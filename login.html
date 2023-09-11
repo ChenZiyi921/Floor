@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h1 class="page_title">京西棚户区改造项目安置房选房系统</h1>
+            <div class="foot_btn_container">
+                <div class="btn btn1" onclick="toStatistics()"><img src="./images/i_home.png" alt=""><span>房源统计</span>
+                </div>
+                <div class="btn btn2" onclick="toQuery()"><img src="./images/i_query.png" alt=""><span>房源查询</span></div>
+            </div>
+            <p class="version">系统版本：Vol：1.0 推荐IE9.0以上版本Web浏览器，1280*800或更高分辨率</p>
+        </div>
+        <div class="login_form">
+            <div class="form">
+                <h4>系统登录</h4>
+                <div class="form_item">
+                    <span>用户名：</span>
+                    <input type="text" class="username">
+                </div>
+                <div class="form_item">
+                    <span>密&nbsp;&nbsp;&nbsp;码：</span>
+                    <input type="password" class="password">
+                </div>
+                <div class="login_submit">登录</div>
+            </div>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <!-- <h2 class="popup-title">提示标题</h2> -->
+            <p class="popup-message"></p>
+            <button class="popup-close">关闭</button>
+        </div>
+    </div>
+</body>
+
+<script src="./utils/jquery.js"></script>
+<script src="./utils/util.js"></script>
+<script src="./config.js"></script>
+<script src="./js/login.js"></script>
+
+</html>
