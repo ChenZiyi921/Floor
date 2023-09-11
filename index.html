@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/app-loading.css" />
-    <title>V3 Admin Vite</title>
-  </head>
-  <body>
-    <div id="app">
-      <div id="app-loading"></div>
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page_title">京西棚户区改造项目安置房选房系统</h1>
+        <div class="search">
+            <input class="input" type="text" maxlength="6" />
+            <div class="suffix">号</div>
+            <div class="button" id="query"><img src="./images/i_query.png" alt=""><span>查询</span></div>
+        </div>
+        <div class="content">
+            <div class="title"></div>
+            <div class="detail">
+                <!-- <p><span class="left">选房序号：</span><span class="right">609</span></p>
+                <p><span class="left">姓名：</span><span class="right">钱多多</span></p>
+                <p><span class="left">身份证号码：</span><span class="right">110111198911116511</span></p>
+                <p><span class="left">应安置面积：</span><span class="right">120.00平米</span></p>
+                <p><span class="left">预选方案：</span><span class="right">一套一居、一套两居</span></p>
+                <p><span class="left">预选套数：</span><span class="right">2</span></p>
+                <p><span class="left">已选房屋：</span><span class="right">二居B2反（1套）</span></p>
+                <p><span class="left">剩余安置面积：</span><span class="right">40.00平米</span></p> -->
+            </div>
+            <div class="foot_btn_container">
+                <div class="btn btn1" onclick="to_project_list()"><img src="./images/i_home.png"
+                        alt=""><span>开始选房</span>
+                </div>
+                <div class="btn btn2" onclick="reQuery()"><img src="./images/i_query.png" alt=""><span>重新查询</span></div>
+            </div>
+        </div>
     </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+    <div class="popup">
+        <div class="popup-content">
+            <!-- <h2 class="popup-title">提示标题</h2> -->
+            <p class="popup-message"></p>
+            <button class="popup-close">关闭</button>
+        </div>
+    </div>
+</body>
+
+<script src="./utils/jquery.js"></script>
+<script src="./utils/util.js"></script>
+<script src="./config.js"></script>
+<script src="./js/index.js"></script>
+
 </html>

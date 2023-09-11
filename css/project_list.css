@@ -1,0 +1,335 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background-size: 100%;
+  background-color: #4b6c1b;
+  overflow-y: auto;
+}
+
+.page_title {
+  font-size: 30px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #bdc678;
+  line-height: 56px;
+  padding: 30px 0;
+  letter-spacing: 2px;
+  text-align: center;
+  background: url("../images/back.png") center center no-repeat;
+  background-size: cover;
+  white-space: nowrap;
+}
+
+/* 隐藏原始复选框 */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* 定义自定义复选框样式 */
+input[type="checkbox"] + label {
+  position: relative;
+  /* 调整复选框与标签之间的间距 */
+  cursor: pointer;
+}
+
+/* 绘制复选框外观 */
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e9f8d3;
+  border-radius: 3px;
+}
+
+/* 绘制选中复选框的填充 */
+input[type="checkbox"]:checked + label::before {
+  background-color: #e9f8d3;
+  /* 修改选中填充颜色 */
+}
+
+/* 绘制复选框的选中标记 */
+input[type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #425b18;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+/* 显示选中复选框的选中标记 */
+input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+.switch_open {
+  /* display: none; */
+}
+
+.switch_close {
+  display: none;
+  float: right;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+  line-height: 54px;
+  margin: 60px auto 20px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.search .input {
+  border: none;
+  outline: none;
+  font-size: 24px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  text-align: right;
+  width: 130px;
+  height: 54px;
+  line-height: 54px;
+  background: #fff;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.search .suffix {
+  padding: 0 30px;
+  font-size: 24px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #222222;
+  background-color: #fff;
+}
+
+.search .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 126px;
+  height: 54px;
+  line-height: 54px;
+  background: #3d8af4;
+  border-radius: 0px 8px 8px 0px;
+  font-size: 24px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn_confirm {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 190px;
+  height: 56px;
+  line-height: 56px;
+  background: #425b18;
+  border-radius: 0px 0px 0px 8px;
+  margin-left: 20px;
+  font-size: 24px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* 整个滚动条的样式 */
+.house_type_list::-webkit-scrollbar {
+  width: 4px;
+  height: 16px;
+  border: 1px solid #f2f2f2;
+  background-color: #f2f2f2;
+}
+
+/* 滚动条的轨道两端按钮，允许通过点击微调小方块的位置 */
+.house_type_list::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* 滚动条的轨道样式 */
+.house_type_list::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+}
+
+/* 内层轨道样式 */
+.house_type_list::-webkit-scrollbar-track-piece {
+  background-color: #f2f2f2;
+}
+
+/* 滚动条里面的小方块，能上下移动 */
+.house_type_list::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  box-shadow: inset 0 0 1px 0 #f2f2f2;
+  border: 1px solid #f2f2f2;
+  background-color: #529bff;
+}
+
+.house_type_list {
+  height: calc(100vh - 478px);
+  overflow: auto;
+}
+
+.house_type {
+  display: flex;
+  padding: 0 3px;
+}
+
+.house_type .active {
+  background: #67bb74 !important;
+}
+
+.house_type .left span,
+.house_type .right span {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.house_type .left span {
+  width: 70px;
+  height: 36px;
+  line-height: 36px;
+  /* border-right: 1px solid #6386f1;
+  border-top: 1px solid #6386f1; */
+  margin: 2px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.house_type .left span:nth-of-type(1) {
+  background: #10488f;
+}
+
+.house_type .right {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.house_type .right span {
+  width: 68px;
+  height: 36px;
+  line-height: 36px;
+  background: #10488f;
+  /* border-right: 1px solid #6386f1;
+  border-top: 1px solid #6386f1; */
+  border-radius: 4px;
+  margin: 2px;
+  box-sizing: border-box;
+}
+
+.content {
+  text-align: center;
+  padding-left: 330px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.content .area_list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 30px 20px 4px;
+}
+
+.content .area_list .item {
+  position: relative;
+  border-radius: 8px;
+  box-sizing: border-box;
+  flex-basis: calc(33.33% - 40px);
+  margin: 20px;
+  min-width: 240px;
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.content .area_list .item .info {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.content .area_list .item .title {
+  height: 45px;
+  font-size: 32px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 45px;
+  padding: 38px 0 11px;
+}
+
+.content .area_list .item .count {
+  height: 37px;
+  font-size: 26px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 37px;
+}
+@media (max-width: 1199px) {
+  .content .area_list .item .title {
+    font-size: 20px;
+  }
+  .content .area_list .item .count {
+    font-size: 14px;
+  }
+  .page_title {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1680px) {
+}
+@media (min-width: 1200px) and (max-width: 1359px) {
+  .content .area_list .item .title {
+    font-size: 22px;
+  }
+  .content .area_list .item .count {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1360px) and (max-width: 1439px) {
+  .content .area_list .item .title {
+    font-size: 26px;
+  }
+  .content .area_list .item .count {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599px) {
+  .content .area_list .item .title {
+    font-size: 28px;
+  }
+  .content .area_list .item .count {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1680px) {
+  .content .area_list .item .title {
+    font-size: 30px;
+  }
+  .content .area_list .item .count {
+    font-size: 24px;
+  }
+}

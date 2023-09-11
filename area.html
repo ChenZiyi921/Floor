@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/slide.css">
+    <link rel="stylesheet" href="./css/area.css">
+    <style>
+        .place_item:nth-of-type(1) {
+            top: 900px;
+            left: 840px;
+        }
+
+        .place_item:nth-of-type(2) {
+            top: 530px;
+            left: 1100px;
+        }
+
+        .place_item:nth-of-type(3) {
+            top: 290px;
+            left: 1350px;
+        }
+
+        .place_item:nth-of-type(4) {
+            top: 720px;
+            left: 500px;
+        }
+
+        .place_item:nth-of-type(5) {
+            top: 410px;
+            left: 740px;
+        }
+
+        .place_item:nth-of-type(6) {
+            top: 160px;
+            left: 1050px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="page_title">京西棚户区改造项目安置房选房系统</h1>
+    <div class="back_button" onclick="to_back()"><img style="width: 20px;" src="./images/i_back.png"
+            alt=""><span>返回首页</span></div>
+    <div class="container">
+        <div class="slide">
+            <h3 class="title" onclick="test()">京西棚户区改造</h3>
+            <p class="desc">总剩余房源 <span class="house_total"></span> 套</p>
+            <div class="switch"><span>
+                    <img class="switch_open" src="./images/i_open.png" alt="">
+                    <img class="switch_close" src="./images/i_close.png" alt="">
+                </span></div>
+            <div class="count"></div>
+            <div class="house_type_list">
+                <!-- <div class="house_type">
+                    <div class="left">
+                        <span>一居</span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="right">
+                        <span>A1</span>
+                        <span>A1</span>
+                        <span>A1</span>
+                        <span>A1</span>
+                        <span>A1</span>
+                        <span>A1</span>
+                        <span>A1</span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="foot">
+                <p><span>已选户型</span><span>套数</span></p>
+                <p><span class="room_detail"></span><span>1</span></p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="area_list">
+                <!-- <div class="place_item">
+                    <p>1号楼</p>
+                    <p>剩余1套</p>
+                </div>
+                <div class="place_item">
+                    <p>2号楼</p>
+                    <p>剩余1套</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="unitInfo">
+        <div class="number">10</div>
+        <div class="level">
+            <p><span>已选</span><span>1001</span></p>
+            <p>一居A1</p>
+            <p>84.66㎡</p>
+        </div>
+    </div>
+</body>
+
+<script src="./utils/jquery.js"></script>
+<script src="./utils/util.js"></script>
+<script src="./config.js"></script>
+<script src="./js/area.js"></script>
+
+</html>
