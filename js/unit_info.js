@@ -4,9 +4,20 @@ var popupMessage = document.querySelector(".popup-message");
 // 进页面根据URL参数填充
 function init() {
     var place = getUrlKey('place') || '';
+    var family_id = getUrlKey('family_id') || '';
     var room_building = getUrlKey('room_building') || '';
     var title = document.querySelector('.title');
+    var house_info = document.querySelector('.house_info');
+    var house_image = document.querySelector('.house_image');
+    var unitInfo = document.querySelector(".unitInfo");
+
     title.innerHTML = place + '地块：' + room_building;
+    if (family_id) {
+        house_info.style.display = 'block';
+        unitInfo.style.width = "calc(100vw - 340px)";
+    } else {
+        house_image.style.display = 'block';
+    }
 }
 
 function closePopup() {
@@ -34,11 +45,21 @@ function buildingInfo() {
         data: {
             place: getUrlKey("place") || "",
             room_building: getUrlKey("room_building") || "",
+            serial: getUrlKey("serial") || "",
+            family_id: getUrlKey("family_id") || "",
         },
         contentType: "application/json",
         dataType: "json",
         success: function (res) {
             if (res.status === "success") {
+                if (getUrlKey("family_id")) {
+                    var house_info = document.querySelector('.house_info');
+                    house_info.innerHTML = '<p><span>选房序号：</span><span>' + res.custom.serial + '</span></p>' +
+                        '<p><span>被拆迁人：</span><span>' + res.custom.name + '</span></p>' +
+                        '<p><span>所选户型：</span><span>' + res.custom.selected_room + '</span></p>';
+                } else {
+
+                }
                 // 循环有几个单元，渲染thead
                 var thead = document.querySelector(".thead");
                 var haedHtml = "";
@@ -62,7 +83,7 @@ function buildingInfo() {
                         ) {
                             var room_info = res.data[i].room_danyua[j].room_info[k];
                             item +=
-                                '<div class="level">' +
+                                '<div class="level ' + (room_info.selected_custom_id > 0 ? "selected" : "") + '">' +
                                 '<p>' + (room_info.selected_custom_id > 0 ? '<span class="lock"><img src="./images/i_lock.png" alt=""></span>' : '') + room_info.room_number + '</p>' +
                                 '<p>' + room_info.room_js + room_info.room_type + '</p>' +
                                 '<p>' + room_info.room_area + '㎡</p>' +
