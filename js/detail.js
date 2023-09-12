@@ -1,11 +1,13 @@
 var popup = document.querySelector('.popup');
 var popupMessage = document.querySelector('.popup-message');
 
-// 进页面根据URL参数填充是第几轮
+// 进页面根据URL参数填充
 function init() {
-    // var assign_batch_no = getUrlKey('assign_batch_no') || '';
-    // var title = document.querySelector('.title');
-    // title.innerHTML = '【第' + assign_batch_no + '轮选房】'
+    var family_id = getUrlKey('family_id') || '';
+    var confirmButton = document.querySelector('.btn2');
+    if (family_id) {
+        confirmButton.style.display = 'flex';
+    }
 }
 
 function closePopup() {

@@ -1,11 +1,12 @@
 var popup = document.querySelector(".popup");
 var popupMessage = document.querySelector(".popup-message");
 
-// 进页面根据URL参数填充是第几轮
+// 进页面根据URL参数填充
 function init() {
-    // var assign_batch_no = getUrlKey('assign_batch_no') || '';
-    // var title = document.querySelector('.title');
-    // title.innerHTML = '【第' + assign_batch_no + '轮选房】'
+    var place = getUrlKey('place') || '';
+    var room_building = getUrlKey('room_building') || '';
+    var title = document.querySelector('.title');
+    title.innerHTML = place + '地块：' + room_building;
 }
 
 function closePopup() {
@@ -15,26 +16,15 @@ function closePopup() {
     });
 }
 
-// function reQuery() {
-//     var input = document.querySelector('.input');
-//     var content = document.querySelector('.content');
-//     input.value = '';
-//     content.style.display = 'none';
-// }
-
-// function queryClick() {
-//     var query = document.querySelector('#query');
-//     var input = document.querySelector('.input');
-//     query.addEventListener('click', function () {
-//         if (input.value) {
-//             buildingInfo(input.value)
-//         } else {
-//             closePopup();
-//             popupMessage.innerHTML = '请填写选房编号';
-//             popup.classList.add('show');
-//         }
-//     })
-// }
+function queryClick() {
+    var room = document.querySelectorAll('.level');
+    for (var i = 0; i < room.length; i++) {
+        room[i].addEventListener('click', function () {
+            console.log(this)
+            location.href = './detail.html?assign_batch_no=2&serial=0609&family_id=1295&place=03&room_building=4号楼'
+        })
+    }
+}
 
 // 查询
 function buildingInfo() {
@@ -84,6 +74,7 @@ function buildingInfo() {
                         "<tr>" + "<td class='number'>" + res.data[i].room_floor + "</td>" + itemHtml + "</tr>";
                 }
                 tbody.innerHTML = bodyHtml;
+                queryClick()
             } else {
                 closePopup();
                 popupMessage.innerHTML = res.msg;
@@ -98,5 +89,6 @@ function to_project_list() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    init();
     buildingInfo();
 });
