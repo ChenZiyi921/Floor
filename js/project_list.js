@@ -186,10 +186,10 @@ function queryPlace() {
     for (var i = 0; i < items.length; i++) {
         items[i].addEventListener('click', function () {
             var params = jsonToParams(Object.assign({}, queryParams, {
-                assign_batch_no: 2,
-                serial: "0609",
-                family_id: 1295,
-                place_name: this.getAttribute('place_name')
+                assign_batch_no: getUrlKey('assign_batch_no') || "",
+                serial: getUrlKey('serial') || "",
+                family_id: getUrlKey('family_id') || "",
+                place_name: this.getAttribute('place_name') || ""
             }))
             location.href = './area.html?' + params
         })

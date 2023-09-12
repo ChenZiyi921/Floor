@@ -110,8 +110,14 @@ function placeItemClick() {
     var place_item = document.querySelectorAll('.place_item');
     for (var i = 0; i < place_item.length; i++) {
         place_item[i].addEventListener('click', function () {
-            var params = jsonToParams({ place: getUrlKey('place_name'), room_building: this.getAttribute("room_building"), serial: getUrlKey('serial'), family_id: getUrlKey('family_id') });
-            location.href = './unit_info.html?assign_batch_no=2&' + params;
+            var params = jsonToParams({
+                place: getUrlKey('place_name') || "",
+                room_building: this.getAttribute("room_building") || "",
+                serial: getUrlKey('serial') || "",
+                family_id: getUrlKey('family_id') || "",
+                assign_batch_no: getUrlKey('assign_batch_no') || "",
+            });
+            location.href = './unit_info.html?' + params;
         })
     }
 }
