@@ -93,13 +93,15 @@ body {
 }
 
 .house_type_list {
-  height: calc(100vh - 478px);
+  /* height: calc(100vh - 478px); */
+  flex: 1;
   overflow: auto;
 }
 
 .house_type {
   display: flex;
   padding: 0 3px;
+  box-sizing: border-box;
 }
 
 .house_type .active {

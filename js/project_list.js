@@ -9,12 +9,14 @@ function init() {
     var count = document.querySelector('.count');
     var search = document.querySelector('.search');
     var input = document.querySelector('.input');
+    var foot = document.querySelector('.foot');
 
     if (assign_batch_no) {
         count.innerHTML = '【第' + assign_batch_no + '轮选房】';
     }
     if (!family_id) {
         search.style.visibility = 'hidden';
+        foot.style.display = 'none';
     } else {
         input.value = serial
     }

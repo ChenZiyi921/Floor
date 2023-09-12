@@ -7,9 +7,14 @@ function init() {
     var room_type = getUrlKey('room_type') || '';
     var count = document.querySelector('.count');
     var room_detail = document.querySelector('.room_detail');
+    var foot = document.querySelector('.foot');
 
     count.innerHTML = '【第' + assign_batch_no + '轮选房】'
     room_detail.innerHTML = room_js + room_type;
+
+    if (!family_id) {
+        foot.style.display = 'none';
+    }
 }
 
 function switchClick() {
