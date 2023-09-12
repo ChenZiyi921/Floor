@@ -13,6 +13,7 @@ function init() {
 
     if (assign_batch_no) {
         count.innerHTML = '【第' + assign_batch_no + '轮选房】';
+        count.style.display = 'block';
     }
     if (!family_id) {
         search.style.visibility = 'hidden';

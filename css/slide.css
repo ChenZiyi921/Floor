@@ -40,6 +40,7 @@
   height: 22px;
   background: #3d8af4;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .slide .switch span {
   display: block;
@@ -56,6 +57,7 @@
 }
 
 .slide .count {
+  display: none;
   height: 30px;
   line-height: 30px;
   font-size: 18px;

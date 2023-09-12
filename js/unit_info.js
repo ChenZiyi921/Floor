@@ -119,10 +119,6 @@ function buildingInfo() {
     });
 }
 
-function to_project_list() {
-    location.href = "./project_list.html?assign_batch_no=2&serial=0609&family_id=1295";
-}
-
 document.addEventListener("DOMContentLoaded", function () {
     init();
     buildingInfo();

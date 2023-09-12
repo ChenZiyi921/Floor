@@ -1,6 +1,8 @@
 var popup = document.querySelector('.popup');
 var popupMessage = document.querySelector('.popup-message');
 
+var selectSn = "";
+
 // 进页面根据URL参数填充是第几轮
 function init() {
     var assign_batch_no = getUrlKey('assign_batch_no') || '';
@@ -48,6 +50,7 @@ function customInfo(val) {
         dataType: 'json',
         success: function (res) {
             if (res.status === 'success') {
+                selectSn = res.data.selectSn;
                 var detail = document.querySelector('.detail');
                 detail.innerHTML = '<p><span class="left">选房序号：</span><span class="right">' + res.data.selectSn + '</span></p>' +
                     '<p><span class="left">姓名：</span><span class="right">' + res.data.name + '</span></p>' +
@@ -69,7 +72,12 @@ function customInfo(val) {
 }
 
 function to_project_list() {
-    location.href = './project_list.html?assign_batch_no=2&serial=0609&family_id=1295'
+    var params = jsonToParams({
+        serial: selectSn,
+        family_id: getUrlKey('family_id') || "",
+        assign_batch_no: getUrlKey('assign_batch_no') || "",
+    });
+    location.href = './project_list.html?' + params;
 }
 
 document.addEventListener('DOMContentLoaded', function () {

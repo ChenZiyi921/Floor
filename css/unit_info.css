@@ -40,9 +40,9 @@
 }
 
 .content .main .unitInfo {
-  display: block;
+  display: table;
   width: calc(100vw - 560px);
-  min-width: 630px;
+  min-width: 610px;
   background: #fff;
   overflow-x: auto;
 }

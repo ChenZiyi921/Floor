@@ -9,7 +9,11 @@ function init() {
     var room_detail = document.querySelector('.room_detail');
     var foot = document.querySelector('.foot');
 
-    count.innerHTML = '【第' + assign_batch_no + '轮选房】'
+    if (assign_batch_no) {
+        count.innerHTML = '【第' + assign_batch_no + '轮选房】';
+        count.style.display = 'block';
+    }
+
     room_detail.innerHTML = room_js + room_type;
 
     if (!family_id) {
