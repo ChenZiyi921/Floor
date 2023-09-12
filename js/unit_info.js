@@ -16,7 +16,7 @@ function init() {
         house_info.style.display = 'block';
         unitInfo.style.width = "calc(100vw - 340px)";
     } else {
-        house_image.style.display = 'block';
+        // house_image.style.display = 'block';
     }
 }
 
@@ -31,8 +31,18 @@ function queryClick() {
     var room = document.querySelectorAll('.level');
     for (var i = 0; i < room.length; i++) {
         room[i].addEventListener('click', function () {
-            console.log(this)
-            location.href = './detail.html?assign_batch_no=2&serial=0609&family_id=1295&place=03&room_building=4号楼'
+            var family_id = getUrlKey('family_id') || '';
+            var house_image = document.querySelector('.house_image');
+            house_image.style.display = 'block';
+            for (let j = 0; j < room.length; j++) {
+                room[j].classList.remove("active");
+            }
+            if (family_id) {
+                location.href = './detail.html?assign_batch_no=2&serial=0609&family_id=1295&place=03&room_building=4号楼';
+            } else {
+                this.classList.add("active");
+                house_image.innerHTML = '<img src="' + this.getAttribute('img') + '" alt="">';
+            }
         })
     }
 }
@@ -54,9 +64,13 @@ function buildingInfo() {
             if (res.status === "success") {
                 if (getUrlKey("family_id")) {
                     var house_info = document.querySelector('.house_info');
+                    var selectedHtml = "";
+                    for (let s = 0; s < res.custom.selected_room.length; s++) {
+                        selectedHtml += res.custom.selected_room[s] + '\n';
+                    }
                     house_info.innerHTML = '<p><span>选房序号：</span><span>' + res.custom.serial + '</span></p>' +
                         '<p><span>被拆迁人：</span><span>' + res.custom.name + '</span></p>' +
-                        '<p><span>所选户型：</span><span>' + res.custom.selected_room + '</span></p>';
+                        '<p><span>所选户型：</span><span>' + selectedHtml + '</span></p>';
                 } else {
 
                 }
@@ -83,7 +97,7 @@ function buildingInfo() {
                         ) {
                             var room_info = res.data[i].room_danyua[j].room_info[k];
                             item +=
-                                '<div class="level ' + (room_info.selected_custom_id > 0 ? "selected" : "") + '">' +
+                                '<div img="' + room_info.img + '" class="level ' + (room_info.selected_custom_id > 0 ? "selected" : "") + '">' +
                                 '<p>' + (room_info.selected_custom_id > 0 ? '<span class="lock"><img src="./images/i_lock.png" alt=""></span>' : '') + room_info.room_number + '</p>' +
                                 '<p>' + room_info.room_js + room_info.room_type + '</p>' +
                                 '<p>' + room_info.room_area + '㎡</p>' +
