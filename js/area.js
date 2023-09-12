@@ -110,28 +110,13 @@ function placeItemClick() {
     var place_item = document.querySelectorAll('.place_item');
     for (var i = 0; i < place_item.length; i++) {
         place_item[i].addEventListener('click', function () {
-            unitInfo({ place: getUrlKey('place_name'), room_building: this.getAttribute("room_building") })
+            var params = jsonToParams({ place: getUrlKey('place_name'), room_building: this.getAttribute("room_building") });
+            location.href = './unit_info.html?assign_batch_no=2&serial=0609&family_id=1295&' + params;
         })
     }
 }
 
-function unitInfo() {
-    $.ajax({
-        url: base_url + "api/v10/unitInfo",
-        type: "GET",
-        data: {},
-        contentType: "application/json",
-        dataType: 'json',
-        success: function (res) {
-            if (res.status === 'success') {
-                console.log(res)
-            }
-        }
-    });
-}
-
 function to_back() {
-    // location.href = './index.html?assign_batch_no=2&serial=0609&family_id=1295'
     history.back()
 }
 
