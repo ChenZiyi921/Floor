@@ -95,7 +95,7 @@ function resourceHouseData(val) {
 }
 
 function to_project_list() {
-    var params = jsonToParams = ({
+    var params = jsonToParams({
         assign_batch_no: getUrlKey('assign_batch_no') || "",
         family_id: getUrlKey('family_id') || '',
         place: getUrlKey('place') || '',
