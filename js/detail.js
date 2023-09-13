@@ -40,7 +40,6 @@ function resourceHouseData(val) {
         url: base_url + "api/v10/resourceHouseData",
         type: "GET",
         data: {
-            // family_id=1&serial=000001&room_id=6240&place=08&room_building=5号楼&room_danyuan=二单元&room_js=二居&room_type=A1反
             family_id: getUrlKey('family_id') || '',
             serial: getUrlKey('serial') || '',
             room_id: getUrlKey('room_id') || '',

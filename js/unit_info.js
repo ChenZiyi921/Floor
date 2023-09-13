@@ -8,15 +8,12 @@ function init() {
     var room_building = getUrlKey('room_building') || '';
     var title = document.querySelector('.title');
     var house_info = document.querySelector('.house_info');
-    var house_image = document.querySelector('.house_image');
     var unitInfo = document.querySelector(".unitInfo");
 
     title.innerHTML = place + '地块：' + room_building;
     if (family_id) {
         house_info.style.display = 'block';
         unitInfo.style.width = "calc(100vw - 340px)";
-    } else {
-        // house_image.style.display = 'block';
     }
 }
 
@@ -28,19 +25,31 @@ function closePopup() {
 }
 
 function queryClick() {
-    var room = document.querySelectorAll('.level');
-    for (var i = 0; i < room.length; i++) {
-        room[i].addEventListener('click', function () {
+    var level = document.querySelectorAll('.level');
+    for (var i = 0; i < level.length; i++) {
+        level[i].addEventListener('click', function () {
             var family_id = getUrlKey('family_id') || '';
-            var house_image = document.querySelector('.house_image');
-            house_image.style.display = 'block';
-            for (let j = 0; j < room.length; j++) {
-                room[j].classList.remove("active");
+            for (let j = 0; j < level.length; j++) {
+                level[j].classList.remove("active");
             }
             if (family_id) {
-                location.href = './detail.html?assign_batch_no=2&serial=0609&family_id=1295&place=03&room_building=4号楼';
+                var room = JSON.parse(this.getAttribute("room"));
+                var params = jsonToParams({
+                    assign_batch_no: getUrlKey('assign_batch_no') || "",
+                    family_id: getUrlKey('family_id') || '',
+                    serial: getUrlKey('serial') || '',
+                    room_id: room.id || '',
+                    place: getUrlKey('place') || '',
+                    room_building: getUrlKey('room_building') || '',
+                    room_danyuan: room.room_danyuan || '',
+                    room_js: room.room_js || '',
+                    room_type: room.room_type || '',
+                })
+                location.href = './detail.html?' + params;
             } else {
                 this.classList.add("active");
+                var house_image = document.querySelector('.house_image');
+                house_image.style.display = 'block';
                 house_image.innerHTML = '<img src="' + this.getAttribute('img') + '" alt="">';
             }
         })
@@ -96,8 +105,9 @@ function buildingInfo() {
                             k++
                         ) {
                             var room_info = res.data[i].room_danyua[j].room_info[k];
+                            var roomParams = JSON.stringify({ id: room_info.id, room_js: room_info.room_js, room_type: room_info.room_type, room_danyuan: room_info.room_danyuan });
                             item +=
-                                '<div img="' + room_info.img + '" class="level ' + (room_info.selected_custom_id > 0 ? "selected" : "") + '">' +
+                                '<div room=' + roomParams + ' img="' + room_info.img + '" class="level ' + (room_info.selected_custom_id > 0 ? "selected" : "") + '">' +
                                 '<p>' + (room_info.selected_custom_id > 0 ? '<span class="lock"><img src="./images/i_lock.png" alt=""></span>' : '') + room_info.room_number + '</p>' +
                                 '<p>' + room_info.room_js + room_info.room_type + '</p>' +
                                 '<p>' + room_info.room_area + '㎡</p>' +
