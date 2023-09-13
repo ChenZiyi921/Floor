@@ -188,9 +188,9 @@ function queryPlace() {
         items[i].addEventListener('click', function () {
             var params = jsonToParams(Object.assign({}, queryParams, {
                 assign_batch_no: getUrlKey('assign_batch_no') || "",
-                serial: getUrlKey('serial') || "",
                 family_id: getUrlKey('family_id') || "",
-                place_name: this.getAttribute('place_name') || ""
+                place_name: this.getAttribute('place_name') || "",
+                serial: getUrlKey('serial') || "",
             }))
             location.href = './area.html?' + params
         })
@@ -199,7 +199,12 @@ function queryPlace() {
 
 // 返回index.html, 查询页面
 function to_index() {
-    location.href = './index.html?assign_batch_no=2&serial=0609&family_id=1295';
+    var params = jsonToParams({
+        assign_batch_no: getUrlKey('assign_batch_no') || "",
+        family_id: getUrlKey('family_id') || "",
+        serial: getUrlKey('serial') || "",
+    })
+    location.href = './index.html?' + params;
 }
 
 document.addEventListener('DOMContentLoaded', function () {

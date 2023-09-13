@@ -115,11 +115,11 @@ function placeItemClick() {
     for (var i = 0; i < place_item.length; i++) {
         place_item[i].addEventListener('click', function () {
             var params = jsonToParams({
+                assign_batch_no: getUrlKey('assign_batch_no') || "",
+                family_id: getUrlKey('family_id') || "",
                 place: getUrlKey('place_name') || "",
                 room_building: this.getAttribute("room_building") || "",
                 serial: getUrlKey('serial') || "",
-                family_id: getUrlKey('family_id') || "",
-                assign_batch_no: getUrlKey('assign_batch_no') || "",
             });
             location.href = './unit_info.html?' + params;
         })

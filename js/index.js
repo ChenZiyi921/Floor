@@ -73,9 +73,9 @@ function customInfo(val) {
 
 function to_project_list() {
     var params = jsonToParams({
-        serial: selectSn,
-        family_id: getUrlKey('family_id') || "",
         assign_batch_no: getUrlKey('assign_batch_no') || "",
+        family_id: getUrlKey('family_id') || "",
+        serial: selectSn,
     });
     location.href = './project_list.html?' + params;
 }
