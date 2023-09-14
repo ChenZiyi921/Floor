@@ -11,29 +11,38 @@ function closePopup() {
     });
 }
 
-function reQuery() {
-    var input = document.querySelector(".input");
-    var content = document.querySelector(".content");
-    input.value = "";
-    content.style.display = "none";
-}
-
-function queryClick() {
-    var query = document.querySelector("#query");
-    var input = document.querySelector(".input");
-    query.addEventListener("click", function () {
-        if (input.value) {
-            resourceHouseData(input.value);
-        } else {
-            closePopup();
-            popupMessage.innerHTML = "请填写选房编号";
-            popup.classList.add("show");
-        }
+// 确认选房
+function postResourceHouseData() {
+    $.ajax({
+        url: base_url + "api/v10/resourceHouseData",
+        type: "POST",
+        data: {
+            family_id: getUrlKey("family_id") || "",
+            serial: getUrlKey("serial") || "",
+            room_id: getUrlKey("room_id") || "",
+            place: getUrlKey("place") || "",
+            room_building: getUrlKey("room_building") || "",
+            room_danyuan: getUrlKey("room_danyuan") || "",
+            room_js: getUrlKey("room_js") || "",
+            room_type: getUrlKey("room_type") || "",
+        },
+        dataType: "json",
+        success: function (res) {
+            if (res.status === "success") {
+                closePopup();
+                popupMessage.innerHTML = "恭喜您，选房成功！";
+                popup.classList.add("show");
+            } else {
+                closePopup();
+                popupMessage.innerHTML = res.msg;
+                popup.classList.add("show");
+            }
+        },
     });
 }
 
 // 查询
-function resourceHouseData(val) {
+function getResourceHouseData(val) {
     $.ajax({
         url: base_url + "api/v10/resourceHouseData",
         type: "GET",
@@ -128,5 +137,5 @@ function to_project_list() {
 
 document.addEventListener("DOMContentLoaded", function () {
     init();
-    resourceHouseData();
+    getResourceHouseData();
 });
