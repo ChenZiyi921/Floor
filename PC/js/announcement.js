@@ -28,22 +28,30 @@ function getAnnouncement() {
                 today.innerHTML = res.today + "选房公示";
                 var html = "";
                 for (var i = 0; i < res.data.length; i++) {
-                    html += '<tr>' +
-                        '<td class="number">' + res.data[i].name + '</td>' +
-                        '<td class="number">' + res.data[i].place + '</td>' +
-                        '<td class="number">' + res.data[i].room_building + '</td>' +
-                        '<td class="number">' + res.data[i].room_danyuan + '</td>' +
-                        '<td class="number">' + res.data[i].room_number + '</td>' +
-                        '<td class="number">' + res.data[i].date + '</td>' +
-                        '</tr>';
-
+                    html +=
+                        "<tr>" +
+                        '<td class="number">' +
+                        res.data[i].name +
+                        "</td>" +
+                        '<td class="number">' +
+                        res.data[i].place +
+                        "</td>" +
+                        '<td class="number">' +
+                        res.data[i].room_building +
+                        "</td>" +
+                        '<td class="number">' +
+                        res.data[i].room_danyuan +
+                        "</td>" +
+                        '<td class="number">' +
+                        res.data[i].room_number +
+                        "</td>" +
+                        '<td class="number">' +
+                        res.data[i].date +
+                        "</td>" +
+                        "</tr>";
                 }
                 tbody.innerHTML = html;
-                autoScrollTable(res.count)
-                // ==============================================================
-
-
-                // ==============================================================
+                autoScrollTable(res.count);
             } else {
                 closePopup();
                 popupMessage.innerHTML = res.msg;
@@ -54,13 +62,12 @@ function getAnnouncement() {
 }
 var timer;
 function autoScrollTable(count) {
+    var thead = document.querySelector(".thead");
+    var today = document.querySelector(".today");
 
-    var thead = document.querySelector('.thead');
-    var today = document.querySelector('.today');
-
-    var table = document.querySelector('.table-container'); // 表格元素
+    var table = document.querySelector(".table-container"); // 表格元素
     var tableHeight = table.offsetHeight; // 表格的高度
-    var container = document.querySelector('.unitInfo'); // 容器元素
+    var container = document.querySelector(".unitInfo"); // 容器元素
     var containerHeight = container.offsetHeight; // 容器的高度
 
     // 每次滚动的距离
@@ -69,9 +76,9 @@ function autoScrollTable(count) {
     // 滚动函数
     function scroll() {
         if (table.scrollTop + tableHeight >= containerHeight) {
-            console.log(table.scrollTop, tableHeight, containerHeight)
+            console.log(table.scrollTop, tableHeight, containerHeight);
             // 达到底部时，回到顶部
-            clearInterval(scrollInterval)
+            clearInterval(scrollInterval);
             getAnnouncement();
             table.scrollTop = 0;
         } else {
@@ -81,19 +88,20 @@ function autoScrollTable(count) {
     }
 
     // 检测是否够一页
-    const flag = count > ((window.innerHeight - today.offsetHeight - thead.offsetHeight - 24) / 46);
+    const flag =
+        count >
+        (window.innerHeight - today.offsetHeight - thead.offsetHeight - 24) / 46;
     if (flag) {
         // 开始自动滚动
         var scrollInterval = setInterval(scroll, 100); // 可根据需要调整滚动间隔
     } else {
         function doSomething() {
-            getAnnouncement()
+            getAnnouncement();
             clearTimeout(timer);
             timer = setTimeout(doSomething, 1000 * 60 * 10);
         }
         timer = setTimeout(doSomething, 1000 * 60 * 10); // 十分钟
     }
-
 }
 
 document.addEventListener("DOMContentLoaded", function () {

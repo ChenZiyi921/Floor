@@ -1,11 +1,22 @@
 var popup = document.querySelector(".popup");
 var popupMessage = document.querySelector(".popup-message");
 
+var place = getUrlKey('place') || '';
+var room_building = getUrlKey('room_building') || '';
+var assign_batch_no = getUrlKey("assign_batch_no") || "";
+var family_id = getUrlKey('family_id') || '';
+var serial = getUrlKey('serial') || '';
+
+
+var options = {};
+if (family_id) {
+    options.family_id = family_id;
+    options.serial = serial;
+}
+options.assign_batch_no = assign_batch_no;
+
 // 进页面根据URL参数填充
 function init() {
-    var place = getUrlKey('place') || '';
-    var family_id = getUrlKey('family_id') || '';
-    var room_building = getUrlKey('room_building') || '';
     var title = document.querySelector('.title');
     var house_info = document.querySelector('.house_info');
     var unitInfo = document.querySelector(".unitInfo");
@@ -28,19 +39,18 @@ function queryClick() {
     var level = document.querySelectorAll('.level');
     for (var i = 0; i < level.length; i++) {
         level[i].addEventListener('click', function () {
-            var family_id = getUrlKey('family_id') || '';
             for (let j = 0; j < level.length; j++) {
                 level[j].classList.remove("active");
             }
             if (family_id) {
                 var room = JSON.parse(this.getAttribute("room"));
                 var params = jsonToParams({
-                    assign_batch_no: getUrlKey('assign_batch_no') || "",
-                    family_id: getUrlKey('family_id') || '',
-                    serial: getUrlKey('serial') || '',
+                    assign_batch_no: assign_batch_no,
+                    family_id: family_id,
+                    serial: serial,
                     room_id: room.id || '',
-                    place: getUrlKey('place') || '',
-                    room_building: getUrlKey('room_building') || '',
+                    place: place,
+                    room_building: room_building,
                     room_danyuan: room.room_danyuan || '',
                     room_js: room.room_js || '',
                     room_type: room.room_type || '',
@@ -61,17 +71,15 @@ function buildingInfo() {
     $.ajax({
         url: base_url + "api/v10/buildingInfo",
         type: "GET",
-        data: {
-            place: getUrlKey("place") || "",
-            room_building: getUrlKey("room_building") || "",
-            serial: getUrlKey("serial") || "",
-            family_id: getUrlKey("family_id") || "",
-        },
+        data: Object.assign({
+            place: place,
+            room_building: room_building,
+        }, options),
         contentType: "application/json",
         dataType: "json",
         success: function (res) {
             if (res.status === "success") {
-                if (getUrlKey("family_id")) {
+                if (family_id) {
                     var house_info = document.querySelector('.house_info');
                     var selectedHtml = "";
                     for (let s = 0; s < res.custom.selected_room.length; s++) {

@@ -3,7 +3,7 @@ function toStatistics() {
 }
 
 function toQuery() {
-    location.href = './project_list.html';
+    location.href = './project_list.html?assign_batch_no=1';
 }
 
 function submit() {
