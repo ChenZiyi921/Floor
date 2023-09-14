@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/announcement.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="today"></h1>
+        <div class="table-container">
+            <table class="unitInfo">
+                <thead class="thead">
+                    <tr>
+                        <th>姓名</th>
+                        <th>地块</th>
+                        <th>楼号</th>
+                        <th>单元号</th>
+                        <th>房号</th>
+                        <th>选房日期</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    <!-- <tr>
+                    <td class="number">二层</td>
+                    <td class="number">二层</td>
+                    <td class="number">二层</td>
+                    <td class="number">二层</td>
+                    <td class="number">二层</td>
+                    <td class="number">二层</td>
+                </tr> -->
+                </tbody>
+            </table>
+            <div id="bg"></div>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <!-- <h2 class="popup-title">提示标题</h2> -->
+            <p class="popup-message"></p>
+            <button class="popup-close">关闭</button>
+        </div>
+    </div>
+</body>
+
+<script src="./utils/jquery.js"></script>
+<script src="./utils/util.js"></script>
+<script src="./config.js"></script>
+<script src="./js/announcement.js"></script>
+
+</html>
