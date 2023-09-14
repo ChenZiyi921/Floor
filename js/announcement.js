@@ -39,7 +39,7 @@ function getAnnouncement() {
 
                 }
                 tbody.innerHTML = html;
-                autoScrollTable()
+                autoScrollTable(res.count)
                 // ==============================================================
 
 
@@ -52,22 +52,27 @@ function getAnnouncement() {
         },
     });
 }
+var timer;
+function autoScrollTable(count) {
 
-function autoScrollTable() {
-    let table = document.querySelector('.table-container'); // 表格元素
-    let tableHeight = table.offsetHeight; // 表格的高度
-    let container = document.querySelector('.unitInfo'); // 容器元素
-    let containerHeight = container.offsetHeight; // 容器的高度
+    var thead = document.querySelector('.thead');
+    var today = document.querySelector('.today');
+
+    var table = document.querySelector('.table-container'); // 表格元素
+    var tableHeight = table.offsetHeight; // 表格的高度
+    var container = document.querySelector('.unitInfo'); // 容器元素
+    var containerHeight = container.offsetHeight; // 容器的高度
 
     // 每次滚动的距离
-    let scrollDistance = 1; // 可根据需要调整滚动速度
+    var scrollDistance = 1; // 可根据需要调整滚动速度
 
     // 滚动函数
     function scroll() {
         if (table.scrollTop + tableHeight >= containerHeight) {
+            console.log(table.scrollTop, tableHeight, containerHeight)
             // 达到底部时，回到顶部
             clearInterval(scrollInterval)
-            getAnnouncement()
+            getAnnouncement();
             table.scrollTop = 0;
         } else {
             // 向下滚动指定距离
@@ -75,8 +80,20 @@ function autoScrollTable() {
         }
     }
 
-    // 开始自动滚动
-    let scrollInterval = setInterval(scroll, 100); // 可根据需要调整滚动间隔
+    // 检测是否够一页
+    const flag = count > ((window.innerHeight - today.offsetHeight - thead.offsetHeight - 24) / 46);
+    if (flag) {
+        // 开始自动滚动
+        var scrollInterval = setInterval(scroll, 100); // 可根据需要调整滚动间隔
+    } else {
+        function doSomething() {
+            getAnnouncement()
+            clearTimeout(timer);
+            timer = setTimeout(doSomething, 1000 * 60 * 10);
+        }
+        timer = setTimeout(doSomething, 1000 * 60 * 10); // 十分钟
+    }
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
