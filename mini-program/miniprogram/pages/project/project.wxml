@@ -1,0 +1,33 @@
+<!-- logs.wxml -->
+<view class="container">
+  <view class="item">
+    <view class="title">地理位置</view>
+    <view class="block">
+      <image class="image" src="../../img/1.jpg" mode="widthFix" />
+      <image class="image" src="../../img/2.jpg" mode="widthFix" />
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">选房周期</view>
+    <view class="block" style="padding: 30rpx 16rpx">
+      <view class="h5">第一轮时间：2023年2月6日-2月23日</view>
+      <view class="h5">第二轮时间：2023年2月24日-2月28日</view>
+      <view class="h6">具体选房时间以《选房通知单》注明时间为准</view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">选房大厅地址</view>
+    <view class="block">
+      <view class="text">选房场地为：中铁建*山语澜庭项目配套商业中铁建*山语澜庭项目配套商业中铁建*山语澜庭项目配套商业中铁建*山语澜庭项目配套商业</view>
+      <image class="image" src="../../img/3.jpg" mode="widthFix" />
+      <image class="image" src="../../img/4.jpg" mode="widthFix" />
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">选房大厅动向安排</view>
+    <view class="block">
+      <image class="image" src="../../img/5.jpg" mode="widthFix" />
+      <image class="image" src="../../img/6.jpg" mode="widthFix" />
+    </view>
+  </view>
+</view>

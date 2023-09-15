@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/test/test",
+    "pages/project/project",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/info/info"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,7 +17,7 @@
     "backgroundColor": "#f7f7fa",
     "list": [
       {
-        "pagePath": "pages/test/test",
+        "pagePath": "pages/project/project",
         "text": "项目概况",
         "iconPath": "img/i-user.png",
         "selectedIconPath": "img/i-user-active.png"
@@ -29,7 +29,7 @@
         "selectedIconPath": "img/i-home-active.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/info/info",
         "text": "信息公示",
         "iconPath": "img/i-user.png",
         "selectedIconPath": "img/i-user-active.png"
