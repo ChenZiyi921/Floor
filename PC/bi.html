@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/bi.css">
+    <style>
+        .right .item .title {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            height: 32px;
+            font-size: 20px;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 600;
+            color: #FFFFFF;
+            line-height: 32px;
+            border-left: 6px solid #8EE8F8;
+            padding-left: 16px;
+        }
+
+        .today_total {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            font-size: 20px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+
+        .today_total .text {
+            font-size: 28px;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        .today_total .count {
+            font-size: 66px;
+            font-family: DINAlternate-Bold, DINAlternate;
+            font-weight: bold;
+            color: #F86500;
+            margin-right: 10px;
+        }
+
+        .chart1 {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="head">
+            <div class="title">房山区河北镇棚户区改造回迁安置项目选房系统</div>
+            <div class="query"><img src="./images/i_1.png" alt=""><span>房源查询</span></div>
+        </div> -->
+        <div class="wrap">
+            <div class="left">
+                <div class="item">
+                    <p>123</p>
+                    <p>123</p>
+                    <p>123</p>
+                </div>
+                <div class="item">
+                    <p>123</p>
+                    <p>123</p>
+                    <p>123</p>
+                </div>
+                <div class="item">
+                    <p>123</p>
+                    <p>123</p>
+                    <p>123</p>
+                </div>
+                <div class="item">
+                    <p>123</p>
+                    <p>123</p>
+                    <p>123</p>
+                </div>
+                <div class="item">
+                    <p>123</p>
+                    <p>123</p>
+                    <p>123</p>
+                </div>
+                <div class="item">
+                    <p>123</p>
+                    <p>123</p>
+                    <p>123</p>
+                </div>
+                <span class="subscript"></span>
+                <span class="subscript"></span>
+                <span class="subscript"></span>
+                <span class="subscript"></span>
+            </div>
+            <div class="right">
+                <div class="item">
+                    <div style="display: flex; height: 100%;">
+                        <div class="today_total">
+                            <div class="text">【当日选房】</div>
+                            <div><span class="count">5</span><span style="font-size: 20px;">套</span></div>
+                        </div>
+                        <div class="chart chart1"></div>
+                    </div>
+                    <div class="title">2023年09月07日</div>
+                    <span class="subscript"></span>
+                    <span class="subscript"></span>
+                    <span class="subscript"></span>
+                    <span class="subscript"></span>
+                </div>
+                <div class="item">
+                    <div class="title">地块选房统计</div>
+                    <div class="chart chart2"></div>
+                    <span class="subscript"></span>
+                    <span class="subscript"></span>
+                    <span class="subscript"></span>
+                    <span class="subscript"></span>
+                </div>
+                <div class="item">
+                    <div class="title">选房居室统计</div>
+                    <div class="chart chart3"></div>
+                    <span class="subscript"></span>
+                    <span class="subscript"></span>
+                    <span class="subscript"></span>
+                    <span class="subscript"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./js/echarts.min.js"></script>
+<script src="./utils/jquery.js"></script>
+<script src="./utils/util.js"></script>
+<script src="./config.js"></script>
+<script src="./js/bi.js"></script>
+
+</html>
