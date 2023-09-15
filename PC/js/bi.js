@@ -5,6 +5,9 @@ function initChart1() {
     var option;
 
     option = {
+        grid: {
+            left: 0
+        },
         tooltip: {
             trigger: 'item'
         },
@@ -12,16 +15,38 @@ function initChart1() {
             {
                 name: 'Access From',
                 type: 'pie',
-                radius: ['40%', '70%'],
+                radius: ['50%', '70%'],
                 avoidLabelOverlap: false,
                 label: {
                     show: false,
-                    position: 'center'
+                    position: 'center',
+                    normal: {
+                        show: true,
+                        position: 'center',
+                        color: '#4c4a4a',
+                        formatter: '{total|' + '75%' + '}' + '\n\r' + '{text|选房占比}',
+                        rich: {
+                            total: {
+                                fontSize: 35,
+                                fontFamily: "微软雅黑",
+                                color: '#F86500',
+                                lineHeight: 50,
+                            },
+                            text: {
+                                fontFamily: "微软雅黑",
+                                fontSize: 16,
+                                color: '#fff',
+                            },
+                        }
+                    },
+                    emphasis: { // 中间文字显示
+                        show: true,
+                    }
                 },
                 emphasis: {
                     label: {
                         show: true,
-                        fontSize: 40,
+                        fontSize: 20,
                         fontWeight: 'bold'
                     }
                 },
@@ -29,8 +54,42 @@ function initChart1() {
                     show: false
                 },
                 data: [
-                    { value: 1048, name: 'Search Engine' },
-                    { value: 735, name: 'Direct' }
+                    {
+                        value: 250, name: 'Search Engine', itemStyle: {
+                            normal: {
+                                label: {
+                                    formatter: "{c}" + "%",
+                                    show: true,
+                                    position: "inside",
+                                    textStyle: {
+                                        fontWeight: "bolder",
+                                        fontSize: "12",
+                                        color: "#fff"
+                                    }
+                                },
+                                color: "#273f99",
+                                opacity: 1
+                            }
+                        }
+                    },
+                    {
+                        value: 735, name: 'Direct', itemStyle: {
+                            normal: {
+                                label: {
+                                    formatter: "{c}" + "%",
+                                    show: true,
+                                    position: "inside",
+                                    textStyle: {
+                                        fontWeight: "bolder",
+                                        fontSize: "12",
+                                        color: "#fff"
+                                    }
+                                },
+                                color: "#5dcae5",
+                                opacity: 1
+                            }
+                        }
+                    }
                 ]
             }
         ]
@@ -107,13 +166,47 @@ function initChart2() {
                 stack: "one",
                 emphasis: emphasisStyle,
                 data: data1,
+                barMaxWidth: 60,
+                itemStyle: {
+                    normal: {
+                        label: {
+                            formatter: "{c}" + "%",
+                            show: true,
+                            position: "inside",
+                            textStyle: {
+                                fontWeight: "bolder",
+                                fontSize: "12",
+                                color: "#fff"
+                            }
+                        },
+                        color: "#90d56f",
+                        opacity: 1
+                    }
+                }
             },
             {
                 name: "未选",
                 type: "bar",
                 stack: "one",
                 emphasis: emphasisStyle,
+                barMaxWidth: 60,
                 data: data2,
+                itemStyle: {
+                    normal: {
+                        label: {
+                            formatter: "共{c}" + "套",
+                            show: true,
+                            position: "top",
+                            textStyle: {
+                                fontWeight: "bolder",
+                                fontSize: "12",
+                                color: "#fff"
+                            }
+                        },
+                        color: "#263e99",
+                        opacity: 1
+                    }
+                }
             },
         ],
     };
@@ -130,7 +223,7 @@ function initChart3() {
     let xAxisData = [];
     let data1 = [];
     let data2 = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 3; i++) {
         xAxisData.push("Class" + i);
         data1.push(+(Math.random() * 2).toFixed(2));
         data2.push(+(Math.random() * 5).toFixed(2));
@@ -188,19 +281,57 @@ function initChart3() {
                 type: "bar",
                 stack: "one",
                 emphasis: emphasisStyle,
+                barMaxWidth: 60,
                 data: data1,
+                itemStyle: {
+                    normal: {
+                        label: {
+                            formatter: "{c}" + "%",
+                            show: true,
+                            position: "inside",
+                            textStyle: {
+                                fontWeight: "bolder",
+                                fontSize: "12",
+                                color: "#fff"
+                            }
+                        },
+                        color: "#f3b23e",
+                        opacity: 1
+                    }
+                }
             },
             {
                 name: "未选",
                 type: "bar",
                 stack: "one",
                 emphasis: emphasisStyle,
+                barMaxWidth: 60,
                 data: data2,
+                itemStyle: {
+                    normal: {
+                        label: {
+                            formatter: "共{c}" + "套",
+                            show: true,
+                            position: "top",
+                            textStyle: {
+                                fontWeight: "bolder",
+                                fontSize: "12",
+                                color: "#fff"
+                            }
+                        },
+                        color: "#263e99",
+                        opacity: 1
+                    }
+                }
             },
         ],
     };
 
     option && myChart3.setOption(option);
+}
+
+function toQuery() {
+    location.href = './project_list.html?assign_batch_no=1';
 }
 
 document.addEventListener("DOMContentLoaded", function () {
