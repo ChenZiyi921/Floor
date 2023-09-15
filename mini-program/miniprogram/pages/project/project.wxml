@@ -1,4 +1,4 @@
-<!-- logs.wxml -->
+<!-- project.wxml -->
 <view class="container">
   <view class="item">
     <view class="title">地理位置</view>

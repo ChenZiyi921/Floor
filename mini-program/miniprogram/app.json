@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/project/project",
     "pages/index/index",
+    "pages/project/project",
     "pages/info/info"
   ],
   "window": {
