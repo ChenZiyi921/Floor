@@ -1,5 +1,6 @@
 var myChart1;
-function initChart1() {
+function initChart1(data) {
+    var ratio = Number((data.total_selected / data.total_room * 100).toFixed(2));
     var chartDom = document.querySelector('.chart1');
     myChart1 = echarts.init(chartDom);
     var option;
@@ -24,7 +25,7 @@ function initChart1() {
                         show: true,
                         position: 'center',
                         color: '#4c4a4a',
-                        formatter: '{total|' + '75%' + '}' + '\n\r' + '{text|选房占比}',
+                        formatter: '{total|' + ratio + '%' + '}' + '\n\r' + '{text|选房占比}',
                         rich: {
                             total: {
                                 fontSize: 35,
@@ -55,7 +56,7 @@ function initChart1() {
                 },
                 data: [
                     {
-                        value: 250, name: 'Search Engine', itemStyle: {
+                        value: data.total_unselected, name: 'Search Engine', itemStyle: {
                             normal: {
                                 label: {
                                     formatter: "{c}" + "%",
@@ -73,7 +74,7 @@ function initChart1() {
                         }
                     },
                     {
-                        value: 735, name: 'Direct', itemStyle: {
+                        value: data.total_selected, name: 'Direct', itemStyle: {
                             normal: {
                                 label: {
                                     formatter: "{c}" + "%",
@@ -99,7 +100,7 @@ function initChart1() {
 }
 
 var myChart2;
-function initChart2() {
+function initChart2(data) {
     var chartDom = document.querySelector(".chart2");
     myChart2 = echarts.init(chartDom);
     var option;
@@ -107,10 +108,12 @@ function initChart2() {
     let xAxisData = [];
     let data1 = [];
     let data2 = [];
-    for (let i = 0; i < 6; i++) {
-        xAxisData.push("Class" + i);
-        data1.push(+(Math.random() * 2).toFixed(2));
-        data2.push(+(Math.random() * 5).toFixed(2));
+    let data3 = [];
+    for (let i = 0; i < data.length; i++) {
+        xAxisData.push(data[i].place_name);
+        data1.push(Number((data[i].selected / data[i].allRoom * 100).toFixed(2)));
+        data2.push(data[i].unselected);
+        data3.push(data[i].allRoom);
     }
     var emphasisStyle = {
         itemStyle: {
@@ -129,7 +132,7 @@ function initChart2() {
             selectedMode: false
         },
         toolbox: {},
-        tooltip: {},
+        // tooltip: {},
         xAxis: {
             data: xAxisData,
             axisLabel: {
@@ -193,8 +196,33 @@ function initChart2() {
                 data: data2,
                 itemStyle: {
                     normal: {
+                        // label: {
+                        //     formatter: "共{c}" + "套",
+                        //     show: true,
+                        //     position: "top",
+                        //     textStyle: {
+                        //         fontWeight: "bolder",
+                        //         fontSize: "12",
+                        //         color: "#fff"
+                        //     }
+                        // },
+                        color: "#263e99",
+                        opacity: 1
+                    }
+                }
+            },
+            {
+                name: '总数',
+                type: 'bar',
+                stack: 'one',
+                emphasis: emphasisStyle,
+                data: new Array(data1.length).fill(2),
+                itemStyle: {
+                    normal: {
                         label: {
-                            formatter: "共{c}" + "套",
+                            formatter: params => {
+                                return "共" + data3[params.dataIndex] + "套"
+                            },
                             show: true,
                             position: "top",
                             textStyle: {
@@ -207,7 +235,7 @@ function initChart2() {
                         opacity: 1
                     }
                 }
-            },
+            }
         ],
     };
 
@@ -215,7 +243,7 @@ function initChart2() {
 }
 
 var myChart3;
-function initChart3() {
+function initChart3(data) {
     var chartDom = document.querySelector(".chart3");
     myChart3 = echarts.init(chartDom);
     var option;
@@ -223,10 +251,12 @@ function initChart3() {
     let xAxisData = [];
     let data1 = [];
     let data2 = [];
-    for (let i = 0; i < 3; i++) {
-        xAxisData.push("Class" + i);
-        data1.push(+(Math.random() * 2).toFixed(2));
-        data2.push(+(Math.random() * 5).toFixed(2));
+    let data3 = [];
+    for (let i = 0; i < data.length; i++) {
+        xAxisData.push(data[i].js_name);
+        data1.push(Number((data[i].selected / data[i].allRoom * 100).toFixed(2)));
+        data2.push(data[i].unselected);
+        data3.push(data[i].allRoom);
     }
     var emphasisStyle = {
         itemStyle: {
@@ -245,7 +275,7 @@ function initChart3() {
             selectedMode: false
         },
         toolbox: {},
-        tooltip: {},
+        // tooltip: {},
         xAxis: {
             data: xAxisData,
             axisLabel: {
@@ -309,8 +339,23 @@ function initChart3() {
                 data: data2,
                 itemStyle: {
                     normal: {
+                        color: "#263e99",
+                        opacity: 1
+                    }
+                }
+            },
+            {
+                name: '总数',
+                type: 'bar',
+                stack: 'one',
+                emphasis: emphasisStyle,
+                data: new Array(data1.length).fill(2),
+                itemStyle: {
+                    normal: {
                         label: {
-                            formatter: "共{c}" + "套",
+                            formatter: params => {
+                                return "共" + data3[params.dataIndex] + "套"
+                            },
                             show: true,
                             position: "top",
                             textStyle: {
@@ -323,11 +368,44 @@ function initChart3() {
                         opacity: 1
                     }
                 }
-            },
+            }
         ],
     };
 
     option && myChart3.setOption(option);
+}
+
+function bigScreen() {
+    $.ajax({
+        url: base_url + "api/v10/bigScreen",
+        type: "POST",
+        data: {
+            assign_batch_no: 1
+        },
+        dataType: "json",
+        success: function (res) {
+            if (res.status === "success") {
+                var left = document.querySelector('.left');
+                var placeDataHtml = '';
+                for (let i = 0; i < res.data.placeData.length; i++) {
+                    placeDataHtml += '<div class="item" style="background: url(' + res.data.placeData[i].image + ') center center no-repeat">' +
+                        '<p>' + res.data.placeData[i].place_name + '</p>' +
+                        '<p>剩余' + res.data.placeData[i].unselected + '套</p>' +
+                        '<p>已选' + res.data.placeData[i].selected + '套</p>' +
+                        '</div>';
+
+                }
+                left.innerHTML = placeDataHtml;
+
+                var count = document.querySelector('.count');
+                count.innerHTML = res.data.todayData.todaySelected;
+
+                initChart1(res.data.todayData);
+                initChart2(res.data.selectionPlace);
+                initChart3(res.data.jsData);
+            }
+        },
+    });
 }
 
 function toQuery() {
@@ -335,9 +413,7 @@ function toQuery() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    initChart1();
-    initChart2();
-    initChart3();
+    bigScreen();
 });
 
 
