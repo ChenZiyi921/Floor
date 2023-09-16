@@ -21,7 +21,7 @@
     <view class="label">选房流程</view>
     <view class="date">2023/09/08 23:16:59</view>
   </view>
-  <view class="item">
+  <view class="item" bindtap="toRoomHandbook">
     <view class="label">选房手册</view>
     <view class="date">2023/09/08 23:16:59</view>
   </view>

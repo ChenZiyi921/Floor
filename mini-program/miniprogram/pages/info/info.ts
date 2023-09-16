@@ -27,5 +27,10 @@ Page({
       url: '../room_flow/room_flow',
     })
   },
+  toRoomHandbook() {
+    wx.navigateTo({
+      url: '../room_handbook/room_handbook',
+    })
+  },
   onLoad() {},
 });
