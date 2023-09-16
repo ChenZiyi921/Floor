@@ -9,11 +9,11 @@
     <view class="label">选房流程动画</view>
     <view class="date">2023/09/08 23:16:59</view>
   </view>
-  <view class="item">
+  <view class="item" bindtap="toRoomPosition">
     <view class="label">地块位置图</view>
     <view class="date">2023/09/08 23:16:59</view>
   </view>
-  <view class="item">
+  <view class="item" bindtap="toRoomType">
     <view class="label">户型信息</view>
     <view class="date">2023/09/08 23:16:59</view>
   </view>
