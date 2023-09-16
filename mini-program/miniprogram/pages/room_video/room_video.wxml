@@ -1,0 +1,9 @@
+<!-- pages/room_video/room_video.wxml -->
+<view class="container">
+    <view class="title">信息公示</view>
+    <view class="item">
+        <view class="label">居室分布示意图</view>
+        <view class="date">2023/09/08 23:16:59</view>
+    </view>
+    <video src="https://baikevideo.cdn.bcebos.com/media/mda-Ofj5DOML8EqV0Umy/da4f175769bcf693d0d0e205e1546015.mp4" poster="http://mmbiz.qpic.cn/mmbiz_jpg/EhZ0Apwc3PEeGtkWJyWbblIIRII9eLXQVibOHX3un9B2icSeoEp0BHxxlAib4ko6budbzYlfBuGp5ibA1TCXqSRwPg/0?wx_fmt=jpeg"></video>
+</view>

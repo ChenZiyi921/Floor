@@ -2,7 +2,10 @@ Page({
   data: {
     logs: [],
   },
-  onLoad() {
-    
+  toRoomVideo() {
+    wx.navigateTo({
+      url: '../room_video/room_video',
+    })
   },
-})
+  onLoad() {},
+});

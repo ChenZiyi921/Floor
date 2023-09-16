@@ -1,0 +1,9 @@
+<!-- pages/room_distribution/room_distribution.wxml -->
+<view class="container">
+    <view class="title">信息公示</view>
+    <view class="item">
+        <view class="label">居室分布示意图</view>
+        <view class="date">2023/09/08 23:16:59</view>
+    </view>
+    <image class="image" src="../../img/room_distribution/1.jpg" />
+</view>

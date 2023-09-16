@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/project/project",
-    "pages/info/info"
+    "pages/info/info",
+    "pages/room_distribution/room_distribution",
+    "pages/room_video/room_video"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,6 +38,7 @@
       }
     ]
   },
+  "lazyCodeLoading": "requiredComponents",
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
