@@ -6,7 +6,8 @@
     "pages/room_distribution/room_distribution",
     "pages/room_video/room_video",
     "pages/room_position/room_position",
-    "pages/room_type/room_type"
+    "pages/room_type/room_type",
+    "pages/room_flow/room_flow"
   ],
   "window": {
     "backgroundTextStyle": "light",
