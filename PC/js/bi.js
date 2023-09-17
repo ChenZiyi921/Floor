@@ -414,6 +414,13 @@ function toQuery() {
 
 document.addEventListener("DOMContentLoaded", function () {
     bigScreen();
+    var timer;
+    function doSomething() {
+        bigScreen();
+        clearTimeout(timer);
+        timer = setTimeout(doSomething, 1000 * 5);
+    }
+    timer = setTimeout(doSomething, 1000 * 5); // 五秒钟
 });
 
 

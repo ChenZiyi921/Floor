@@ -2,6 +2,8 @@ var assign_batch_no = getUrlKey("assign_batch_no") || "";
 var family_id = getUrlKey("family_id") || "";
 var serial = getUrlKey("serial") || "";
 var place = getUrlKey("place_name") || "";
+var room_js = getUrlKey("room_js") || "";
+var room_type = getUrlKey("room_type") || "";
 
 var options = {};
 if (family_id) {
@@ -12,8 +14,6 @@ options.assign_batch_no = assign_batch_no;
 
 // 进页面根据URL参数填充是第几轮
 function init() {
-    var room_js = getUrlKey("room_js") || "";
-    var room_type = getUrlKey("room_type") || "";
     var count = document.querySelector(".count");
     var room_detail = document.querySelector(".room_detail");
     var foot = document.querySelector(".foot");
@@ -112,27 +112,31 @@ function area_list_render() {
     $.ajax({
         type: "post",
         url: base_url + "api/v10/placeInfo",
-        data: Object.assign({ place: place }, options),
+        data: Object.assign({ place: place, room_js: room_js, room_type: room_type }, options),
         dataType: "json",
         success: function (res) {
             if (res.status === "success") {
+
                 var area_list = document.querySelector(".area_list");
                 var house_total = document.querySelector(".house_total");
-                var html = "";
-                for (var i = 0; i < res.data.slice(0, 6).length; i++) {
-                    html +=
-                        '<div class="place_item" room_building="' +
-                        res.data[i].room_building +
-                        '">' +
-                        "<p>" +
-                        res.data[i].room_building +
-                        "</p>" +
-                        "<p>" +
-                        res.data[i].remain_total +
-                        "</p>" +
-                        "</div>";
+                var place_items = document.querySelectorAll(".place_item");
+                for (var i = 0; i < place_items.length; i++) {
+                    var html = "";
+                    for (let j = 0; j < res.data.length; j++) {
+                        if (res.data[j].room_building === place_items[i].getAttribute("room_building")) {
+                            html +=
+                                "<p>" +
+                                res.data[j].room_building +
+                                "</p>" +
+                                "<p>" +
+                                res.data[j].remain_total +
+                                "</p>";
+                            place_items[i].innerHTML = html;
+                            place_items[i].style.display = 'block';
+                        }
+
+                    }
                 }
-                area_list.innerHTML = html;
                 house_total.innerHTML = res.total_count;
                 placeItemClick();
             }
