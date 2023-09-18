@@ -1,4 +1,4 @@
 <!-- index.wxml -->
 <view class="container">
-  <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  <image src="../../img/index/2.jpg" mode="cover" class="image"></image>
 </view>

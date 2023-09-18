@@ -34,10 +34,5 @@
   text-align: center;
 }
 .image {
-  display: block;
-  width: 100%;
   margin-top: 12rpx;
-}
-video {
-  width: 100%;
 }

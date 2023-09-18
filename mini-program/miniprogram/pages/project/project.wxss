@@ -27,8 +27,6 @@
   border-radius: 0px 0px 8px 8px;
 }
 .image {
-  display: block;
-  width: 100%;
   margin-top: 12rpx;
 }
 .h5 {
