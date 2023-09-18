@@ -4,7 +4,9 @@
   <view class="item" wx:for="{{data}}" wx:for-item="item">
     <view class="title">0015地块</view>
     <view class="block">
-      <text class="text" wx:for="{{item.list}}">{{item.name}}</text>
+      <view class="text" wx:for="{{item.list}}" bindtap="toUnitList" data-params="{{item}}">
+        <text>{{item.name}}</text>
+      </view>
     </view>
   </view>
 </view>

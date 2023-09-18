@@ -8,7 +8,8 @@
     "pages/room_position/room_position",
     "pages/room_type/room_type",
     "pages/room_flow/room_flow",
-    "pages/room_handbook/room_handbook"
+    "pages/room_handbook/room_handbook",
+    "pages/unit_list/unit_list"
   ],
   "window": {
     "backgroundTextStyle": "light",

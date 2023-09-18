@@ -1,0 +1,29 @@
+<!-- pages/unit_list/unit_list.wxml -->
+<view class="container">
+    <view class="tabs">
+        <view class="tab active">一单元</view>
+        <view class="tab">二单元</view>
+        <view class="tab">三单元</view>
+        <view class="tab">四单元</view>
+    </view>
+    <view class="head">
+        <view class="left">0073 - 6号楼</view>
+        <view class="status_info">
+            <view class="item">
+                <image class="image" src="../../img/checkbox.svg" />
+                <text>可选</text>
+            </view>
+            <view class="item">
+                <image class="image" src="../../img/checkbox_active.svg" />
+                <text>已选</text>
+            </view>
+        </view>
+    </view>
+    <view class="floor_info" wx:for="{{data}}" wx:for-item="item">
+        <view class="house" wx:for="{{item.list}}">
+            <image class="image" src="../../img/checkbox_white.svg"></image>
+            <view class="text">301</view>
+            <view class="status">已选</view>
+        </view>
+    </view>
+</view>

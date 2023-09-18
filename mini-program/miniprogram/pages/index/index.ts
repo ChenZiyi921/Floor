@@ -40,10 +40,10 @@ Page({
       },
     ],
   },
-  // 事件处理函数
-  bindViewTap() {
+  toUnitList(e) {
+    const { name } = e.currentTarget.dataset.params;
     wx.navigateTo({
-      url: "../info/info",
+      url: `../unit_list/unit_list?id=${name}`,
     });
   },
   onLoad() {
