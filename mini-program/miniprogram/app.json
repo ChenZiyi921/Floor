@@ -26,20 +26,20 @@
       {
         "pagePath": "pages/project/project",
         "text": "项目概况",
-        "iconPath": "img/t-1.png",
-        "selectedIconPath": "img/t-1s.png"
+        "iconPath": "img/tabbar/t-1.png",
+        "selectedIconPath": "img/tabbar/t-1s.png"
       },
       {
         "pagePath": "pages/index/index",
         "text": "主页",
-        "iconPath": "img/t-2.png",
-        "selectedIconPath": "img/t-2s.png"
+        "iconPath": "img/tabbar/t-2.png",
+        "selectedIconPath": "img/tabbar/t-2s.png"
       },
       {
         "pagePath": "pages/info/info",
         "text": "信息公示",
-        "iconPath": "img/t-3.png",
-        "selectedIconPath": "img/t-3s.png"
+        "iconPath": "img/tabbar/t-3.png",
+        "selectedIconPath": "img/tabbar/t-3s.png"
       }
     ]
   },
