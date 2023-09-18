@@ -20,7 +20,7 @@
     "color": "#7f8389",
     "selectedColor": "#00a8f3",
     "borderStyle": "black",
-    "backgroundColor": "#f7f7fa",
+    "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/project/project",
