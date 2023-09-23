@@ -42,7 +42,7 @@ function queryClick() {
 // 查询
 function customInfo(val) {
   $.ajax({
-    url: base_url + "api/v10/customInfo",
+    url: global.base_url + "api/v10/customInfo",
     type: "GET",
     data: {
       serial: val,
@@ -95,7 +95,7 @@ function customInfo(val) {
 
 function to_project_list() {
   $.ajax({
-    url: base_url + "api/v10/isSelection",
+    url: global.base_url + "api/v10/isSelection",
     type: "GET",
     data: {
       family_id: family_id,

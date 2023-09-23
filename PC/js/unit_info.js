@@ -73,7 +73,7 @@ function queryClick() {
 // 查询
 function buildingInfo() {
   $.ajax({
-    url: base_url + "api/v10/buildingInfo",
+    url: global.base_url + "api/v10/buildingInfo",
     type: "GET",
     data: Object.assign(
       {

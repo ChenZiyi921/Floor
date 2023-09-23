@@ -385,7 +385,7 @@ function initChart3(data) {
 
 function bigScreen() {
   $.ajax({
-    url: base_url + "api/v10/bigScreen",
+    url: global.base_url + "api/v10/bigScreen",
     type: "POST",
     data: {
       assign_batch_no: 1,

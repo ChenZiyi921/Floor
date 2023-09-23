@@ -24,7 +24,7 @@ function init() {
   var foot = document.querySelector(".foot");
 
   container.style.background =
-    'url("../images/place/' + place + '_place.png") left top no-repeat';
+    'url("./images/place/' + place + '_place.png") left top no-repeat';
 
   if (assign_batch_no) {
     count.innerHTML = "【第" + assign_batch_no + "轮选房】";
@@ -57,7 +57,7 @@ function switchClick() {
 // 左侧那个列表
 function house_type_list_render() {
   $.ajax({
-    url: base_url + "api/v10/roomType",
+    url: global.base_url + "api/v10/roomType",
     type: "GET",
     data: options,
     contentType: "application/json",
@@ -119,7 +119,7 @@ function house_type_list_render() {
 function area_list_render() {
   $.ajax({
     type: "post",
-    url: base_url + "api/v10/placeInfo",
+    url: global.base_url + "api/v10/placeInfo",
     data: Object.assign(
       { place: place, room_js: room_js, room_type: room_type },
       options

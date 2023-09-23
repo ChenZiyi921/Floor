@@ -59,7 +59,7 @@ function switchClick() {
 // 左侧那个列表
 function house_type_list_render() {
   $.ajax({
-    url: base_url + "api/v10/roomType",
+    url: global.base_url + "api/v10/roomType",
     type: "GET",
     data: options,
     contentType: "application/json",
@@ -128,7 +128,7 @@ function house_type_list_render() {
 function area_list_render(room = {}) {
   $.ajax({
     type: "post",
-    url: base_url + "api/v10/queryPlace",
+    url: global.base_url + "api/v10/queryPlace",
     data: Object.assign(room, options),
     dataType: "json",
     success: function (res) {
