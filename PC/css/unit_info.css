@@ -2,7 +2,7 @@
   width: 100%;
   height: 100vh;
   background-size: 100%;
-  background-color: #4b6c1b;
+  background: linear-gradient(47deg, #17358d 0%, #1b3ea5 100%);
   overflow-y: hidden;
 }
 
@@ -24,7 +24,7 @@
   width: 100%;
   border-radius: 12px;
   box-sizing: border-box;
-  padding: 16px 16px 16px 0;
+  padding: 16px;
 }
 .content h3 {
   font-size: 24px;
@@ -39,6 +39,10 @@
   height: calc(100vh - 88px);
 }
 
+.scroll {
+  border: 3px solid #fff;
+}
+
 .content .main .unitInfo {
   display: table;
   width: calc(100vw - 560px);
@@ -48,12 +52,13 @@
 }
 
 .tbody {
-  background: #b1bc93;
+  background: #9cacdb;
 }
 
 .content .main .unitInfo .item {
   padding: 0;
-  /* border-bottom: 1px solid #e0e8cc; */
+  /* display: flex;
+  justify-content: center; */
 }
 
 .content .main .unitInfo .number,
@@ -69,22 +74,23 @@
 .content .main .unitInfo .number {
   display: table-cell;
   background: #eeeeee;
+  /* border: 1px solid #e0e8cc; */
 }
 
 .content .main .unitInfo .item .level {
   width: 126px;
-  background: #fff;
+  background: #dddddd;
   text-align: center;
   position: relative;
   box-sizing: border-box;
-  border: 2px solid #e0e8cc;
+  /* border: 1px solid #e0e8cc; */
   flex-shrink: 0;
   float: left;
   cursor: pointer;
 }
 
 .content .main .unitInfo .item .selected {
-  background: #a2cea8;
+  background: #90acff;
 }
 
 .content .main .unitInfo .head {
@@ -135,7 +141,7 @@
   display: flex;
   line-height: 40px;
   padding: 10px;
-  border-bottom: 1px solid #597330;
+  border-bottom: 1px solid #4a7fc4;
   font-size: 18px;
 }
 .content .main .house_info p span {
@@ -143,7 +149,7 @@
 .content .main .house_info p span:nth-of-type(1) {
   width: 140px;
   text-align: right;
-  color: #c1d2a8;
+  color: #a5cbfb;
 }
 .content .main .house_info p span:nth-of-type(2) {
   flex: 1;

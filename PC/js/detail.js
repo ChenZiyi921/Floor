@@ -14,9 +14,10 @@ function closePopup() {
 // 确认选房
 function postResourceHouseData() {
     $.ajax({
-        url: base_url + "api/v10/resourceHouseData",
+        url: base_url + "api/v10/selectionComplete",
         type: "POST",
         data: {
+            assign_batch_no: getUrlKey("assign_batch_no") || "",
             family_id: getUrlKey("family_id") || "",
             serial: getUrlKey("serial") || "",
             room_id: getUrlKey("room_id") || "",
@@ -92,10 +93,11 @@ function getResourceHouseData(val) {
                         res.house.room_area +
                         "平米</span></span>" +
                         '<span class="item"><span>总楼层：</span><span>' +
-                        res.house.room_floor +
+                        res.house.room_max_floor +
                         "</span></span>" +
                         "</p>" +
                         '<p><span class="item"><span>所在楼层：</span><span>' +
+                        res.house.room_floor +
                         "" +
                         "</span></span></p>" +
                         "</div>" +

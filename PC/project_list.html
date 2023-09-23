@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/slide.css">
     <link rel="stylesheet" href="./css/project_list.css">
 </head>
@@ -17,7 +18,7 @@
                 <label for="myCheckbox"></label></span><span>选房确认</span>
         </div> -->
         <div class="slide">
-            <h3 class="title" onclick="test()">京西棚户区改造</h3>
+            <h3 class="title" onclick="test()">北四村棚改项目</h3>
             <p class="desc">总剩余房源 <span class="house_total"></span> 套</p>
             <div class="switch"><span>
                     <img class="switch_open" src="./images/i_open.png" alt="">
@@ -42,12 +43,12 @@
                     </div>
                 </div> -->
             </div>
-            <div class="foot">
+            <div class="foot" id="foot">
                 <p><span>已选户型</span><span>套数</span></p>
-                <p><span class="room_detail"></span><span>1</span></p>
+                <!--<p><span class="room_detail"></span>二居<span>1</span></p>-->
             </div>
         </div>
-        <h1 class="page_title">京西棚户区改造项目安置房选房系统</h1>
+        <h1 class="page_title">昌平区“北四村”棚改项目安置房选房系统</h1>
         <div class="search">
             <input class="input" type="text" maxlength="6" />
             <div class="suffix">号</div>
@@ -64,6 +65,13 @@
                     </div>
                 </div> -->
             </div>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <!-- <h2 class="popup-title">提示标题</h2> -->
+            <p class="popup-message"></p>
+            <button class="popup-close">关闭</button>
         </div>
     </div>
 </body>
