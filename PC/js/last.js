@@ -1,14 +1,12 @@
 var popup = document.querySelector(".popup");
 var popupMessage = document.querySelector(".popup-message");
 
-var serial, family_id;
 var assign_batch_no = getUrlKey("assign_batch_no") || "";
+var family_id = getUrlKey("family_id") || "";
+var serial = getUrlKey("serial") || "";
 
-// 进页面根据URL参数填充是第几轮
 function init() {
-  var title = document.querySelector(".title");
-  title.innerHTML =
-    "【第<span class='assign_batch_no'>" + assign_batch_no + "</span>轮选房】";
+  endQuery();
 }
 
 function closePopup() {
@@ -19,33 +17,68 @@ function closePopup() {
 }
 
 function reQuery() {
-  var input = document.querySelector(".input");
-  var content = document.querySelector(".content");
-  input.value = "";
-  content.style.display = "none";
+  // 返回index.html, 查询页面
+  var params = jsonToParams({
+    assign_batch_no: assign_batch_no || "",
+  });
+  location.href = "./index.html?" + params;
 }
 
-function queryClick() {
-  var query = document.querySelector("#query");
-  var input = document.querySelector(".input");
-  query.addEventListener("click", function () {
-    if (input.value) {
-      customInfo(input.value);
-    } else {
-      closePopup();
-      popupMessage.innerHTML = "请填写选房编号";
-      popup.classList.add("show");
-    }
+function confirmSubmit() {
+  $.ajax({
+    url: global.base_url + "api/v10/selectionComplete",
+    type: "POST",
+    data: {
+      // assign_batch_no: getUrlKey("assign_batch_no") || "",
+      // family_id: getUrlKey("family_id") || "",
+      // serial: getUrlKey("serial") || "",
+      // room_id: getUrlKey("room_id") || "",
+      // place: getUrlKey("place") || "",
+      // room_building: getUrlKey("room_building") || "",
+      // room_danyuan: getUrlKey("room_danyuan") || "",
+      // room_js: getUrlKey("room_js") || "",
+      // room_type: getUrlKey("room_type") || "",
+    },
+    dataType: "json",
+    success: function (res) {
+      if (res.status === "success") {
+        // var myModal = new Modal({
+        //   title: "特别提示",
+        //   description: "剩余面积139平示。是否继续选房",
+        //   showButton1: true,
+        //   button1Text: "结算签约",
+        //   onButton1Click: function () {
+        //     myModal.close();
+        //     to_index();
+        //   },
+        //   showButton2: true,
+        //   button2Text: "继续选房",
+        //   onButton2Click: function () {
+        //     var params = jsonToParams({
+        //       assign_batch_no: assign_batch_no,
+        //       family_id: family_id || "",
+        //       serial: serial || "",
+        //     });
+        //     location.href = "./project_list.html?" + params;
+        //   },
+        // });
+      } else {
+        closePopup();
+        popupMessage.innerHTML = res.msg;
+        popup.classList.add("show");
+      }
+    },
   });
 }
 
 // 查询
-function customInfo(val) {
+function endQuery(val) {
   $.ajax({
-    url: global.base_url + "api/v10/customInfo",
+    url: global.base_url + "api/v10/endQuery",
     type: "GET",
     data: {
-      serial: val,
+      serial: serial,
+      family_id: family_id,
       assign_batch_no: assign_batch_no,
     },
     contentType: "application/json",
@@ -53,14 +86,12 @@ function customInfo(val) {
     success: function (res) {
       if (res.status === "success") {
         if (res.data) {
-          serial = res.data.serial;
-          family_id = res.data.family_id;
           var detail = document.querySelector(".detail");
           detail.innerHTML =
             '<p><span class="left">选房序号：</span><span class="right">' +
             res.data.serial +
             "</span></p>" +
-            '<p><span class="left">姓名：</span><span class="right">' +
+            '<p><span class="left">被腾退人：</span><span class="right">' +
             res.data.name +
             "</span></p>" +
             '<p><span class="left">身份证号码：</span><span class="right">' +
@@ -69,16 +100,10 @@ function customInfo(val) {
             '<p><span class="left">应安置面积：</span><span class="right">' +
             res.data.area_zuizhong +
             "</span></p>" +
-            '<p><span class="left">预选方案：</span><span class="right">' +
-            res.data.select_plan +
-            "</span></p>" +
-            '<p><span class="left">预选套数：</span><span class="right">' +
-            res.data.select_total +
-            "</span></p>" +
             '<p><span class="left">已选房屋：</span><span class="right">' +
             res.data.selected_room +
             "</span></p>" +
-            '<p><span class="left">剩余安置面积：</span><span class="right">' +
+            '<p><span class="left">剩余面积：</span><span class="right">' +
             res.data.area_remain +
             "</span></p>";
           var content = document.querySelector(".content");
@@ -93,33 +118,6 @@ function customInfo(val) {
   });
 }
 
-function to_project_list() {
-  $.ajax({
-    url: global.base_url + "api/v10/isSelection",
-    type: "GET",
-    data: {
-      family_id: family_id,
-    },
-    contentType: "application/json",
-    dataType: "json",
-    success: function (res) {
-      if (res.status === "success") {
-        var params = jsonToParams({
-          assign_batch_no: assign_batch_no,
-          family_id: family_id || "",
-          serial: serial || "",
-        });
-        location.href = "./project_list.html?" + params;
-      } else {
-        closePopup();
-        popupMessage.innerHTML = res.msg;
-        popup.classList.add("show");
-      }
-    },
-  });
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   init();
-  queryClick();
 });

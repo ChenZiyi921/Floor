@@ -1,6 +1,10 @@
 var popup = document.querySelector(".popup");
 var popupMessage = document.querySelector(".popup-message");
 
+var assign_batch_no = getUrlKey("assign_batch_no") || "";
+var family_id = getUrlKey("family_id") || "";
+var serial = getUrlKey("serial") || "";
+
 // 进页面根据URL参数填充
 function init() {}
 
@@ -37,9 +41,9 @@ function postResourceHouseData() {
         url: global.base_url + "api/v10/selectionComplete",
         type: "POST",
         data: {
-          assign_batch_no: getUrlKey("assign_batch_no") || "",
-          family_id: getUrlKey("family_id") || "",
-          serial: getUrlKey("serial") || "",
+          assign_batch_no: assign_batch_no,
+          family_id: family_id,
+          serial: serial,
           room_id: getUrlKey("room_id") || "",
           place: getUrlKey("place") || "",
           room_building: getUrlKey("room_building") || "",
@@ -50,13 +54,13 @@ function postResourceHouseData() {
         dataType: "json",
         success: function (res) {
           if (res.status === "success") {
-            var myModal = new Modal({
+            var myModal2 = new Modal({
               title: "特别提示",
-              description: "剩余面积139平示。是否继续选房",
+              description: res.data.prompt,
               showButton1: true,
               button1Text: "结算签约",
               onButton1Click: function () {
-                myModal.close();
+                myModal2.close();
                 to_index();
               },
               showButton2: true,
@@ -64,12 +68,13 @@ function postResourceHouseData() {
               onButton2Click: function () {
                 var params = jsonToParams({
                   assign_batch_no: assign_batch_no,
-                  family_id: family_id || "",
-                  serial: serial || "",
+                  family_id: family_id,
+                  serial: serial,
                 });
                 location.href = "./project_list.html?" + params;
               },
             });
+            myModal2.open();
           } else {
             closePopup();
             popupMessage.innerHTML = res.msg;
@@ -88,8 +93,8 @@ function getResourceHouseData(val) {
     url: global.base_url + "api/v10/resourceHouseData",
     type: "GET",
     data: {
-      family_id: getUrlKey("family_id") || "",
-      serial: getUrlKey("serial") || "",
+      family_id: family_id,
+      serial: serial,
       room_id: getUrlKey("room_id") || "",
       place: getUrlKey("place") || "",
       room_building: getUrlKey("room_building") || "",
@@ -164,15 +169,15 @@ function getResourceHouseData(val) {
 
 function to_project_list() {
   var params = jsonToParams({
-    assign_batch_no: getUrlKey("assign_batch_no") || "",
-    family_id: getUrlKey("family_id") || "",
+    assign_batch_no: assign_batch_no,
+    family_id: family_id,
     place: getUrlKey("place") || "",
     room_building: getUrlKey("room_building") || "",
     room_danyuan: getUrlKey("room_danyuan") || "",
     room_id: getUrlKey("room_id") || "",
     room_js: getUrlKey("room_js") || "",
     room_type: getUrlKey("room_type") || "",
-    serial: getUrlKey("serial") || "",
+    serial: serial,
   });
   location.href = "./project_list.html?" + params;
 }

@@ -30,6 +30,16 @@ function init() {
   } else {
     input.value = serial;
   }
+
+  var params = jsonToParams({
+    assign_batch_no: assign_batch_no,
+    family_id: family_id,
+    serial: serial,
+  });
+  var btn_confirm = document.querySelector(".btn_confirm");
+  btn_confirm.addEventListener("click", function () {
+    location.href = "./last.html?" + params;
+  });
 }
 
 function closePopup() {
