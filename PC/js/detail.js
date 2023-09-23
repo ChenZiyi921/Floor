@@ -11,35 +11,75 @@ function closePopup() {
   });
 }
 
+// 返回index.html, 查询页面
+function to_index() {
+  var params = jsonToParams({
+    assign_batch_no: assign_batch_no || "",
+  });
+  location.href = "./index.html?" + params;
+}
+
 // 确认选房
 function postResourceHouseData() {
-  $.ajax({
-    url: global.base_url + "api/v10/selectionComplete",
-    type: "POST",
-    data: {
-      assign_batch_no: getUrlKey("assign_batch_no") || "",
-      family_id: getUrlKey("family_id") || "",
-      serial: getUrlKey("serial") || "",
-      room_id: getUrlKey("room_id") || "",
-      place: getUrlKey("place") || "",
-      room_building: getUrlKey("room_building") || "",
-      room_danyuan: getUrlKey("room_danyuan") || "",
-      room_js: getUrlKey("room_js") || "",
-      room_type: getUrlKey("room_type") || "",
+  // 创建弹窗实例
+  var myModal = new Modal({
+    title: "特别提示",
+    description: "点击“确定”按钮，期视为确认选房结果，\n选房结果不可更改。",
+    showButton1: true,
+    button1Text: "取消",
+    onButton1Click: function () {
+      myModal.close();
     },
-    dataType: "json",
-    success: function (res) {
-      if (res.status === "success") {
-        closePopup();
-        popupMessage.innerHTML = "恭喜您，选房成功！";
-        popup.classList.add("show");
-      } else {
-        closePopup();
-        popupMessage.innerHTML = res.msg;
-        popup.classList.add("show");
-      }
+    showButton2: true,
+    button2Text: "确定",
+    onButton2Click: function () {
+      $.ajax({
+        url: global.base_url + "api/v10/selectionComplete",
+        type: "POST",
+        data: {
+          assign_batch_no: getUrlKey("assign_batch_no") || "",
+          family_id: getUrlKey("family_id") || "",
+          serial: getUrlKey("serial") || "",
+          room_id: getUrlKey("room_id") || "",
+          place: getUrlKey("place") || "",
+          room_building: getUrlKey("room_building") || "",
+          room_danyuan: getUrlKey("room_danyuan") || "",
+          room_js: getUrlKey("room_js") || "",
+          room_type: getUrlKey("room_type") || "",
+        },
+        dataType: "json",
+        success: function (res) {
+          if (res.status === "success") {
+            var myModal = new Modal({
+              title: "特别提示",
+              description: "剩余面积139平示。是否继续选房",
+              showButton1: true,
+              button1Text: "结算签约",
+              onButton1Click: function () {
+                myModal.close();
+                to_index();
+              },
+              showButton2: true,
+              button2Text: "继续选房",
+              onButton2Click: function () {
+                var params = jsonToParams({
+                  assign_batch_no: assign_batch_no,
+                  family_id: family_id || "",
+                  serial: serial || "",
+                });
+                location.href = "./project_list.html?" + params;
+              },
+            });
+          } else {
+            closePopup();
+            popupMessage.innerHTML = res.msg;
+            popup.classList.add("show");
+          }
+        },
+      });
     },
   });
+  myModal.open();
 }
 
 // 查询

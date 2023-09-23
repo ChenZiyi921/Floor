@@ -83,11 +83,17 @@
   color: #fff;
 }
 .content .main .house_image {
-  width: 500px;
-  height: 540px;
+  max-width: 500px;
+  padding: 20px;
+  box-sizing: border-box;
+  max-height: 540px;
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
+}
+
+.content .main .house_image img {
+  margin: auto;
 }
 
 .foot_btn_container {
