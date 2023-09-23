@@ -1,3 +1,4 @@
+var assign_batch_no = getUrlKey("assign_batch_no") || "";
 var myChart1;
 function initChart1(data) {
   var ratio = Number(
@@ -388,7 +389,7 @@ function bigScreen() {
     url: global.base_url + "api/v10/bigScreen",
     type: "POST",
     data: {
-      assign_batch_no: 1,
+      assign_batch_no: assign_batch_no,
     },
     dataType: "json",
     success: function (res) {
@@ -427,7 +428,7 @@ function bigScreen() {
 }
 
 function toQuery() {
-  location.href = "./project_list.html?assign_batch_no=1";
+  location.href = "./project_list.html?assign_batch_no=" + assign_batch_no;
 }
 
 document.addEventListener("DOMContentLoaded", function () {

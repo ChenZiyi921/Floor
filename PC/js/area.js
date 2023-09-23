@@ -130,6 +130,7 @@ function area_list_render() {
         var area_list = document.querySelector(".area_list");
         var house_total = document.querySelector(".house_total");
         var place_items = document.querySelectorAll(".place_item");
+        area_list.classList.add("place" + place);
         for (var i = 0; i < place_items.length; i++) {
           var html = "";
           for (let j = 0; j < res.data.length; j++) {
