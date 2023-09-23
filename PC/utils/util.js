@@ -14,6 +14,10 @@ function jsonToParams(json) {
     ?.replaceAll("undefined", "");
 }
 
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(find, "g"), replace);
+}
+
 function Modal(options) {
   var modal = document.getElementById("myModal");
   var modalTitle = document.getElementById("modalTitle");

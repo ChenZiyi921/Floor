@@ -101,7 +101,7 @@ function endQuery(val) {
             res.data.area_zuizhong +
             "</span></p>" +
             '<p><span class="left">已选房屋：</span><span class="right">' +
-            res.data.selected_room +
+            res.data.selected_room.join().replaceAll(",", "\n") +
             "</span></p>" +
             '<p><span class="left">剩余面积：</span><span class="right">' +
             res.data.area_remain +
