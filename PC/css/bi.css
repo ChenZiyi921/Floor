@@ -141,7 +141,7 @@
 }
 
 .left .item p {
-  -webkit-text-stroke: 4px transparent;
+  -webkit-text-stroke: 3px transparent;
   background: #2b82d9;
   -webkit-background-clip: text;
 }

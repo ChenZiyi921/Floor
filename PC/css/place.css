@@ -1,90 +1,101 @@
 .place_item {
   display: none;
 }
-
+/* 03地块 */
 .place03 .place_item:nth-of-type(1) {
-  top: 900px;
-  left: 840px;
+  top: 734px;
+  left: 830px;
 }
 
 .place03 .place_item:nth-of-type(2) {
-  top: 530px;
-  left: 1100px;
+  top: 436px;
+  left: 1120px;
 }
 
 .place03 .place_item:nth-of-type(3) {
-  top: 290px;
-  left: 1350px;
+  top: 250px;
+  left: 1370px;
 }
 
 .place03 .place_item:nth-of-type(4) {
-  top: 720px;
-  left: 500px;
+  top: 140px;
+  left: 1050px;
 }
 
 .place03 .place_item:nth-of-type(5) {
-  top: 410px;
-  left: 740px;
+  top: 340px;
+  left: 730px;
 }
 
 .place03 .place_item:nth-of-type(6) {
-  top: 160px;
-  left: 1050px;
+  top: 620px;
+  left: 470px;
 }
 
+/* 08地块 */
 .place08 .place_item:nth-of-type(1) {
-  top: 900px;
-  left: 840px;
+  top: 706px;
+  left: 1270px;
 }
 
 .place08 .place_item:nth-of-type(2) {
-  top: 530px;
-  left: 1100px;
+  top: 550px;
+  left: 1010px;
 }
 
 .place08 .place_item:nth-of-type(3) {
-  top: 290px;
-  left: 1350px;
+  top: 370px;
+  left: 660px;
 }
 
 .place08 .place_item:nth-of-type(4) {
-  top: 720px;
-  left: 500px;
+  top: 283px;
+  left: 434px;
 }
 
 .place08 .place_item:nth-of-type(5) {
-  top: 410px;
-  left: 740px;
+  top: 480px;
+  left: 1660px;
 }
 
 .place08 .place_item:nth-of-type(6) {
-  top: 160px;
-  left: 1050px;
+  top: 334px;
+  left: 1300px;
 }
 
+.place08 .place_item:nth-of-type(7) {
+  top: 200px;
+  left: 970px;
+}
+
+.place08 .place_item:nth-of-type(8) {
+  top: 144px;
+  left: 680px;
+}
+/* 10地块 */
 .place10 .place_item:nth-of-type(1) {
-  top: 900px;
-  left: 840px;
+  top: 736px;
+  left: 1070px;
 }
 
 .place10 .place_item:nth-of-type(2) {
-  top: 530px;
-  left: 1100px;
+  top: 512px;
+  left: 1444px;
 }
 
 .place10 .place_item:nth-of-type(3) {
-  top: 290px;
-  left: 1350px;
+  top: 430px;
+  left: 920px;
 }
 
 .place10 .place_item:nth-of-type(4) {
-  top: 720px;
-  left: 500px;
+  top: 150px;
+  left: 810px;
 }
 
 .place10 .place_item:nth-of-type(5) {
-  top: 410px;
-  left: 740px;
+  top: 344px;
+  left: 560px;
 }
 
 .place10 .place_item:nth-of-type(6) {
@@ -92,59 +103,50 @@
   left: 1050px;
 }
 
-.place10 .place_item:nth-of-type(8) {
-  top: 410px;
-  left: 740px;
-}
-
-.place10 .place_item:nth-of-type(8) {
-  top: 160px;
-  left: 1050px;
-}
-
+/* 14地块 */
 .place14 .place_item:nth-of-type(1) {
-  top: 900px;
-  left: 840px;
+  top: 746px;
+  left: 880px;
 }
 
 .place14 .place_item:nth-of-type(2) {
-  top: 530px;
-  left: 1100px;
+  top: 524px;
+  left: 1260px;
 }
 
 .place14 .place_item:nth-of-type(3) {
-  top: 290px;
-  left: 1350px;
+  top: 360px;
+  left: 1650px;
 }
 
 .place14 .place_item:nth-of-type(4) {
-  top: 720px;
-  left: 500px;
+  top: 263px;
+  left: 1150px;
 }
 
 .place14 .place_item:nth-of-type(5) {
-  top: 410px;
-  left: 740px;
+  top: 480px;
+  left: 770px;
 }
 
 .place14 .place_item:nth-of-type(6) {
-  top: 160px;
-  left: 1050px;
+  top: 444px;
+  left: 480px;
+}
+
+.place14 .place_item:nth-of-type(7) {
+  top: 224px;
+  left: 800px;
 }
 
 .place14 .place_item:nth-of-type(8) {
-  top: 410px;
-  left: 740px;
+  top: 110px;
+  left: 990px;
 }
-
-.place14 .place_item:nth-of-type(8) {
-  top: 160px;
-  left: 1050px;
-}
-
+/* 15地块 */
 .place15 .place_item:nth-of-type(1) {
-  top: 900px;
-  left: 840px;
+  top: 800px;
+  left: 940px;
 }
 
 .place15 .place_item:nth-of-type(2) {
@@ -153,31 +155,31 @@
 }
 
 .place15 .place_item:nth-of-type(3) {
-  top: 290px;
-  left: 1350px;
+  top: 470px;
+  left: 1500px;
 }
 
 .place15 .place_item:nth-of-type(4) {
-  top: 720px;
-  left: 500px;
+  top: 290px;
+  left: 1290px;
 }
 
 .place15 .place_item:nth-of-type(5) {
-  top: 410px;
-  left: 740px;
+  top: 326px;
+  left: 890px;
 }
 
 .place15 .place_item:nth-of-type(6) {
-  top: 160px;
-  left: 1050px;
+  top: 540px;
+  left: 680px;
+}
+
+.place15 .place_item:nth-of-type(7) {
+  top: 340px;
+  left: 540px;
 }
 
 .place15 .place_item:nth-of-type(8) {
-  top: 410px;
-  left: 740px;
-}
-
-.place15 .place_item:nth-of-type(8) {
-  top: 160px;
-  left: 1050px;
+  top: 134px;
+  left: 1100px;
 }

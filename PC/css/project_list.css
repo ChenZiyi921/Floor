@@ -283,6 +283,7 @@ input[type="checkbox"]:checked + label::after {
   max-width: 400px;
   cursor: pointer;
   border: 2px solid #fff;
+  overflow: hidden;
 }
 
 .content .area_list .item .info {
@@ -290,21 +291,24 @@ input[type="checkbox"]:checked + label::after {
   left: 0;
   top: 0;
   width: 100%;
+  -webkit-text-stroke: 3px transparent;
+  background: #2b82d9;
+  -webkit-background-clip: text;
 }
 
 .content .area_list .item .title {
-  height: 45px;
+  height: 40px;
   font-size: 32px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
   color: #ffffff;
   line-height: 45px;
-  padding: 38px 0 11px;
+  padding: 20px 0 4px;
 }
 
 .content .area_list .item .count {
   height: 37px;
-  font-size: 26px;
+  font-size: 18px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
   color: #ffffff;
@@ -336,7 +340,7 @@ input[type="checkbox"]:checked + label::after {
     font-size: 26px;
   }
   .content .area_list .item .count {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media (min-width: 1440px) and (max-width: 1599px) {
@@ -344,7 +348,7 @@ input[type="checkbox"]:checked + label::after {
     font-size: 28px;
   }
   .content .area_list .item .count {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 @media (min-width: 1680px) {
@@ -352,6 +356,6 @@ input[type="checkbox"]:checked + label::after {
     font-size: 30px;
   }
   .content .area_list .item .count {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
