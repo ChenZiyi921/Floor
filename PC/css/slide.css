@@ -4,7 +4,7 @@
   position: fixed;
   width: 300px;
   height: calc(100vh - 200px);
-  background: #252a2a;
+  background: rgba(23, 28, 57, 0.9);
   color: #fff;
   top: 160px;
   left: 14px;
@@ -12,6 +12,7 @@
   overflow: hidden;
   border: 2px solid #3d82e1;
   transition: height 0.2s ease-in-out;
+  box-shadow: 0px 0px 20px 2px #132049;
 }
 
 .slide .title {
@@ -72,13 +73,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
+  font-size: 14px;
   padding: 10px 18px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
 }
 
 .slide .foot p:nth-of-type(1) span {
+  font-size: 18px !important;
   color: #529bff;
 }
 .slide .foot p:nth-of-type(2) {

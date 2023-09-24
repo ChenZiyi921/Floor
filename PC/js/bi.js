@@ -32,7 +32,7 @@ function initChart1(data) {
               "{total|" + ratio + "%" + "}" + "\n\r" + "{text|选房占比}",
             rich: {
               total: {
-                fontSize: 35,
+                fontSize: 32,
                 fontFamily: "微软雅黑",
                 color: "#F86500",
                 lineHeight: 50,
@@ -40,7 +40,7 @@ function initChart1(data) {
               text: {
                 fontFamily: "微软雅黑",
                 fontSize: 16,
-                color: "#fff",
+                color: "#c3d3ff",
               },
             },
           },
@@ -152,6 +152,11 @@ function initChart2(data) {
           padding: 10,
         },
       },
+      axisLine: {
+        lineStyle: {
+          color: "#8A9BC9",
+        },
+      },
     },
     yAxis: {
       splitLine: { show: false },
@@ -191,7 +196,7 @@ function initChart2(data) {
                 color: "#fff",
               },
             },
-            color: "#90d56f",
+            color: "#85c965",
             opacity: 1,
           },
         },
@@ -295,6 +300,11 @@ function initChart3(data) {
           padding: 10,
         },
       },
+      axisLine: {
+        lineStyle: {
+          color: "#8A9BC9",
+        },
+      },
     },
     yAxis: {
       splitLine: { show: false },
@@ -334,7 +344,7 @@ function initChart3(data) {
                 color: "#fff",
               },
             },
-            color: "#f3b23e",
+            color: "#e7a837",
             opacity: 1,
           },
         },
@@ -396,7 +406,7 @@ function bigScreen() {
       if (res.status === "success") {
         var today_date = document.querySelector(".today_date");
         today_date.innerHTML = res.data.today_date + " " + res.data.today_week;
-        var left = document.querySelector(".left");
+        var left = document.querySelector(".content");
         var placeDataHtml = "";
         for (let i = 0; i < res.data.placeData.length; i++) {
           placeDataHtml +=
@@ -413,6 +423,21 @@ function bigScreen() {
             res.data.placeData[i].selected +
             "套</p>" +
             "</div>";
+          // placeDataHtml +=
+          //   '<div class="item">' +
+          //   '<img src="' +
+          //   res.data.placeData[i].image +
+          //   '" alt="">' +
+          //   "<div class='pos'><p>" +
+          //   res.data.placeData[i].place_name +
+          //   "</p>" +
+          //   "<p>剩余" +
+          //   res.data.placeData[i].unselected +
+          //   "套</p>" +
+          //   "<p>已选" +
+          //   res.data.placeData[i].selected +
+          //   "套</p>" +
+          //   "</div></div>";
         }
         left.innerHTML = placeDataHtml;
 
@@ -439,7 +464,7 @@ document.addEventListener("DOMContentLoaded", function () {
     clearTimeout(timer);
     timer = setTimeout(doSomething, 1000 * 5);
   }
-  timer = setTimeout(doSomething, 1000 * 5); // 五秒钟
+  // timer = setTimeout(doSomething, 1000 * 5); // 五秒钟
 });
 
 window.addEventListener("resize", () => {
