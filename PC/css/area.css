@@ -204,7 +204,8 @@ body {
 .place_item {
   display: none;
   position: absolute;
-  background: rgba(61, 142, 101, 0.8);
+  /* background: rgba(61, 142, 101, 0.8); */
+  background: rgba(19, 117, 53, 0.8);
   border-radius: 6px;
   border: 2px solid #fff;
   width: 110px;
