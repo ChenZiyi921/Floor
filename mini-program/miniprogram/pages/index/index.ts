@@ -4,7 +4,6 @@ const app = getApp<IAppOption>();
 
 Page({
   data: {
-    background: ["./img/banner1.png", "./img/banner1.png"],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -48,7 +47,7 @@ Page({
       },
     ],
   },
-  goheight(e) {
+  goheight(e: { detail: { height: any; width: any } }) {
     var width = wx.getSystemInfoSync().windowWidth;
     //获取可使用窗口宽度
     var imgheight = e.detail.height;
@@ -73,18 +72,18 @@ Page({
     });
   },
 
-  intervalChange(e) {
+  intervalChange(e: { detail: { value: any } }) {
     this.setData({
       interval: e.detail.value,
     });
   },
 
-  durationChange(e) {
+  durationChange(e: { detail: { value: any } }) {
     this.setData({
       duration: e.detail.value,
     });
   },
-  toUnitList(e) {
+  toUnitList(e: { currentTarget: { dataset: { params: { name: any } } } }) {
     const { name } = e.currentTarget.dataset.params;
     wx.navigateTo({
       url: `../unit_list/unit_list?id=${name}`,
