@@ -24,6 +24,11 @@ function toIndex() {
   location.href = "./index.html?" + params;
 }
 
+function closeModal() {
+  var popup_pdf = document.querySelector(".popup_pdf");
+  popup_pdf.classList.remove("show");
+}
+
 function reQuery() {
   // 返回index.html, 查询页面
   var params = jsonToParams({
@@ -45,7 +50,11 @@ function confirmSubmit() {
     success: function (res) {
       if (res.status === "success") {
         var popup_pdf = document.querySelector(".popup_pdf");
+        var popup_pdf_foot = document.querySelector(".popup_pdf_foot");
         var popup_pdf_message = document.querySelector(".popup_pdf_message");
+        if (res.next === 1) {
+          popup_pdf_foot.style.display = "block";
+        }
         popup_pdf_message.innerHTML = res.msg;
         popup_pdf.classList.add("show");
       } else {
