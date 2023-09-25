@@ -20,6 +20,7 @@
 .item {
   padding: 20rpx 0rpx;
   border-bottom: 1rpx solid #eee;
+  background-color: #fff;
 }
 .item .label {
   font-size: 34rpx;
