@@ -1,6 +1,15 @@
 <!-- index.wxml -->
 <view class="container">
-  <image src="../../img/index/2.jpg" mode="cover" class="image"></image>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" style="height:{{height}}">
+    <block>
+      <swiper-item>
+        <image src="../../img/index/banner1.png" class="swiper-item" mode="widthFix" bindload='goheight'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="../../img/index/banner2.png" class="swiper-item" mode="widthFix" bindload='goheight'></image>
+      </swiper-item>
+    </block>
+  </swiper>
   <view class="item" wx:for="{{data}}" wx:for-item="item">
     <view class="title">0015地块</view>
     <view class="block">
