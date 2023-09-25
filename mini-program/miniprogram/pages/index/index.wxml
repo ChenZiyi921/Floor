@@ -3,10 +3,10 @@
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" style="height:{{height}}">
     <block>
       <swiper-item>
-        <image src="../../img/index/banner1.png" class="swiper-item" mode="widthFix" bindload='goheight'></image>
+        <image src="../../img/index/banner1.jpg" class="swiper-item" mode="widthFix" bindload='goheight'></image>
       </swiper-item>
       <swiper-item>
-        <image src="../../img/index/banner2.png" class="swiper-item" mode="widthFix" bindload='goheight'></image>
+        <image src="../../img/index/banner2.jpg" class="swiper-item" mode="widthFix" bindload='goheight'></image>
       </swiper-item>
     </block>
   </swiper>
