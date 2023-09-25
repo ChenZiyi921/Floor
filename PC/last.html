@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/last.css">
 </head>
 
 <body>
     <div class="container">
-        <h1 class="page_title">京西棚户区改造项目安置房选房系统</h1>
+        <h1 class="page_title"></h1>
         <div class="content">
             <div class="title"></div>
             <div class="detail">
@@ -37,6 +38,16 @@
             <!-- <h2 class="popup-title">提示标题</h2> -->
             <p class="popup-message"></p>
             <button class="popup-close">关闭</button>
+        </div>
+    </div>
+    <div class="popup_pdf">
+        <div class="popup_pdf_content">
+            <iframe src="http://cp.yxsdcti.cn/m/pdf.pdf" width="800" height="600"></iframe>
+            <div class="popup_pdf_foot">
+                <p class="popup_pdf_message"></p>
+                <button class="popup_pdf_btn popup_pdf_btn1" onclick="toIndex()">剩余面积放弃不选了</button>
+                <button class="popup_pdf_btn popup_pdf_btn2">我要参加第二轮选房</button>
+            </div>
         </div>
     </div>
 </body>
