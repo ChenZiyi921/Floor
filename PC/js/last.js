@@ -52,6 +52,8 @@ function confirmSubmit() {
         var popup_pdf = document.querySelector(".popup_pdf");
         var popup_pdf_foot = document.querySelector(".popup_pdf_foot");
         var popup_pdf_message = document.querySelector(".popup_pdf_message");
+        var pdf_url = document.querySelector(".pdf_url");
+        pdf_url.setAttribute("src", res.print_url);
         if (res.next === 1) {
           popup_pdf_foot.style.display = "block";
         }

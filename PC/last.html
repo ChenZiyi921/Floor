@@ -14,6 +14,9 @@
 <body>
     <div class="container">
         <h1 class="page_title"></h1>
+        <div class="btn_confirm" onclick="toIndex()"><span style="width: 22px; height: 22px; margin-right: 6px;"><img
+                    src="./images/i_close.svg" alt="" srcset=""></span><span>选房完成</span>
+        </div>
         <div class="content">
             <div class="title"></div>
             <div class="detail">
@@ -43,7 +46,7 @@
     <div class="popup_pdf">
         <div class="popup_pdf_content">
             <div class="popup_pdf_close" onclick="closeModal()">×</div>
-            <iframe src="http://cp.yxsdcti.cn/m/pdf.pdf" width="800" height="600"></iframe>
+            <iframe class="pdf_url" src="" width="1000" style="height: calc(90vh - 150px);"></iframe>
             <div class="popup_pdf_foot">
                 <p class="popup_pdf_message"></p>
                 <button class="popup_pdf_btn popup_pdf_btn1" onclick="toIndex()">剩余面积放弃不选了</button>
