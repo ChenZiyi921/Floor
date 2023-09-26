@@ -115,6 +115,36 @@ function endQuery(val) {
   });
 }
 
+// 我要参加第二轮选房
+function signSecond() {
+  $.ajax({
+    url: global.base_url + "api/v10/signSecond",
+    type: "POST",
+    data: {
+      assign_batch_no: getUrlKey("assign_batch_no") || "",
+      family_id: getUrlKey("family_id") || "",
+      serial: getUrlKey("serial") || "",
+    },
+    dataType: "json",
+    success: function (res) {
+      if (res.status === "success") {
+        var popup_pdf = document.querySelector(".popup_pdf");
+        var popup_pdf_foot = document.querySelector(".popup_pdf_foot");
+        var popup_pdf_message = document.querySelector(".popup_pdf_message");
+        var pdf_url = document.querySelector(".pdf_url");
+        pdf_url.setAttribute("src", res.notice_print_url);
+        popup_pdf_foot.style.display = "none";
+        popup_pdf_message.innerHTML = res.msg;
+        popup_pdf.classList.add("show");
+      } else {
+        closePopup();
+        popupMessage.innerHTML = res.msg;
+        popup.classList.add("show");
+      }
+    },
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   init();
 });
