@@ -19,10 +19,11 @@
         </view>
     </view>
     <view class="floor_info" wx:for="{{data}}" wx:for-item="item">
-        <view class="house unselect" wx:for="{{item.list}}">
-            <image class="image" src="{{'../../img/checkbox.svg'||'../../img/checkbox_white.svg'}}"></image>
-            <view class="text">301</view>
-            <view class="status">{{true?"未选":"已选"}}</view>
+        <view class="room_floor">{{item.room_floor}}</view>
+        <view class="house {{item.selected===0?'unselect':''}}" wx:for="{{item.room}}">
+            <image class="image" src="{{item.selected===0?'../../img/checkbox.svg':'../../img/checkbox_white.svg'}}"></image>
+            <view class="text">{{item.room_number}}</view>
+            <view class="status">{{item.selected===0?"未选":"已选"}}</view>
         </view>
     </view>
 </view>

@@ -30,7 +30,7 @@ Page({
         },
         success: (res) => {
           this.setData({ units: res.data.data, active: res.data.data[0] });
-          this.getList();
+          this.getList(res.data.data[0]);
         },
         fail: function (error) {
           console.error("请求出错:", error);
@@ -49,11 +49,11 @@ Page({
   tabClick(e: { currentTarget: { dataset: { active: any } } }) {
     const { active } = e.currentTarget.dataset;
     this.setData({ active });
-    this.getList();
+    this.getList(active);
   },
-  getList() {
+  getList(danYuan: string) {
     wx.request({
-      url: app.globalData.host + "/api/wechat/queryDy",
+      url: app.globalData.host + "/api/wechat/queryRoom",
       method: "GET",
       header: {
         "Content-Type": "application/json",
@@ -62,9 +62,10 @@ Page({
         assign_batch_no: 1,
         place: this.data.place,
         building: this.data.building,
+        danYuan,
       },
-      success: function (res) {
-        this.setData({ data: res.data });
+      success: (res) => {
+        this.setData({ data: res.data.data });
       },
       fail: function (error) {
         console.error("请求出错:", error);
