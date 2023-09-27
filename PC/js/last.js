@@ -24,17 +24,68 @@ function toIndex() {
   location.href = "./index.html?" + params;
 }
 
+function uncheck() {
+  // 创建弹窗实例
+  var myModal = new Modal({
+    title: "特别提示",
+    description: "确认后不可更改，是否确认",
+    showButton1: true,
+    button1Text: "取消",
+    onButton1Click: function () {
+      myModal.close();
+    },
+    showButton2: true,
+    button2Text: "确定",
+    onButton2Click: function () {
+      $.ajax({
+        url: global.base_url + "api/v10/endAll",
+        type: "POST",
+        data: {
+          assign_batch_no: assign_batch_no,
+          family_id: family_id,
+          serial: serial,
+        },
+        dataType: "json",
+        success: function (res) {
+          if (res.status === "success") {
+            toIndex();
+          } else {
+            closePopup();
+            popupMessage.innerHTML = res.msg;
+            popup.classList.add("show");
+          }
+        },
+      });
+    },
+  });
+  myModal.open();
+}
+
 function closeModal() {
   var popup_pdf = document.querySelector(".popup_pdf");
   popup_pdf.classList.remove("show");
 }
 
 function reQuery() {
-  // 返回index.html, 查询页面
-  var params = jsonToParams({
-    assign_batch_no: assign_batch_no || "",
+  $.ajax({
+    url: global.base_url + "api/v10/endSelect",
+    type: "POST",
+    data: {
+      assign_batch_no: assign_batch_no,
+      family_id: family_id,
+      serial: serial,
+    },
+    dataType: "json",
+    success: function (res) {
+      if (res.status === "success") {
+        toIndex();
+      } else {
+        closePopup();
+        popupMessage.innerHTML = res.msg;
+        popup.classList.add("show");
+      }
+    },
   });
-  location.href = "./index.html?" + params;
 }
 
 function confirmSubmit() {
@@ -42,9 +93,9 @@ function confirmSubmit() {
     url: global.base_url + "api/v10/endSelect",
     type: "POST",
     data: {
-      assign_batch_no: getUrlKey("assign_batch_no") || "",
-      family_id: getUrlKey("family_id") || "",
-      serial: getUrlKey("serial") || "",
+      assign_batch_no: assign_batch_no,
+      family_id: family_id,
+      serial: serial,
     },
     dataType: "json",
     success: function (res) {
@@ -121,9 +172,9 @@ function signSecond() {
     url: global.base_url + "api/v10/signSecond",
     type: "POST",
     data: {
-      assign_batch_no: getUrlKey("assign_batch_no") || "",
-      family_id: getUrlKey("family_id") || "",
-      serial: getUrlKey("serial") || "",
+      assign_batch_no: assign_batch_no,
+      family_id: family_id,
+      serial: serial,
     },
     dataType: "json",
     success: function (res) {

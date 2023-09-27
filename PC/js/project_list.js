@@ -30,16 +30,6 @@ function init() {
   } else {
     input.value = serial;
   }
-
-  var params = jsonToParams({
-    assign_batch_no: assign_batch_no,
-    family_id: family_id,
-    serial: serial,
-  });
-  var btn_confirm = document.querySelector(".btn_confirm");
-  btn_confirm.addEventListener("click", function () {
-    location.href = "./last.html?" + params;
-  });
 }
 
 function closePopup() {
@@ -128,6 +118,23 @@ function house_type_list_render() {
               res.selectedData[i].number +
               "</span></p>"
           );
+        }
+
+        var btn_confirm = document.querySelector(".btn_confirm");
+        // 主选并且选房了
+        if (family_id && res.selectedData.length) {
+          btn_confirm.style.display = "flex";
+          var params = jsonToParams({
+            assign_batch_no: assign_batch_no,
+            family_id: family_id,
+            serial: serial,
+          });
+          btn_confirm.style.display = "flex";
+          btn_confirm.addEventListener("click", function () {
+            location.href = "./last.html?" + params;
+          });
+        } else {
+          btn_confirm.style.display = "none";
         }
       }
     },

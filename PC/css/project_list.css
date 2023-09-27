@@ -39,59 +39,6 @@
   white-space: nowrap;
 }
 
-/* 隐藏原始复选框 */
-input[type="checkbox"] {
-  display: none;
-}
-
-/* 定义自定义复选框样式 */
-input[type="checkbox"] + label {
-  position: relative;
-  /* 调整复选框与标签之间的间距 */
-  cursor: pointer;
-}
-
-/* 绘制复选框外观 */
-input[type="checkbox"] + label::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 18px;
-  height: 18px;
-  border: 2px solid #e9f8d3;
-  border-radius: 3px;
-}
-
-/* 绘制选中复选框的填充 */
-input[type="checkbox"]:checked + label::before {
-  background-color: #e9f8d3;
-  /* 修改选中填充颜色 */
-}
-
-/* 绘制复选框的选中标记 */
-input[type="checkbox"] + label::after {
-  content: "";
-  position: absolute;
-  left: 8px;
-  top: 3px;
-  width: 5px;
-  height: 10px;
-  border: solid #425b18;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  opacity: 0;
-}
-
-/* 显示选中复选框的选中标记 */
-input[type="checkbox"]:checked + label::after {
-  opacity: 1;
-}
-
-.switch_open {
-  /* display: none; */
-}
-
 .switch_close {
   display: none;
   float: right;
@@ -155,7 +102,7 @@ input[type="checkbox"]:checked + label::after {
   position: absolute;
   right: 0;
   top: 10px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 190px;
