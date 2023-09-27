@@ -10,26 +10,32 @@ Page({
     building: "",
     active: "",
     units: ["一单元", "三单元", "二单元"],
-    data: [{}, {}],
+    data: [],
   },
   getTabList() {
-    wx.request({
-      url: app.globalData.host + "/api/wechat/queryDy",
-      method: "GET",
-      header: {
-        "Content-Type": "application/json",
-      },
-      data: {
-        assign_batch_no: 1,
-        place: this.data.place,
-        building: this.data.building,
-      },
-      success: function (res) {
-        this.setData({ units: res.data });
-      },
-      fail: function (error) {
-        console.error("请求出错:", error);
-      },
+    wx.getStorage({
+      key: "queryDy",
+    }).then((res) => {
+      const { place, building } = res.data;
+      wx.request({
+        url: app.globalData.host + "/api/wechat/queryDy",
+        method: "GET",
+        header: {
+          "Content-Type": "application/json",
+        },
+        data: {
+          assign_batch_no: 1,
+          place,
+          building,
+        },
+        success: (res) => {
+          this.setData({ units: res.data.data, active: res.data.data[0] });
+          this.getList();
+        },
+        fail: function (error) {
+          console.error("请求出错:", error);
+        },
+      });
     });
   },
   init() {
@@ -70,6 +76,7 @@ Page({
    */
   onLoad() {
     this.init();
+    this.getTabList();
   },
 
   /**

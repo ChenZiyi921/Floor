@@ -11,55 +11,7 @@ Page({
     duration: 500,
     circular: true,
     height: "",
-    data: [
-      {
-        place: "03",
-        building: ["1号楼", "2号楼", "3号楼", "4号楼", "5号楼", "6号楼"],
-      },
-      {
-        place: "08",
-        building: [
-          "1号楼",
-          "2号楼",
-          "3号楼",
-          "4号楼",
-          "5号楼",
-          "6号楼",
-          "7号楼",
-          "8号楼",
-        ],
-      },
-      {
-        place: "10",
-        building: ["1号楼", "2号楼", "3号楼", "4号楼", "5号楼"],
-      },
-      {
-        place: "14",
-        building: [
-          "1号楼",
-          "2号楼",
-          "3号楼",
-          "4号楼",
-          "5号楼",
-          "6号楼",
-          "7号楼",
-          "8号楼",
-        ],
-      },
-      {
-        place: "15",
-        building: [
-          "1号楼",
-          "2号楼",
-          "3号楼",
-          "4号楼",
-          "5号楼",
-          "6号楼",
-          "7号楼",
-          "8号楼",
-        ],
-      },
-    ],
+    data: [],
   },
   goheight(e: { detail: { height: any; width: any } }) {
     var width = wx.getSystemInfoSync().windowWidth;
@@ -105,7 +57,7 @@ Page({
     });
   },
   onLoad() {
-    // this.getList();
+    this.getList();
   },
   getList() {
     wx.request({
@@ -117,8 +69,11 @@ Page({
       data: {
         assign_batch_no: 1,
       },
-      success: function (res) {
-        this.setData({ data: res.data });
+      success: (res) => {
+        const { data, status } = res.data;
+        if (status === "success") {
+          this.setData({ data: data });
+        }
       },
       fail: function (error) {
         console.error("请求出错:", error);

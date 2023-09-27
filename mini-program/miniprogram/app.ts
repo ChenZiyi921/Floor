@@ -1,7 +1,7 @@
 // app.ts
 App<IAppOption>({
   globalData: {
-    host: "http://cp.yxsdcti.cn",
+    host: "https://www.klmxf.com",
   },
   onLaunch() {
     // 展示本地存储能力
