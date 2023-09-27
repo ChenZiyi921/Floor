@@ -54,6 +54,11 @@ function postResourceHouseData() {
         dataType: "json",
         success: function (res) {
           if (res.status === "success") {
+            var params = jsonToParams({
+              assign_batch_no: assign_batch_no,
+              family_id: family_id,
+              serial: serial,
+            });
             var myModal2 = new Modal({
               title: "特别提示",
               description: res.data.prompt,
@@ -61,16 +66,11 @@ function postResourceHouseData() {
               button1Text: "结算签约",
               onButton1Click: function () {
                 myModal2.close();
-                to_index();
+                location.href = "./last.html?" + params;
               },
               showButton2: true,
               button2Text: "继续选房",
               onButton2Click: function () {
-                var params = jsonToParams({
-                  assign_batch_no: assign_batch_no,
-                  family_id: family_id,
-                  serial: serial,
-                });
                 location.href = "./project_list.html?" + params;
               },
             });
