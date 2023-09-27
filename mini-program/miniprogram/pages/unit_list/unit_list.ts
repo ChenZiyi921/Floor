@@ -52,6 +52,9 @@ Page({
     this.getList(active);
   },
   getList(danYuan: string) {
+    wx.showLoading({
+      title: "加载中",
+    });
     wx.request({
       url: app.globalData.host + "/api/wechat/queryRoom",
       method: "GET",
@@ -66,6 +69,7 @@ Page({
       },
       success: (res) => {
         this.setData({ data: res.data.data });
+        wx.hideLoading();
       },
       fail: function (error) {
         console.error("请求出错:", error);
