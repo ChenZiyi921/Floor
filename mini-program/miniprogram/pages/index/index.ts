@@ -13,36 +13,50 @@ Page({
     height: "",
     data: [
       {
-        name: "0011地块",
-        list: [
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
+        place: "03",
+        building: ["1号楼", "2号楼", "3号楼", "4号楼", "5号楼", "6号楼"],
+      },
+      {
+        place: "08",
+        building: [
+          "1号楼",
+          "2号楼",
+          "3号楼",
+          "4号楼",
+          "5号楼",
+          "6号楼",
+          "7号楼",
+          "8号楼",
         ],
       },
       {
-        name: "0011地块",
-        list: [
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
+        place: "10",
+        building: ["1号楼", "2号楼", "3号楼", "4号楼", "5号楼"],
+      },
+      {
+        place: "14",
+        building: [
+          "1号楼",
+          "2号楼",
+          "3号楼",
+          "4号楼",
+          "5号楼",
+          "6号楼",
+          "7号楼",
+          "8号楼",
         ],
       },
       {
-        name: "0011地块",
-        list: [
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
+        place: "15",
+        building: [
+          "1号楼",
+          "2号楼",
+          "3号楼",
+          "4号楼",
+          "5号楼",
+          "6号楼",
+          "7号楼",
+          "8号楼",
         ],
       },
     ],
@@ -83,27 +97,28 @@ Page({
       duration: e.detail.value,
     });
   },
-  toUnitList(e: { currentTarget: { dataset: { params: { name: any } } } }) {
-    const { name } = e.currentTarget.dataset.params;
+  toUnitList(e: { currentTarget: { dataset: { place: any; building: any } } }) {
+    const { place, building } = e.currentTarget.dataset;
+    wx.setStorage({ data: { place, building }, key: "queryDy" });
     wx.navigateTo({
-      url: `../unit_list/unit_list?id=${name}`,
+      url: `../unit_list/unit_list`,
     });
   },
   onLoad() {
-    this.getList();
+    // this.getList();
   },
   getList() {
     wx.request({
-      url: "http://cp.yxsdcti.cn/api/v10/selectedAnnouncement", // 请求的 URL
+      url: app.globalData.host + "/api/wechat/placeFloor",
       method: "GET",
       header: {
         "Content-Type": "application/json",
       },
       data: {
-        limit: 1000,
+        assign_batch_no: 1,
       },
       success: function (res) {
-        console.log(res.data); // 处理返回的数据
+        this.setData({ data: res.data });
       },
       fail: function (error) {
         console.error("请求出错:", error);

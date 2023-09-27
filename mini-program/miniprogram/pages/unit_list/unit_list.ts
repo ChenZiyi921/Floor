@@ -1,34 +1,76 @@
 // pages/unit_list/unit_list.ts
+const app = getApp<IAppOption>();
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    data: [
-      {
-        name: "0011地块",
-        list: [{ name: "01#" }, { name: "01#" }],
-      },
-      {
-        name: "0011地块",
-        list: [{ name: "01#" }, { name: "01#" }, { name: "01#" }],
-      },
-      {
-        name: "0011地块",
-        list: [
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-          { name: "01#" },
-        ],
-      },
-    ],
+    place: "",
+    building: "",
+    active: "",
+    units: ["一单元", "三单元", "二单元"],
+    data: [{}, {}],
   },
-
+  getTabList() {
+    wx.request({
+      url: app.globalData.host + "/api/wechat/queryDy",
+      method: "GET",
+      header: {
+        "Content-Type": "application/json",
+      },
+      data: {
+        assign_batch_no: 1,
+        place: this.data.place,
+        building: this.data.building,
+      },
+      success: function (res) {
+        this.setData({ units: res.data });
+      },
+      fail: function (error) {
+        console.error("请求出错:", error);
+      },
+    });
+  },
+  init() {
+    wx.getStorage({
+      key: "queryDy",
+    }).then((res) => {
+      const { place, building } = res.data;
+      this.setData({ place, building });
+    });
+  },
+  tabClick(e: { currentTarget: { dataset: { active: any } } }) {
+    const { active } = e.currentTarget.dataset;
+    this.setData({ active });
+    this.getList();
+  },
+  getList() {
+    wx.request({
+      url: app.globalData.host + "/api/wechat/queryDy",
+      method: "GET",
+      header: {
+        "Content-Type": "application/json",
+      },
+      data: {
+        assign_batch_no: 1,
+        place: this.data.place,
+        building: this.data.building,
+      },
+      success: function (res) {
+        this.setData({ data: res.data });
+      },
+      fail: function (error) {
+        console.error("请求出错:", error);
+      },
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {},
+  onLoad() {
+    this.init();
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

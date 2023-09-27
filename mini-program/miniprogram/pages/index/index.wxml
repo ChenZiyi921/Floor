@@ -11,10 +11,10 @@
     </block>
   </swiper>
   <view class="item" wx:for="{{data}}" wx:for-item="item">
-    <view class="title">0015地块</view>
+    <view class="title">{{item.place}}地块</view>
     <view class="block">
-      <view class="text" wx:for="{{item.list}}" bindtap="toUnitList" data-params="{{item}}">
-        <text>{{item.name}}</text>
+      <view class="text" wx:for="{{item.building}}" wx:for-item="building" bindtap="toUnitList" data-place="{{item.place}}" data-building="{{building}}">
+        <text>{{building}}</text>
       </view>
     </view>
   </view>

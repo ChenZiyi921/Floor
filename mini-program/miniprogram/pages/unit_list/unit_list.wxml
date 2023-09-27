@@ -1,13 +1,12 @@
 <!-- pages/unit_list/unit_list.wxml -->
 <view class="container">
     <view class="tabs">
-        <view class="tab active">一单元</view>
-        <view class="tab">二单元</view>
-        <view class="tab">三单元</view>
-        <view class="tab">四单元</view>
+        <view wx:for="{{units}}" wx:for-item="unit" bindtap="tabClick" data-active="{{unit}}" class="tab {{active === unit ? 'active':''}}">
+            {{unit}}
+        </view>
     </view>
     <view class="head">
-        <view class="left">0073 - 6号楼</view>
+        <view class="left">{{place}} - {{building}}</view>
         <view class="status_info">
             <view class="item">
                 <image class="image" src="../../img/checkbox.svg" />
@@ -20,10 +19,10 @@
         </view>
     </view>
     <view class="floor_info" wx:for="{{data}}" wx:for-item="item">
-        <view class="house" wx:for="{{item.list}}">
-            <image class="image" src="../../img/checkbox_white.svg"></image>
+        <view class="house unselect" wx:for="{{item.list}}">
+            <image class="image" src="{{'../../img/checkbox.svg'||'../../img/checkbox_white.svg'}}"></image>
             <view class="text">301</view>
-            <view class="status">已选</view>
+            <view class="status">{{true?"未选":"已选"}}</view>
         </view>
     </view>
 </view>
