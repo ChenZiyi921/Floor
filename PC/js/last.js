@@ -67,25 +67,40 @@ function closeModal() {
 }
 
 function reQuery() {
-  $.ajax({
-    url: global.base_url + "api/v10/endSelect",
-    type: "POST",
-    data: {
-      assign_batch_no: assign_batch_no,
-      family_id: family_id,
-      serial: serial,
+  // 创建弹窗实例
+  var myModal = new Modal({
+    title: "特别提示",
+    description: "确认后不可更改，是否确认",
+    showButton1: true,
+    button1Text: "取消",
+    onButton1Click: function () {
+      myModal.close();
     },
-    dataType: "json",
-    success: function (res) {
-      if (res.status === "success") {
-        toIndex();
-      } else {
-        closePopup();
-        popupMessage.innerHTML = res.msg;
-        popup.classList.add("show");
-      }
+    showButton2: true,
+    button2Text: "确定",
+    onButton2Click: function () {
+      $.ajax({
+        url: global.base_url + "api/v10/restart",
+        type: "POST",
+        data: {
+          assign_batch_no: assign_batch_no,
+          family_id: family_id,
+          serial: serial,
+        },
+        dataType: "json",
+        success: function (res) {
+          if (res.status === "success") {
+            toIndex();
+          } else {
+            closePopup();
+            popupMessage.innerHTML = res.msg;
+            popup.classList.add("show");
+          }
+        },
+      });
     },
   });
+  myModal.open();
 }
 
 function confirmSubmit() {
