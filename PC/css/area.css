@@ -4,7 +4,7 @@ body {
 
 .container {
   width: 1920px;
-  height: 100vh;
+  min-height: 100vh;
   /* background: url("../images/place/03_place.png") left top no-repeat; */
   overflow: hidden;
 }
