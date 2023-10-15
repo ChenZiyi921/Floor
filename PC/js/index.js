@@ -68,12 +68,14 @@ function customInfo(val) {
             "</span></p>" +
             '<p><span class="left">应安置面积：</span><span class="right">' +
             res.data.area_zuizhong +
-            "</span></p>" +
-            '<p><span class="left">预选方案：</span><span class="right">' +
-            res.data.select_plan +
-            "</span></p>" +
-            '<p><span class="left">预选套数：</span><span class="right">' +
-            res.data.select_total +
+
+              /*"</span></p>" +
+              '<p><span class="left">预选方案：</span><span class="right">' +
+              res.data.select_plan +
+              "</span></p>" +
+              '<p><span class="left">预选套数：</span><span class="right">' +
+              res.data.select_total +*/
+
             "</span></p>" +
             '<p><span class="left">已选房屋：</span><span class="right">' +
             res.data.selected_room +

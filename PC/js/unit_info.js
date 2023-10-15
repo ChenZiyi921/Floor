@@ -24,7 +24,7 @@ function init() {
   var house_info = document.querySelector(".house_info");
   var unitInfo = document.querySelector(".unitInfo");
 
-  title.innerHTML = place + "地块：" + room_building;
+  title.innerHTML = place + "地块：" + room_building + " （提示：点击房间查看户型；带锁图标为已选）";
   if (family_id) {
     house_info.style.display = "block";
     unitInfo.style.width = "calc(100vw - 370px)";

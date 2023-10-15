@@ -81,6 +81,8 @@ function house_type_list_render() {
               res.data[i].room_type[j].room_type +
               ">" +
               res.data[i].room_type[j].room_type +
+              "-" +
+              Number(res.data[i].room_type[j].room_area) +
               "</span>";
           }
 
@@ -123,7 +125,7 @@ function house_type_list_render() {
         var btn_confirm = document.querySelector(".btn_confirm");
         // 主选并且选房了
         if (family_id && res.selectedData.length) {
-          btn_confirm.style.display = "flex";
+          /*btn_confirm.style.display = "flex";
           var params = jsonToParams({
             assign_batch_no: assign_batch_no,
             family_id: family_id,
@@ -132,9 +134,19 @@ function house_type_list_render() {
           btn_confirm.style.display = "flex";
           btn_confirm.addEventListener("click", function () {
             location.href = "./last.html?" + params;
-          });
+          });*/
         } else {
-          btn_confirm.style.display = "none";
+          //btn_confirm.style.display = "none";
+
+          //预选
+          btn_confirm.style.display = "flex";
+          var params = jsonToParams({
+            assign_batch_no: assign_batch_no,
+          });
+          btn_confirm.style.display = "flex";
+          btn_confirm.addEventListener("click", function () {
+            location.href = "./bi.html?" + params;
+          });
         }
       }
     },

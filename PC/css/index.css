@@ -58,7 +58,7 @@
   font-weight: 400;
   color: #222222;
   text-align: right;
-  width: 130px;
+  width: 150px;
   height: 54px;
   line-height: 54px;
   background: #fff;
@@ -144,7 +144,7 @@
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
   color: #3d82e1;
-  width: 48%;
+  width: 40%;
   text-align: right;
   letter-spacing: 1px;
 }
@@ -154,7 +154,7 @@
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #ffffff;
-  width: 52%;
+  width: 60%;
   white-space: pre-wrap;
 }
 

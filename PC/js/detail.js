@@ -28,7 +28,7 @@ function postResourceHouseData() {
   // 创建弹窗实例
   var myModal = new Modal({
     title: "特别提示",
-    description: "点击“确定”按钮，期视为确认选房结果，\n选房结果不可更改。",
+    description: "点击“确定”按钮，其视为确认选房结果，\n选房结果不可更改。",
     showButton1: true,
     button1Text: "取消",
     onButton1Click: function () {
@@ -59,23 +59,209 @@ function postResourceHouseData() {
               family_id: family_id,
               serial: serial,
             });
-            var myModal2 = new Modal({
-              title: "特别提示",
-              description: res.data.prompt,
-              showButton1: true,
-              button1Text: "结算签约",
-              onButton1Click: function () {
-                myModal2.close();
-                location.href = "./last.html?" + params;
-              },
-              showButton2: true,
-              button2Text: "继续选房",
-              onButton2Click: function () {
-                location.href = "./project_list.html?" + params;
-              },
+
+            layui.use(function(){
+              var util = layui.util;
+              // 自定义固定条
+              /*util.fixbar({
+                  bars: [{ // 定义可显示的 bar 列表信息 -- v2.8.0 新增
+                      type: 'share',
+                      icon: 'layui-icon-share'
+                  }, {
+                      type: 'help',
+                      icon: 'layui-icon-help'
+                  }, {
+                      type: 'cart',
+                      icon: 'layui-icon-cart',
+                      style: 'background-color: #FF5722;'
+                  }, {
+                      type: 111,
+                      id:'aaa',
+                      content: 'D1-120平米',
+                      style: 'font-size: 21px;width: 140px'
+                  }],
+
+                  // bar1: true,
+                  // bar2: true,
+                  // default: false, // 是否显示默认的 bar 列表 --  v2.8.0 新增
+                  // bgcolor: '#393D52', // bar 的默认背景色
+                   //css: {right: 100, bottom: 100},
+                   css: {top: 150},
+                  // target: '#target-test', // 插入 fixbar 节点的目标元素选择器
+                  // duration: 300, // top bar 等动画时长（毫秒）
+                  on: { // 任意事件 --  v2.8.0 新增
+                      mouseenter: function(type){
+                          layer.tips(type, this, {
+                              tips: 4,
+                              fixed: true
+                          });
+                      },
+                      mouseleave: function(type){
+                          layer.closeAll('tips');
+                      }
+                  },
+                  // 点击事件
+                  click: function(type){
+                      console.log(this, type);
+                      layer.msg(type);
+                  }
+
+
+              });*/
+
+              function showFixbar(){
+                $.ajax({
+                  type: "post"
+                  , url: global.base_url + "api/v10/getSelectedData"
+                  , data: {family_id:family_id,serial:serial,assign_batch_no:assign_batch_no}
+                  , dataType: "json"
+                  , success: function (res) {
+                    console.log(res);
+                    if (res.status == 'success') {
+                      //var options={'bars':res.bars};
+                      //util.fixbar(options);
+
+
+                      util.fixbar({
+                        bars: res.bars,
+                        // bar1: true,
+                        // bar2: true,
+                        // default: false, // 是否显示默认的 bar 列表 --  v2.8.0 新增
+                        // bgcolor: '#393D52', // bar 的默认背景色
+                        //css: {right: 100, bottom: 100},
+                        css: {top: 150},
+                        // target: '#target-test', // 插入 fixbar 节点的目标元素选择器
+                        // duration: 300, // top bar 等动画时长（毫秒）
+                        on: { // 任意事件 --  v2.8.0 新增
+                          mouseenter: function(type){
+                            layer.tips(type, this, {
+                              tips: 4,
+                              time: 20000, // 20s 后自动关闭
+                              fixed: true
+                            });
+                          },
+                          mouseleave: function(type){
+                            layer.closeAll('tips');
+                          }
+                        },
+                        // 点击事件
+                        click: function(type){
+                          // console.log(this, type);
+                          //layer.msg(type);
+
+                          if(type.indexOf("房确认单") > 0 ){
+                            //选房确认单
+                            layer.confirm("确定要打印选房确认单", {
+                              title:"确认打印",
+                              skin: '',
+                              shade: .1
+                            }, function (i) {
+                              layer.close(i);
+
+                              layer.open({
+                                type: 2,
+                                title: '打印流程单',
+                                maxmin: false,
+                                shadeClose: false, //点击遮罩关闭层
+                                area : ['98%' , '98%'],
+                                content: "/index/printlist/printConfirmation?assign_batch_no="+assign_batch_no+"&family_id="+family_id+"&serial="+serial
+                              });
+
+                            });
+
+                          }else if(type.indexOf("轮流程单") > 0 ){
+                            //第二轮选房通知单
+                            layer.confirm("确定要打印第二轮流程单", {
+                              title:"确认打印",
+                              skin: '',
+                              shade: .1
+                            }, function (i) {
+                              layer.close(i);
+
+                              layer.open({
+                                type: 2,
+                                title: '打印第二轮流程单',
+                                maxmin: false,
+                                shadeClose: false, //点击遮罩关闭层
+                                area : ['98%' , '98%'],
+                                content: "/index/signin/printProcessTwo?transfer=1&id="+family_id+"&protocol_code="+serial
+                              });
+
+                            });
+                          }else if(type.indexOf("验通知单") > 0 ){
+                            //交验通知单
+                            layer.confirm("确定要打印交验通知单", {
+                              title:"确认打印",
+                              skin: '',
+                              shade: .1
+                            }, function (i) {
+                              layer.close(i);
+
+                              layer.open({
+                                type: 2,
+                                title: '打印交验通知单',
+                                maxmin: false,
+                                shadeClose: false, //点击遮罩关闭层
+                                area : ['98%' , '98%'],
+                                content: "/index/printword/printConfirm?is_transfer=1&family_id="+family_id+"&serial="+serial
+                              });
+
+                            });
+
+                          }
+                        }
+                      });
+                    }
+                    return false;
+                  }
+                });
+              }
+
+              showFixbar();
             });
-            myModal2.open();
-          } else {
+
+            closePopup();
+            popupMessage.innerHTML = res.msg;
+            popup.classList.add("show");
+
+
+            /*if(res.data.goto > 0){
+              var myModal2 = new Modal({
+                title: "特别提示",
+                description: res.data.prompt,
+                showButton1: true,
+                button1Text: "选房完成",
+                onButton1Click: function () {
+                  myModal2.close();
+                  location.href = "./last.html?" + params;
+                },
+                showButton2: true,
+                button2Text: "继续选房",
+                onButton2Click: function () {
+                  location.href = "./project_list.html?" + params;
+                },
+              });
+              myModal2.open();
+            }else {
+              var myModalNo = new Modal({
+                title: "提示",
+                description: res.data.prompt,
+                showButton1: false,
+                button1Text: "关闭",
+                onButton1Click: function () {
+                  myModalNo.close();
+                  location.href = "";
+                },
+                showButton2: true,
+                button2Text: "结算签约",
+                onButton2Click: function () {
+                  myModalNo.close();
+                  location.href = "./last.html?" + params;//结算签约
+                },
+              });
+              myModalNo.open();
+            }*/
+          }else {
             closePopup();
             popupMessage.innerHTML = res.msg;
             popup.classList.add("show");

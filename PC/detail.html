@@ -8,10 +8,41 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/detail.css">
+    <link href="./layui/layui-v2.8.17/layui/css/layui.css" rel="stylesheet">
 </head>
+<style>
+    .btn_confirm {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 190px;
+        height: 46px;
+        line-height: 46px;
+        background: #1b3a8c;
+        border-radius: 8px 0px 0px 8px;
+        margin-left: 20px;
+        font-size: 20px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #ffffff;
+        cursor: pointer;
+    }
+</style>
+
 
 <body>
     <div class="container">
+
+        <div class="btn_confirm" onclick="goBack()">
+            <span style="width: 22px; height: 22px; margin-right: 6px;margin-top: -30px">
+                <img src="./images/i_home.png" alt="" srcset="">
+            </span>
+            <span >首页</span>
+        </div>
+
         <h1 class="page_title"></h1>
         <div class="content">
             <div class="main">
@@ -39,7 +70,7 @@
             </div>
             <div class="foot_btn_container">
                 <div class="btn btn1" onclick="to_project_list()"><img src="./images/i_arrow_2.png"
-                        alt=""><span>重新选房</span>
+                        alt=""><span>继续选房</span>
                 </div>
                 <div class="btn btn2 confirm_button" onclick="postResourceHouseData()"><img src="./images/i_tick.png"
                         alt=""><span>确认选房</span></div>
@@ -70,5 +101,188 @@
 <script src="./utils/util.js"></script>
 <script src="./config.js"></script>
 <script src="./js/detail.js"></script>
+<script src="./layui/layui-v2.8.17/layui/layui.js"></script>
+<script>
+    layui.use(function(){
+        var util = layui.util;
+        // 自定义固定条
+        /*util.fixbar({
+            bars: [{ // 定义可显示的 bar 列表信息 -- v2.8.0 新增
+                type: 'share',
+                icon: 'layui-icon-share'
+            }, {
+                type: 'help',
+                icon: 'layui-icon-help'
+            }, {
+                type: 'cart',
+                icon: 'layui-icon-cart',
+                style: 'background-color: #FF5722;'
+            }, {
+                type: 111,
+                id:'aaa',
+                content: 'D1-120平米',
+                style: 'font-size: 21px;width: 140px'
+            }],
 
+            // bar1: true,
+            // bar2: true,
+            // default: false, // 是否显示默认的 bar 列表 --  v2.8.0 新增
+            // bgcolor: '#393D52', // bar 的默认背景色
+             //css: {right: 100, bottom: 100},
+             css: {top: 150},
+            // target: '#target-test', // 插入 fixbar 节点的目标元素选择器
+            // duration: 300, // top bar 等动画时长（毫秒）
+            on: { // 任意事件 --  v2.8.0 新增
+                mouseenter: function(type){
+                    layer.tips(type, this, {
+                        tips: 4,
+                        fixed: true
+                    });
+                },
+                mouseleave: function(type){
+                    layer.closeAll('tips');
+                }
+            },
+            // 点击事件
+            click: function(type){
+                console.log(this, type);
+                layer.msg(type);
+            }
+
+
+        });*/
+
+        function showFixbar(){
+            $.ajax({
+                type: "post"
+                , url: global.base_url + "api/v10/getSelectedData"
+                , data: {family_id:family_id,serial:serial,assign_batch_no:assign_batch_no}
+                , dataType: "json"
+                , success: function (res) {
+                    console.log(res);
+                    if (res.status == 'success') {
+                        //var options={'bars':res.bars};
+                        //util.fixbar(options);
+
+
+                        util.fixbar({
+                            bars: res.bars,
+                            // bar1: true,
+                            // bar2: true,
+                            // default: false, // 是否显示默认的 bar 列表 --  v2.8.0 新增
+                            // bgcolor: '#393D52', // bar 的默认背景色
+                            //css: {right: 100, bottom: 100},
+                            css: {top: 150},
+                            // target: '#target-test', // 插入 fixbar 节点的目标元素选择器
+                            // duration: 300, // top bar 等动画时长（毫秒）
+                            on: { // 任意事件 --  v2.8.0 新增
+                                mouseenter: function(type){
+                                    layer.tips(type, this, {
+                                        tips: 4,
+                                        time: 20000, // 20s 后自动关闭
+                                        fixed: true
+                                    });
+                                },
+                                mouseleave: function(type){
+                                    layer.closeAll('tips');
+                                }
+                            },
+                            // 点击事件
+                            click: function(type){
+                                // console.log(this, type);
+                                //layer.msg(type);
+
+                                if(type.indexOf("房确认单") > 0 ){
+                                    //选房确认单
+                                    layer.confirm("确定要打印选房确认单", {
+                                        title:"确认打印",
+                                        skin: '',
+                                        shade: .1
+                                    }, function (i) {
+                                        layer.close(i);
+
+                                        if(assign_batch_no == 1){
+                                            //第1轮选房确认单;
+                                          var content_url="/index/printlist/confirm_one?assign_batch_no="+assign_batch_no+"&family_id="+family_id+"&serial="+serial;
+
+                                        }else if(assign_batch_no == 2){
+                                            //第2轮选房确认单
+                                            var content_url="/index/printlist/confirm_two?assign_batch_no="+assign_batch_no+"&family_id="+family_id+"&serial="+serial;
+                                        }else if(assign_batch_no == 3){
+                                            //第3轮选房确认单
+                                            var content_url="/index/printlist/confirm_three?assign_batch_no="+assign_batch_no+"&family_id="+family_id+"&serial="+serial;
+                                        }
+
+                                        layer.open({
+                                            type: 2,
+                                            title: '打印选房确认单',
+                                            maxmin: false,
+                                            shadeClose: false, //点击遮罩关闭层
+                                            area : ['98%' , '98%'],
+                                            content:content_url
+
+                                        });
+
+                                    });
+
+                                }else if(type.indexOf("轮流程单") > 0 ){
+                                    //第二轮选房通知单
+                                    layer.confirm("确定要打印第二轮流程单", {
+                                        title:"确认打印",
+                                        skin: '',
+                                        shade: .1
+                                    }, function (i) {
+                                        layer.close(i);
+
+                                        layer.open({
+                                            type: 2,
+                                            title: '打印第二轮流程单',
+                                            maxmin: false,
+                                            shadeClose: false, //点击遮罩关闭层
+                                            area : ['98%' , '98%'],
+                                            content: "/index/signin/printProcessTwo?transfer=1&id="+family_id+"&protocol_code="+serial
+                                        });
+
+                                    });
+                                }else if(type.indexOf("验通知单") > 0 ){
+                                    //交验通知单
+                                    layer.confirm("确定要打印交验通知单", {
+                                        title:"确认打印",
+                                        skin: '',
+                                        shade: .1
+                                    }, function (i) {
+                                        layer.close(i);
+
+                                        layer.open({
+                                            type: 2,
+                                            title: '打印交验通知单',
+                                            maxmin: false,
+                                            shadeClose: false, //点击遮罩关闭层
+                                            area : ['98%' , '98%'],
+                                            content: "/index/printword/printConfirm?is_transfer=1&family_id="+family_id+"&serial="+serial
+                                        });
+
+                                    });
+
+                                }
+                            }
+                        });
+                    }
+                    return false;
+                }
+            });
+        }
+
+        showFixbar();
+    });
+
+
+    // 返回首页
+    function goBack() {
+        location.href = "./index.html?assign_batch_no=" + assign_batch_no;
+        //history.back();
+    }
+
+
+</script>
 </html>
