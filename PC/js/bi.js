@@ -11,6 +11,7 @@ function initChart1(data) {
   option = {
     grid: {
       left: 0,
+      bottom: 40,
     },
     tooltip: {
       trigger: "item",
@@ -19,7 +20,7 @@ function initChart1(data) {
       {
         name: "Access From",
         type: "pie",
-        radius: ["60%", "75%"],
+        radius: ["65%", "80%"],
         avoidLabelOverlap: false,
         label: {
           show: false,
@@ -344,7 +345,7 @@ function initChart3(data) {
                 color: "#fff",
               },
             },
-            color: "#e7a837",
+            color: "#e8765e",
             opacity: 1,
           },
         },
@@ -392,6 +393,155 @@ function initChart3(data) {
   };
 
   option && myChart3.setOption(option);
+}
+
+var myChart4;
+function initChart4(data) {
+  var chartDom = document.querySelector(".chart4");
+  myChart4 = echarts.init(chartDom);
+  var option;
+
+  let xAxisData = [];
+  let data1 = [];
+  let data2 = [];
+  let data3 = [];
+  for (let i = 0; i < data.length; i++) {
+    xAxisData.push(data[i].name);
+    data1.push(Number(((data[i].selected / data[i].count) * 100).toFixed(2)));
+    data2.push(data[i].count - data[i].selected);
+    data3.push(data[i].count);
+  }
+  var emphasisStyle = {
+    itemStyle: {
+      shadowBlur: 10,
+      shadowColor: "rgba(0,0,0,0.3)",
+    },
+  };
+  option = {
+    legend: {
+      data: ["已选", "未选"],
+      left: "center",
+      top: 14,
+      textStyle: {
+        color: "#fff",
+      },
+      selectedMode: false,
+    },
+    toolbox: {},
+    // tooltip: {},
+    xAxis: {
+      data: xAxisData,
+      axisLabel: {
+        show: true,
+        textStyle: {
+          color: "#8A9BC9",
+          fontSize: 12,
+          padding: 10,
+        },
+      },
+      axisLine: {
+        lineStyle: {
+          color: "#8A9BC9",
+        },
+      },
+    },
+    yAxis: {
+      splitLine: { show: false },
+      axisLabel: {
+        show: true,
+        textStyle: {
+          color: "#8A9BC9",
+          fontSize: 12,
+          padding: 10,
+        },
+        formatter: function (value, index) {
+          return value + "套";
+        },
+      },
+    },
+    grid: {
+      bottom: 40,
+      right: 30,
+      left: 80,
+    },
+    series: [
+      {
+        name: "已选",
+        type: "bar",
+        stack: "one",
+        emphasis: emphasisStyle,
+        data: data1,
+        barMaxWidth: 60,
+        itemStyle: {
+          normal: {
+            label: {
+              formatter: "{c}" + "%",
+              show: true,
+              position: "inside",
+              textStyle: {
+                fontWeight: "bolder",
+                fontSize: "12",
+                color: "#fff",
+              },
+            },
+            color: "#e7a837",
+            opacity: 1,
+          },
+        },
+      },
+      {
+        name: "未选",
+        type: "bar",
+        stack: "one",
+        emphasis: emphasisStyle,
+        barMaxWidth: 60,
+        data: data2,
+        itemStyle: {
+          normal: {
+            // label: {
+            //     formatter: "共{c}" + "套",
+            //     show: true,
+            //     position: "top",
+            //     textStyle: {
+            //         fontWeight: "bolder",
+            //         fontSize: "12",
+            //         color: "#fff"
+            //     }
+            // },
+            color: "#263e99",
+            opacity: 1,
+          },
+        },
+      },
+      {
+        name: "总数",
+        type: "bar",
+        stack: "one",
+        emphasis: emphasisStyle,
+        data: new Array(data1.length).fill(2),
+        itemStyle: {
+          normal: {
+            label: {
+              formatter: (params) => {
+                return "共" + data3[params.dataIndex] + "套";
+              },
+              show: true,
+              position: "top",
+              textStyle: {
+                fontWeight: "bolder",
+                fontSize: "12",
+                color: "#fff",
+              },
+            },
+            color: "#263e99",
+            opacity: 1,
+          },
+        },
+      },
+    ],
+  };
+
+  option && myChart4.setOption(option);
 }
 
 function bigScreen() {
@@ -447,6 +597,7 @@ function bigScreen() {
         initChart1(res.data.todayData);
         initChart2(res.data.selectionPlace);
         initChart3(res.data.jsData);
+        initChart4(res.data.village);
       }
     },
   });
@@ -471,4 +622,5 @@ window.addEventListener("resize", () => {
   myChart1.resize();
   myChart2.resize();
   myChart3.resize();
+  myChart4.resize();
 });
