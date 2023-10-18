@@ -1,9 +1,9 @@
 function toStatistics() {
-  location.href = "./statistics.html";
+  location.href = "./m/bi.html?assign_batch_no=1";
 }
 
 function toQuery() {
-  location.href = "./c/project_list.html?assign_batch_no=1";
+  location.href = "./m/project_list.html?assign_batch_no=1";
 }
 
 function submit() {
