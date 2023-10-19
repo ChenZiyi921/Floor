@@ -5,16 +5,17 @@ var place = getUrlKey("place_name") || "";
 var room_js = getUrlKey("room_js") || "";
 var room_type = getUrlKey("room_type") || "";
 
-//mengfei
-var room_js = getUrlKey("room_js") || "";
-var room_type = getUrlKey("room_type") || "";
-
 var options = {};
 if (family_id) {
   options.family_id = family_id;
   options.serial = serial;
 }
 options.assign_batch_no = assign_batch_no;
+
+var queryParams = {
+  room_js: room_js,
+  room_type: room_type,
+};
 
 // 进页面根据URL参数填充是第几轮
 function init() {
@@ -165,7 +166,6 @@ function area_list_render(room = {}) {
 function clearRoomJsClass() {
   var house_type_list = document.querySelector(".house_type_list");
   var items = house_type_list.querySelectorAll(".room_js");
-  console.log(house_type_list);
   for (var i = 0; i < items.length; i++) {
     items[i].classList.remove("active");
   }
@@ -193,7 +193,7 @@ function queryPlaceJs() {
       this.classList.add("active");
       clearRoomTypeClass();
       var room_js = this.getAttribute("room_js");
-      queryParams = { room_js: room_js, room_type: room_type };
+      queryParams = { room_js: room_js };
       area_list_render({ room_js: room_js });
 
       //mengfei
@@ -238,14 +238,10 @@ function placeItemClick() {
       var params = jsonToParams(
         Object.assign(
           {
-            assign_batch_no: assign_batch_no,
             place: place,
             room_building: this.getAttribute("room_building") || "",
-
-            //mengfei
-            room_js: room_js, //居室
-            room_type: room_type, //户型
           },
+          queryParams,
           options
         )
       );

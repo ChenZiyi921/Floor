@@ -122,7 +122,7 @@ function postResourceHouseData() {
                       //util.fixbar(options);
 
 
-                      util.fixbar({
+                      /*util.fixbar({
                         bars: res.bars,
                         // bar1: true,
                         // bar2: true,
@@ -210,7 +210,154 @@ function postResourceHouseData() {
 
                           }
                         }
+                      });*/
+
+
+                      util.fixbar({
+                        bars: res.bars,
+                        // bar1: true,
+                        // bar2: true,
+                        // default: false, // 是否显示默认的 bar 列表 --  v2.8.0 新增
+                        // bgcolor: '#393D52', // bar 的默认背景色
+                        //css: {right: 100, bottom: 100},
+                        css: {top: 150},
+                        // target: '#target-test', // 插入 fixbar 节点的目标元素选择器
+                        // duration: 300, // top bar 等动画时长（毫秒）
+                        on: { // 任意事件 --  v2.8.0 新增
+                          mouseenter: function(type){
+                            layer.tips(type, this, {
+                              tips: 4,
+                              time: 20000, // 20s 后自动关闭
+                              fixed: true
+                            });
+                          },
+                          mouseleave: function(type){
+                            layer.closeAll('tips');
+                          }
+                        },
+                        // 点击事件
+                        click: function(type){
+                          // console.log(this, type);
+                          layer.msg(type);
+
+                          if(type.indexOf("房确认单") > 0 ){
+                            //选房确认单
+                            layer.confirm("确定要打印选房确认单", {
+                              title:"确认打印",
+                              skin: '',
+                              shade: .1
+                            }, function (i) {
+                              layer.close(i);
+
+                              if(assign_batch_no == 1){
+                                //第1轮选房确认单;
+                                var content_url="/index/printlist/confirm_one?assign_batch_no="+assign_batch_no+"&family_id="+family_id+"&serial="+serial;
+
+                              }else if(assign_batch_no == 2){
+                                //第2轮选房确认单
+                                var content_url="/index/printlist/confirm_two?assign_batch_no="+assign_batch_no+"&family_id="+family_id+"&serial="+serial;
+                              }else if(assign_batch_no == 3){
+                                //第3轮选房确认单
+                                var content_url="/index/printlist/confirm_three?assign_batch_no="+assign_batch_no+"&family_id="+family_id+"&serial="+serial;
+                              }
+
+                              layer.open({
+                                type: 2,
+                                title: '打印选房确认单',
+                                maxmin: false,
+                                shadeClose: false, //点击遮罩关闭层
+                                area : ['98%' , '98%'],
+                                content:content_url
+
+                              });
+
+                            });
+
+                          }else if(type.indexOf("轮流程单") > 0 ){
+                            //第二轮选房通知单
+                            layer.confirm("确定要打印流程单", {
+                              title:"确认打印",
+                              skin: '',
+                              shade: .1
+                            }, function (i) {
+                              layer.close(i);
+
+                              if(assign_batch_no == 1){
+                                //第1轮选房的时候打印第2轮的流程单
+                                var no_str='二';
+                                var content_url="/index/signin/printProcessTwo?transfer=1&id="+family_id+"&protocol_code="+serial;
+                              }else if(assign_batch_no == 2){
+                                //第2轮选房的时候打印第3轮的流程单
+                                var no_str='三';
+                                var content_url="/index/signin/printProcessThree?transfer=1&id="+family_id+"&protocol_code="+serial;
+                              }
+
+                              layer.open({
+                                type: 2,
+                                title: '打印第'+no_str+'轮流程单',
+                                maxmin: false,
+                                shadeClose: false, //点击遮罩关闭层
+                                area : ['98%' , '98%'],
+                                content: content_url
+                              });
+
+                            });
+                          }else if(type.indexOf("验通知单") > 0 ){
+                            //交验通知单
+                            layer.confirm("确定要打印交验通知单", {
+                              title:"确认打印",
+                              skin: '',
+                              shade: .1
+                            }, function (i) {
+                              layer.close(i);
+
+                              layer.open({
+                                type: 2,
+                                title: '打印交验通知单',
+                                maxmin: false,
+                                shadeClose: false, //点击遮罩关闭层
+                                area : ['98%' , '98%'],
+                                content: "/index/printword/printConfirm?is_transfer=1&family_id="+family_id+"&serial="+serial
+                              });
+
+                            });
+
+                          }else if(type.indexOf("轮通知单") > 0 ){
+                            //选房通知单
+                            layer.confirm("确定要打印选房通知单", {
+                              title:"确认打印",
+                              skin: '',
+                              shade: .1
+                            }, function (i) {
+                              layer.close(i);
+
+                              if(assign_batch_no == 1){
+                                //第1轮选房的时候打印第2轮的选房通知单
+                                var no_str='二';
+                                var content_url="/index/notice/printNotice?family_id="+family_id+"&assign_batch_no=2"+"&serial="+serial;
+                              }else if(assign_batch_no == 2){
+                                //第2轮选房的时候打印第3轮的选房通知单
+                                var no_str='三';
+                                var content_url="/index/notice/printNotice?family_id="+family_id+"&assign_batch_no=3"+"&serial="+serial;
+                              }
+
+                              layer.open({
+                                type: 2,
+                                title: '打印第'+no_str+'轮选房通知单',
+                                maxmin: false,
+                                shadeClose: false, //点击遮罩关闭层
+                                area : ['98%' , '98%'],
+                                content:content_url
+
+                              });
+
+                            });
+
+                          }
+                        }
                       });
+
+
                     }
                     return false;
                   }

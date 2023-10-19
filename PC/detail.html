@@ -164,7 +164,7 @@
                         //var options={'bars':res.bars};
                         //util.fixbar(options);
 
-
+                        //*******************注意：detail.js中也需要修改*******************
                         util.fixbar({
                             bars: res.bars,
                             // bar1: true,
@@ -200,7 +200,7 @@
                                         shade: .1
                                     }, function (i) {
                                         layer.close(i);
-
+                                        //*******************注意：detail.js中也需要修改*******************
                                         if(assign_batch_no == 1){
                                             //第1轮选房确认单;
                                           var content_url="/index/printlist/confirm_one?assign_batch_no="+assign_batch_no+"&family_id="+family_id+"&serial="+serial;
@@ -233,7 +233,7 @@
                                         shade: .1
                                     }, function (i) {
                                         layer.close(i);
-
+                                        //*******************注意：detail.js中也需要修改*******************
                                         if(assign_batch_no == 1){
                                             //第1轮选房的时候打印第2轮的流程单
                                             var no_str='二';
@@ -282,7 +282,7 @@
                                         shade: .1
                                     }, function (i) {
                                         layer.close(i);
-
+                                        //*******************注意：detail.js中也需要修改*******************
                                         if(assign_batch_no == 1){
                                             //第1轮选房的时候打印第2轮的选房通知单
                                             var no_str='二';
