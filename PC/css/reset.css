@@ -9,7 +9,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+ul,
+li {
   margin: 0;
   padding: 0;
   font-style: normal;
@@ -23,4 +25,9 @@ img {
   max-height: 100%;
   max-width: 100%;
   display: block;
+}
+
+ul,
+li {
+  list-style: none;
 }
