@@ -41,7 +41,7 @@
 .search {
   position: relative;
   width: 600px;
-  height: 46px;
+  height: 50px;
   border-radius: 8px;
   border: 2px solid #193a9c;
   margin: 40px auto 0;
@@ -52,10 +52,10 @@
   border: none;
   outline: none;
   width: 100%;
-  line-height: 22px;
+  line-height: 26px;
   padding: 10px 100px 10px 14px;
   box-sizing: border-box;
-  border-radius: 10px 0 0 10px;
+  border-radius: 8px;
   box-sizing: border-box;
 }
 
@@ -64,7 +64,9 @@
   right: 0;
   top: 0;
   width: 85px;
-  line-height: 42px;
+  height: 46px;
+  line-height: 46px;
+  border-radius: 0 6px 6px 0;
   background: #193b9d;
   font-size: 18px;
   color: #ffffff;
@@ -80,11 +82,12 @@
   top: 40px;
   left: -2px;
   width: 515px;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 8px 8px;
   border: 2px solid #193a9c !important;
   border-top: 0 !important;
   box-shadow: none;
   background: #fff;
+  box-sizing: border-box;
 }
 
 .autocomplete ul {

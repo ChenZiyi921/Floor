@@ -93,7 +93,7 @@ function toggle() {
   input.addEventListener("blur", function () {
     setTimeout(() => {
       autocomplete.style.display = "none";
-    }, 100);
+    }, 200);
   });
 }
 
