@@ -120,4 +120,7 @@
   .foot {
     font-size: 12px;
   }
+  .autocomplete {
+    width: calc(100% - 87px);
+  }
 }
