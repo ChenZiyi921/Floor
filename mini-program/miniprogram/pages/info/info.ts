@@ -2,6 +2,32 @@ Page({
   data: {
     logs: [],
   },
+  toRoomDetail() {
+    wx.showLoading({
+      title: "加载中",
+    });
+    wx.downloadFile({
+      url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+      success: (res) => {
+        wx.hideLoading()
+          if (res.tempFilePath) {
+              wx.openDocument({
+                  filePath: res.tempFilePath,
+                  fail: (err) => {
+                      console.error(err);
+                  },
+                  complete: () => {
+                      wx.hideLoading();
+                  }
+              })
+          }
+      },
+      fail: (err) => {
+          console.error(err);
+          wx.hideLoading();
+      }
+  })
+  },
   toRoomDistribution() {
     wx.navigateTo({
       url: '../room_distribution/room_distribution',
@@ -28,9 +54,30 @@ Page({
     })
   },
   toRoomHandbook() {
-    wx.navigateTo({
-      url: '../room_handbook/room_handbook',
-    })
+    wx.showLoading({
+      title: "加载中",
+    });
+    wx.downloadFile({
+      url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+      success: (res) => {
+        wx.hideLoading()
+          if (res.tempFilePath) {
+              wx.openDocument({
+                  filePath: res.tempFilePath,
+                  fail: (err) => {
+                      console.error(err);
+                  },
+                  complete: () => {
+                      wx.hideLoading();
+                  }
+              })
+          }
+      },
+      fail: (err) => {
+          console.error(err);
+          wx.hideLoading();
+      }
+  })
   },
   onLoad() {},
 });

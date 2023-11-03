@@ -5,5 +5,7 @@
         <view class="label">户型信息</view>
         <view class="date">2023/09/08 23:16:59</view>
     </view>
-    <image class="image" src="../../img/room_type/1.jpg" />
+    <view  wx:for="{{imgList}}">  
+    <image class="image" wx:key="imgs" src="{{item}}" data-src="{{item}}" mode='widthFix' data-list="{{imgList}}" bindtap="imgPreview" style="margin-top: 24rpx;" />
+    </view>
 </view>
