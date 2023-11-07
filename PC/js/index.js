@@ -101,6 +101,7 @@ function to_project_list() {
     type: "GET",
     data: {
       family_id: family_id,
+      assign_batch_no:assign_batch_no,
     },
     contentType: "application/json",
     dataType: "json",

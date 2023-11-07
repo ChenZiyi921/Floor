@@ -213,6 +213,7 @@ function postResourceHouseData() {
                       });*/
 
 
+
                       util.fixbar({
                         bars: res.bars,
                         // bar1: true,
@@ -273,35 +274,6 @@ function postResourceHouseData() {
 
                             });
 
-                          }else if(type.indexOf("轮流程单") > 0 ){
-                            //第二轮选房通知单
-                            layer.confirm("确定要打印流程单", {
-                              title:"确认打印",
-                              skin: '',
-                              shade: .1
-                            }, function (i) {
-                              layer.close(i);
-
-                              if(assign_batch_no == 1){
-                                //第1轮选房的时候打印第2轮的流程单
-                                var no_str='二';
-                                var content_url="/index/signin/printProcessTwo?transfer=1&id="+family_id+"&protocol_code="+serial;
-                              }else if(assign_batch_no == 2){
-                                //第2轮选房的时候打印第3轮的流程单
-                                var no_str='三';
-                                var content_url="/index/signin/printProcessThree?transfer=1&id="+family_id+"&protocol_code="+serial;
-                              }
-
-                              layer.open({
-                                type: 2,
-                                title: '打印第'+no_str+'轮流程单',
-                                maxmin: false,
-                                shadeClose: false, //点击遮罩关闭层
-                                area : ['98%' , '98%'],
-                                content: content_url
-                              });
-
-                            });
                           }else if(type.indexOf("验通知单") > 0 ){
                             //交验通知单
                             layer.confirm("确定要打印交验通知单", {
@@ -357,6 +329,10 @@ function postResourceHouseData() {
                         }
                       });
 
+                      //添加印章
+                      if(res.cus.end_all > 0){
+                        $('.main').addClass('stamp');//印章
+                      }
 
                     }
                     return false;
@@ -412,6 +388,58 @@ function postResourceHouseData() {
             closePopup();
             popupMessage.innerHTML = res.msg;
             popup.classList.add("show");
+          }
+        },
+      });
+    },
+  });
+  myModal.open();
+}
+
+
+//完全选完
+function selectEnd() {
+  // 创建弹窗实例
+  var myModal = new Modal({
+    title: "重要提示",
+    description: "完全选完 代表已您将结束所有选房，\n点击确认后结果不可更改。",
+    showButton1: true,
+    button1Text: "取消",
+    onButton1Click: function () {
+      myModal.close();
+    },
+    showButton2: true,
+    button2Text: "确定",
+    onButton2Click: function () {
+      $.ajax({
+        url: global.base_url + "api/v10/selectEnd",
+        type: "POST",
+        data: {
+          assign_batch_no: assign_batch_no,
+          family_id: family_id,
+          serial: serial,
+        },
+        dataType: "json",
+        success: function (res) {
+          if (res.status === "success") {
+            var params = jsonToParams({
+              assign_batch_no: assign_batch_no,
+              family_id: family_id,
+              serial: serial,
+            });
+
+            layui.use(function(){
+              var layer = layui.layer;
+              layer.msg(res.msg, {icon: 1});
+            });
+            
+            $('.main').addClass('stamp');//印章
+
+            closePopup();
+          }else {
+            closePopup();
+            //popupMessage.innerHTML = res.msg;
+            //popup.classList.add("show");
           }
         },
       });
