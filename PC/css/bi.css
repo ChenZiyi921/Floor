@@ -1,3 +1,8 @@
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF)
+}
+
 .container {
   width: 100vw;
   min-height: 100vh;
@@ -67,12 +72,11 @@
   padding: 1%;
   border: 1px solid #3471a7;
   border-radius: 10px;
-  background: linear-gradient(
-    180deg,
-    rgba(171, 237, 246, 0),
-    rgba(114, 215, 234, 0.2)
-  );
+  background: linear-gradient(180deg,
+      rgba(171, 237, 246, 0),
+      rgba(114, 215, 234, 0.2));
 }
+
 .content {
   width: 100%;
   display: flex;
@@ -195,14 +199,13 @@
   border-radius: 10px;
   box-sizing: border-box;
   height: 33.33%;
-  background: linear-gradient(
-    180deg,
-    rgba(171, 237, 246, 0),
-    rgba(114, 215, 234, 0.2)
-  );
+  background: linear-gradient(180deg,
+      rgba(171, 237, 246, 0),
+      rgba(114, 215, 234, 0.2));
 }
 
-.right .item:nth-of-type(1) {
+.right .item:nth-of-type(1),
+.right .item:nth-of-type(2) {
   border: none;
   background: none;
   display: flex;
@@ -236,23 +239,21 @@
   border: 1px solid #3471a7;
   border-radius: 10px;
   box-sizing: border-box;
-  background: linear-gradient(
-    180deg,
-    rgba(171, 237, 246, 0),
-    rgba(114, 215, 234, 0.2)
-  );
+  background: linear-gradient(180deg,
+      rgba(171, 237, 246, 0),
+      rgba(114, 215, 234, 0.2));
 }
 
 .right .item .l1 {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 50%;
   margin-right: 10px;
   border-radius: 10px 0 0 10px;
 }
 
 .right .item .l2 {
-  width: 55%;
+  width: 50%;
   border-radius: 0 10px 10px 0;
 }
 
@@ -315,7 +316,7 @@
   font-family: DINAlternate-Bold, DINAlternate;
   color: #f86500;
   margin-right: 6px;
-  margin-left: 14px;
+  margin-left: 10px;
 }
 
 .chart1 {
@@ -327,4 +328,58 @@
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.js_content {
+  overflow: hidden;
+}
+
+.js_content li {
+  height: 28px;
+  line-height: 28px;
+  border: 1px solid rgba(25, 186, 139, .17);
+  color: rgba(255, 255, 255, .6);
+  white-space: nowrap;
+  margin: 0 6px 6px;
+  padding: 0 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.today_family span,
+.today_family h6,
+.js_content strong,
+.js_content span {
+  text-align: center;
+}
+
+.js_content h6 {
+  font-weight: normal;
+  font-size: 16px;
+  color: #fff;
+  line-height: 34px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.js_content span {
+  font-size: 16px;
+  color: #fff;
+  opacity: .5;
+}
+
+.today_family {
+  font-size: 20px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+.today_family span {
+  font-size: 20px;
+  font-family: DINAlternate-Bold, DINAlternate;
+  color: #f86500;
+  margin-right: 6px;
+  margin-left: 10px;
 }

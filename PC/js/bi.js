@@ -282,8 +282,8 @@ function initChart3(data) {
   option = {
     legend: {
       data: ["已选", "未选"],
-      left: "center",
-      top: 14,
+      right: 10,
+      top: 12,
       textStyle: {
         color: "#fff",
       },
@@ -324,6 +324,7 @@ function initChart3(data) {
     grid: {
       bottom: 40,
       right: 30,
+      left: 60,
     },
     series: [
       {
@@ -420,8 +421,8 @@ function initChart4(data) {
   option = {
     legend: {
       data: ["已选", "未选"],
-      left: "center",
-      top: 14,
+      right: 10,
+      top: 12,
       textStyle: {
         color: "#fff",
       },
@@ -462,7 +463,7 @@ function initChart4(data) {
     grid: {
       bottom: 40,
       right: 30,
-      left: 80,
+      left: 60,
     },
     series: [
       {
@@ -556,43 +557,79 @@ function bigScreen() {
       if (res.status === "success") {
         var today_date = document.querySelector(".today_date");
         today_date.innerHTML = res.data.today_date + " " + res.data.today_week;
-        var left = document.querySelector(".content");
-        var placeDataHtml = "";
-        for (let i = 0; i < res.data.placeData.length; i++) {
-          placeDataHtml +=
-            '<div class="item" style="background: url(' +
-            res.data.placeData[i].image +
-            ') center center no-repeat">' +
-            "<p>" +
-            res.data.placeData[i].place_name +
-            "</p>" +
-            "<p>剩余" +
-            res.data.placeData[i].unselected +
-            "套</p>" +
-            "<p>已选" +
-            res.data.placeData[i].selected +
-            "套</p>" +
-            "</div>";
-          // placeDataHtml +=
-          //   '<div class="item">' +
-          //   '<img src="' +
-          //   res.data.placeData[i].image +
-          //   '" alt="">' +
-          //   "<div class='pos'><p>" +
-          //   res.data.placeData[i].place_name +
-          //   "</p>" +
-          //   "<p>剩余" +
-          //   res.data.placeData[i].unselected +
-          //   "套</p>" +
-          //   "<p>已选" +
-          //   res.data.placeData[i].selected +
-          //   "套</p>" +
-          //   "</div></div>";
+
+        if (res.data.placeData && res.data.placeData.length) {
+          var left = document.querySelector(".content");
+          var placeDataHtml = "";
+          for (let i = 0; i < res.data.placeData.length; i++) {
+            placeDataHtml +=
+              '<div class="item" style="background: url(' +
+              res.data.placeData[i].image +
+              ') center center no-repeat">' +
+              "<p>" +
+              res.data.placeData[i].place_name +
+              "</p>" +
+              "<p>剩余" +
+              res.data.placeData[i].unselected +
+              "套</p>" +
+              "<p>已选" +
+              res.data.placeData[i].selected +
+              "套</p>" +
+              "</div>";
+            // placeDataHtml +=
+            //   '<div class="item">' +
+            //   '<img src="' +
+            //   res.data.placeData[i].image +
+            //   '" alt="">' +
+            //   "<div class='pos'><p>" +
+            //   res.data.placeData[i].place_name +
+            //   "</p>" +
+            //   "<p>剩余" +
+            //   res.data.placeData[i].unselected +
+            //   "套</p>" +
+            //   "<p>已选" +
+            //   res.data.placeData[i].selected +
+            //   "套</p>" +
+            //   "</div></div>";
+          }
+          left.innerHTML = placeDataHtml;
         }
-        left.innerHTML = placeDataHtml;
 
         var count = document.querySelector(".count");
         count.innerHTML = res.data.todayData.todaySelected;
+
+        if (res.data.todayFamily) {
+          var familyCount = document.querySelector(".familyCount");
+          familyCount.innerHTML = res.data.todayFamily.familyCount;
+          // var js_content = document.querySelector(".js_content");
+          // var js_content_li = "";
+          // for (let li = 0; li < res.data.todayFamily.sedS.length; li++) {
+          //   const item = res.data.todayFamily.sedS[li];
+          //   js_content_li +=
+          //     "<li>" +
+          //     "<strong>" +
+          //     item.count +
+          //     "</strong>" +
+          //     "<span>" +
+          //     item.room_js +
+          //     "</span>" +
+          //     "</li>";
+          // }
+          // js_content.innerHTML = js_content_li;
+        }
+
+        if (
+          res.data.todayFamily.familyInfo &&
+          res.data.todayFamily.familyInfo.length
+        ) {
+          var today_family_list = document.querySelector(".today_family_list");
+          var today_family_html = "";
+          for (let li = 0; li < 5; li++) {
+            today_family_html +=
+              "<li>" + (res.data.todayFamily.familyInfo[li] || "") + "</li>";
+          }
+          today_family_list.innerHTML = today_family_html;
+        }
 
         initChart1(res.data.todayData);
         initChart2(res.data.selectionPlace);
