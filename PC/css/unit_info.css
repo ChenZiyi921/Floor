@@ -26,12 +26,12 @@
   box-sizing: border-box;
   padding: 16px;
 }
+
 .content h3 {
   font-size: 24px;
   font-weight: 500;
   color: #ffffff;
   line-height: 33px;
-  margin-bottom: 20px;
 }
 
 .content .main {
@@ -40,15 +40,16 @@
 }
 
 .scroll {
+  width: calc(100vw - 560px);
+  min-width: 610px;
   border: 3px solid #fff;
 }
 
 .content .main .unitInfo {
   display: table;
-  width: calc(100vw - 560px);
-  min-width: 610px;
   background: #fff;
   overflow-x: auto;
+  white-space: nowrap;
 }
 
 .tbody {
@@ -56,7 +57,7 @@
 }
 
 .content .main .unitInfo .item {
-  padding: 0;
+  padding: 0 10px;
   /* display: flex;
   justify-content: center; */
 }
@@ -72,31 +73,27 @@
 }
 
 .content .main .unitInfo .number {
-  display: table-cell;
-  background: #eeeeee;
-  /* border: 1px solid #e0e8cc; */
+  background: #eee;
+  width: 110px;
+  height: 85px;
+  border: 2px solid #9cacdb;
 }
 
 .content .main .unitInfo .item .level {
+  display: inline-block;
   width: 126px;
   background: #dddddd;
   text-align: center;
   position: relative;
   box-sizing: border-box;
-  border: 1px solid #e0e8cc;
+  border: 2px solid #9cacdb;
   flex-shrink: 0;
-  float: left;
   cursor: pointer;
   padding: 6px 0;
 }
 
 .content .main .unitInfo .item .selected {
   background: #90acff;
-}
-
-.content .main .unitInfo .head {
-  overflow: hidden;
-  border: 1px solid #e0e8cc;
 }
 
 .content .main .unitInfo .head .number {
@@ -109,7 +106,6 @@
   position: relative;
   padding: 4px;
   box-sizing: border-box;
-  border-left: 1px solid #e0e8cc;
   flex: 1;
   /* min-width: 190px; */
 }
@@ -149,13 +145,15 @@
   border-bottom: 1px solid #4a7fc4;
   font-size: 18px;
 }
-.content .main .house_info p span {
-}
+
+.content .main .house_info p span {}
+
 .content .main .house_info p span:nth-of-type(1) {
   width: 140px;
   text-align: right;
   color: #a5cbfb;
 }
+
 .content .main .house_info p span:nth-of-type(2) {
   flex: 1;
   color: #fff;

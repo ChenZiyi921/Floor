@@ -449,7 +449,7 @@ function initChart4(data) {
     yAxis: {
       splitLine: { show: false },
       axisLabel: {
-        show: true,
+        show: false,
         textStyle: {
           color: "#8A9BC9",
           fontSize: 12,
@@ -463,7 +463,7 @@ function initChart4(data) {
     grid: {
       bottom: 40,
       right: 30,
-      left: 60,
+      // left: 60,
     },
     series: [
       {
@@ -545,6 +545,157 @@ function initChart4(data) {
   option && myChart4.setOption(option);
 }
 
+var myChart5;
+function initChart5(data) {
+  var chartDom = document.querySelector(".today_family_list");
+  myChart5 = echarts.init(chartDom);
+  var option;
+
+  let xAxisData = [];
+  let data1 = [];
+  let data2 = [];
+  let data3 = [];
+  for (let i = 0; i < data.length; i++) {
+    xAxisData.push(data[i].name);
+    data1.push(data[i].selected);
+    data2.push(data[i].count - data[i].selected);
+    data3.push(data[i].count);
+  }
+  var emphasisStyle = {
+    itemStyle: {
+      shadowBlur: 10,
+      shadowColor: "rgba(0,0,0,0.3)",
+    },
+  };
+  option = {
+    // legend: {
+    //   data: ["已选", "未选"],
+    //   right: 10,
+    //   top: 12,
+    //   textStyle: {
+    //     color: "#fff",
+    //   },
+    //   selectedMode: false,
+    // },
+    toolbox: {},
+    // tooltip: {},
+    xAxis: {
+      data: xAxisData,
+      axisLabel: {
+        show: true,
+        textStyle: {
+          color: "#8A9BC9",
+          fontSize: 12,
+          padding: 10,
+        },
+      },
+      axisLine: {
+        lineStyle: {
+          color: "#8A9BC9",
+        },
+      },
+    },
+    yAxis: {
+      splitLine: { show: false },
+      axisLabel: {
+        show: false,
+        textStyle: {
+          color: "#8A9BC9",
+          fontSize: 12,
+          padding: 10,
+        },
+        formatter: function (value, index) {
+          return value + "套";
+        },
+      },
+    },
+    grid: {
+      bottom: 40,
+      right: 30,
+      // left: 60,
+      top: 30,
+    },
+    series: [
+      {
+        name: "已选",
+        type: "bar",
+        stack: "one",
+        emphasis: emphasisStyle,
+        data: data1,
+        barMaxWidth: 60,
+        itemStyle: {
+          normal: {
+            label: {
+              // formatter: "{c}" + "%",
+              formatter: "{c}",
+              show: true,
+              position: "inside",
+              textStyle: {
+                fontWeight: "bolder",
+                fontSize: "12",
+                color: "#fff",
+              },
+            },
+            color: "#e7a837",
+            opacity: 1,
+          },
+        },
+      },
+      {
+        name: "未选",
+        type: "bar",
+        stack: "one",
+        emphasis: emphasisStyle,
+        barMaxWidth: 60,
+        data: data2,
+        itemStyle: {
+          normal: {
+            // label: {
+            //     formatter: "共{c}" + "套",
+            //     show: true,
+            //     position: "top",
+            //     textStyle: {
+            //         fontWeight: "bolder",
+            //         fontSize: "12",
+            //         color: "#fff"
+            //     }
+            // },
+            color: "#263e99",
+            opacity: 1,
+          },
+        },
+      },
+      {
+        name: "总数",
+        type: "bar",
+        stack: "one",
+        emphasis: emphasisStyle,
+        data: new Array(data1.length).fill(2),
+        itemStyle: {
+          normal: {
+            label: {
+              formatter: (params) => {
+                return "共" + data3[params.dataIndex] + "户";
+              },
+              show: true,
+              position: "top",
+              textStyle: {
+                fontWeight: "bolder",
+                fontSize: "12",
+                color: "#fff",
+              },
+            },
+            color: "#263e99",
+            opacity: 1,
+          },
+        },
+      },
+    ],
+  };
+
+  option && myChart5.setOption(option);
+}
+
 function bigScreen() {
   $.ajax({
     url: global.base_url + "api/v10/bigScreen",
@@ -576,21 +727,6 @@ function bigScreen() {
               res.data.placeData[i].selected +
               "套</p>" +
               "</div>";
-            // placeDataHtml +=
-            //   '<div class="item">' +
-            //   '<img src="' +
-            //   res.data.placeData[i].image +
-            //   '" alt="">' +
-            //   "<div class='pos'><p>" +
-            //   res.data.placeData[i].place_name +
-            //   "</p>" +
-            //   "<p>剩余" +
-            //   res.data.placeData[i].unselected +
-            //   "套</p>" +
-            //   "<p>已选" +
-            //   res.data.placeData[i].selected +
-            //   "套</p>" +
-            //   "</div></div>";
           }
           left.innerHTML = placeDataHtml;
         }
@@ -618,23 +754,26 @@ function bigScreen() {
           // js_content.innerHTML = js_content_li;
         }
 
-        if (
-          res.data.todayFamily.familyInfo &&
-          res.data.todayFamily.familyInfo.length
-        ) {
-          var today_family_list = document.querySelector(".today_family_list");
-          var today_family_html = "";
-          for (let li = 0; li < 5; li++) {
-            today_family_html +=
-              "<li>" + (res.data.todayFamily.familyInfo[li] || "") + "</li>";
-          }
-          today_family_list.innerHTML = today_family_html;
-        }
+        // if (
+        //   res.data.todayFamily.familyInfo &&
+        //   res.data.todayFamily.familyInfo.length
+        // ) {
+        //   var today_family_list = document.querySelector(".today_family_list");
+        //   if (today_family_list) {
+        //     var today_family_html = "";
+        //     for (let li = 0; li < 5; li++) {
+        //       today_family_html +=
+        //         "<li>" + (res.data.todayFamily.familyInfo[li] || "") + "</li>";
+        //     }
+        //     today_family_list.innerHTML = today_family_html;
+        //   }
+        // }
 
         initChart1(res.data.todayData);
         initChart2(res.data.selectionPlace);
         initChart3(res.data.jsData);
         initChart4(res.data.village);
+        initChart5(res.data.village);
       }
     },
   });
@@ -660,4 +799,5 @@ window.addEventListener("resize", () => {
   myChart2.resize();
   myChart3.resize();
   myChart4.resize();
+  myChart5.resize();
 });

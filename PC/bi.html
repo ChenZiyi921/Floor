@@ -2,20 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/modal.css">
-    <link rel="stylesheet" href="./css/bi.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/bi.css" />
 </head>
 
 <body>
     <div class="container">
         <div class="head">
             <div class="title page_title">昌平区北四村棚户区改造和环境整治项目</div>
-            <div class="query" onclick="toQuery()"><img src="./images/i_1.png" alt=""><span>房源查询</span></div>
-            <div class="today_date" style="border: none;"></div>
+            <div class="query" onclick="toQuery()">
+                <img src="./images/i_1.png" alt="" /><span>房源查询</span>
+            </div>
+            <div class="today_date" style="border: none"></div>
         </div>
         <div class="wrap">
             <div class="left">
@@ -29,7 +31,8 @@
                 <div class="item">
                     <div class="l1">
                         <div class="today_total">
-                            <div class="text">【当日选房<span class="count">5</span><span>套</span>】
+                            <div class="text">
+                                【当日选房<span class="count">5</span><span>套</span>】
                             </div>
                         </div>
                         <div class="chart chart1"></div>
@@ -38,16 +41,14 @@
                         <span class="subscript"></span>
                         <span class="subscript"></span>
                     </div>
-                    <div class="l2" style="    display: flex;
-                    flex-direction: column;">
+                    <div class="l2" style="display: flex; flex-direction: column">
                         <div class="today_family">
                             【当日选房 <span class="familyCount"></span>户】
                         </div>
                         <div class="js_content">
-                            <h6>最新选房数据</h6>
-                            <ul class="today_family_list" style="margin: 8px 0; box-sizing: border-box;">
-
-                            </ul>
+                            <h6>选房户数统计</h6>
+                            <div class="today_family_list" style="height: calc(100% - 36px)"></div>
+                            <!-- <ul class="today_family_list" style="margin: 8px 0; box-sizing: border-box"></ul> -->
                             <!-- <li>
                                 <strong>239743</strong>
                                 <span>二居</span>

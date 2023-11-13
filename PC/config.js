@@ -4,4 +4,6 @@ var global = {
 };
 
 var page_title = document.querySelector(".page_title");
-page_title.innerHTML = global.title;
+if (page_title) {
+  page_title.innerHTML = global.title;
+}

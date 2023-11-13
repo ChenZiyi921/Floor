@@ -15,7 +15,7 @@
         }
 
         tr {
-            border: 1px solid #e0e8cc;
+            /* border: 4px solid #9cacdb; */
         }
 
         th {
@@ -54,6 +54,15 @@
             cursor: pointer;
         }
 
+        .arrows {
+            display: flex;
+            margin-left: 60px;
+        }
+
+        .arrows span {
+            margin: 0 10px;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -64,12 +73,18 @@
             <span style="width: 22px; height: 22px; margin-right: 6px;">
                 <img src="./images/i_back.png" alt="" srcset="">
             </span>
-            <span >返回</span>
+            <span>返回</span>
         </div>
 
         <div class="content">
-
-            <h3 class="title"></h3>
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <h3 class="title"></h3>
+                <div class="arrows" style="align-items: center;">
+                    <span>东</span>
+                    <img src="./images/arrows_horizontal.png" alt="" style="height: 30px; width: 80px;">
+                    <span>西</span>
+                </div>
+            </div>
             <div class="main">
                 <div class="scroll" style="overflow: auto;">
                     <table class="unitInfo">

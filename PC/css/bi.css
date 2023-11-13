@@ -332,6 +332,7 @@
 
 .js_content {
   overflow: hidden;
+  height: calc(100% - 46px);
 }
 
 .js_content li {
