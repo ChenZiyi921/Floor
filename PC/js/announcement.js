@@ -31,6 +31,9 @@ function getAnnouncement() {
           html +=
             "<tr>" +
             '<td class="number">' +
+            (i + 1) +
+            "</td>" +
+            '<td class="number">' +
             res.data[i].name +
             "</td>" +
             '<td class="number">' +
@@ -45,12 +48,12 @@ function getAnnouncement() {
             '<td class="number">' +
             res.data[i].room_number +
             "</td>" +
-              '<td class="number">' +
-              res.data[i].room_area +
-              "</td>" +
-              '<td class="number">' +
-              res.data[i].hu_xing +
-              "</td>" +
+            '<td class="number">' +
+            res.data[i].room_area +
+            "</td>" +
+            '<td class="number">' +
+            res.data[i].hu_xing +
+            "</td>" +
             '<td class="number">' +
             res.data[i].date +
             "</td>" +

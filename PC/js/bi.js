@@ -463,7 +463,8 @@ function initChart4(data) {
     grid: {
       bottom: 40,
       right: 30,
-      // left: 60,
+      right: 20,
+      left: 20,
     },
     series: [
       {
@@ -611,8 +612,8 @@ function initChart5(data) {
     },
     grid: {
       bottom: 40,
-      right: 30,
-      // left: 60,
+      right: 20,
+      left: 20,
       top: 30,
     },
     series: [
