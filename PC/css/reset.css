@@ -21,6 +21,7 @@ li {
 a {
   text-decoration: none;
 }
+
 img {
   max-height: 100%;
   max-width: 100%;
@@ -30,4 +31,12 @@ img {
 ul,
 li {
   list-style: none;
+}
+
+.red {
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
 }

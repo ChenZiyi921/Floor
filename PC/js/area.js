@@ -147,9 +147,11 @@ function area_list_render(room = {}) {
                 "<p>" +
                 res.data[j].room_building +
                 "</p>" +
-                "<p>" +
+                "<p>剩余" +
+                "<span style='color: #cb2020; font-size: 22px'>" +
                 res.data[j].remain_total +
-                "</p>";
+                "</span>" +
+                "套</p>";
               place_items[i].innerHTML = html;
               place_items[i].style.display = "block";
             }

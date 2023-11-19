@@ -51,8 +51,16 @@ function Modal(options) {
     modalTitle.innerText = options.title;
   }
 
+  if (options.titleClass) {
+    modalTitle.className = options.titleClass;
+  }
+
   if (options.description) {
     modalDescription.innerText = options.description;
+  }
+
+  if (options.descriptionClass) {
+    modalDescription.className = options.descriptionClass;
   }
 
   if (options.showButton1) {

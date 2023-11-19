@@ -25,13 +25,13 @@ function getAnnouncement() {
       if (res.status === "success") {
         var today = document.querySelector(".today");
         var tbody = document.querySelector(".tbody");
-        today.innerHTML = res.today + "选房公示";
+        today.innerHTML = res.today;
         var html = "";
         for (var i = 0; i < res.data.length; i++) {
           html +=
             "<tr>" +
             '<td class="number">' +
-            (i + 1) +
+            (res.data[i].serial || "") +
             "</td>" +
             '<td class="number">' +
             res.data[i].name +
