@@ -628,7 +628,7 @@ function initChart5(data) {
           normal: {
             label: {
               // formatter: "{c}" + "%",
-              formatter: "{c}",
+              formatter: "{c}户",
               show: true,
               position: "inside",
               textStyle: {
