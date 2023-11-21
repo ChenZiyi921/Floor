@@ -513,6 +513,10 @@ function getResourceHouseData(val) {
             "<span>" +
             res.custom.name +
             "</span></span>" +
+            '<span class="item"><span>地块：</span>' +
+            "<span>" +
+            res.house.place +
+            "</span></span>" +
             "</p>" +
             "<p>" +
             '<span class="item"><span>楼号：</span><span>' +
