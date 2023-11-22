@@ -267,19 +267,19 @@ function queryPlace() {
   for (var i = 0; i < items.length; i++) {
     items[i].addEventListener("click", function () {
       var isActive = document.querySelectorAll(".active");
-      if (isActive.length) {
-        var params = jsonToParams(
-          Object.assign({}, queryParams, options, {
-            assign_batch_no: assign_batch_no || "",
-            place_name: this.getAttribute("place_name") || "",
-          })
-        );
-        location.href = "./area.html?" + params;
-      } else {
-        closePopup();
-        popupMessage.innerHTML = "请选择居室或者户型";
-        popup.classList.add("show");
-      }
+      // if (isActive.length) {
+      var params = jsonToParams(
+        Object.assign({}, queryParams, options, {
+          assign_batch_no: assign_batch_no || "",
+          place_name: this.getAttribute("place_name") || "",
+        })
+      );
+      location.href = "./area.html?" + params;
+      // } else {
+      //   closePopup();
+      //   popupMessage.innerHTML = "请选择居室或者户型";
+      //   popup.classList.add("show");
+      // }
     });
   }
 }
