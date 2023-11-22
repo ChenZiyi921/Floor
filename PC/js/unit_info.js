@@ -24,7 +24,11 @@ function init() {
   var house_info = document.querySelector(".house_info");
   var unitInfo = document.querySelector(".unitInfo");
 
-  title.innerHTML = place + "地块：" + room_building + " （提示：点击房间查看户型；带锁图标为已选）";
+  title.innerHTML =
+    place +
+    "地块：" +
+    room_building +
+    " （提示：点击房间查看户型；带锁图标为已选）";
   if (family_id) {
     house_info.style.display = "block";
     unitInfo.style.width = "calc(100vw - 370px)";
@@ -39,7 +43,7 @@ function closePopup() {
 }
 
 function queryClick() {
-  var level = document.querySelectorAll(".level");
+  var level = document.querySelectorAll(".level_item");
   for (var i = 0; i < level.length; i++) {
     level[i].addEventListener("click", function () {
       for (let j = 0; j < level.length; j++) {
@@ -135,26 +139,32 @@ function buildingInfo() {
                 room_danyuan: room_info.room_danyuan,
               });
               item +=
-                "<div room=" +
+                "<div style='height: 90px' room=" +
                 roomParams +
                 ' img="' +
-                room_info.img +
+                (room_info.img || "") +
                 '" class="level ' +
-                (room_info.selected_custom_id > 0 ? "selected" : "") +
-                '">' +
-                "<p>" +
-                (room_info.selected_custom_id > 0
-                  ? '<span class="lock"><img src="./images/i_lock.png" alt=""></span>'
+                (room_info.show !== 0 ? "level_item " : "") +
+                "" +
+                (room_info.selected_custom_id > 0 && room_info.show !== 0
+                  ? "selected"
                   : "") +
-                room_info.room_number +
-                "</p>" +
-                "<p>" +
-                room_info.room_js +
-                room_info.room_type +
-                "</p>" +
-                "<p>" +
-                room_info.room_area +
-                "㎡</p>" +
+                '">' +
+                (room_info.show !== 0
+                  ? "<p>" +
+                    (room_info.selected_custom_id > 0
+                      ? '<span class="lock"><img src="./images/i_lock.png" alt=""></span>'
+                      : "") +
+                    room_info.room_number +
+                    "</p>" +
+                    "<p>" +
+                    room_info.room_js +
+                    room_info.room_type +
+                    "</p>" +
+                    "<p>" +
+                    room_info.room_area +
+                    "㎡</p>"
+                  : "<div style='visibility: hidden;'><p>1</p><p>2</p><p>3</p></div>") +
                 "</div>";
             }
             itemHtml += '<td class="item">' + item + "</td>";
