@@ -437,7 +437,7 @@ function selectEnd() {
   var myModal = new Modal({
     title: "重要提示",
     titleClass: "red",
-    description: "完成选房 代表已您将结束所有选房，\n点击确认后结果不可更改。",
+    description: "完成选房 代表已您将结束所有选房，\n点击确认后结果不可更改 !!!",
     descriptionClass: "red bold",
     showButton1: true,
     button1Text: "取消",

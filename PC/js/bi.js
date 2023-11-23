@@ -572,7 +572,7 @@ function initChart5(data) {
     legend: {
       data: ["已选", "未选"],
       right: 10,
-      top: 0,
+      top: 12,
       textStyle: {
         color: "#fff",
       },
@@ -612,9 +612,9 @@ function initChart5(data) {
     },
     grid: {
       bottom: 40,
+      right: 30,
       right: 20,
       left: 20,
-      top: 40,
     },
     series: [
       {

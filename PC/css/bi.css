@@ -347,8 +347,6 @@
   overflow: hidden;
 }
 
-.today_family span,
-.today_family h6,
 .js_content strong,
 .js_content span {
   text-align: center;
@@ -369,18 +367,10 @@
   opacity: .5;
 }
 
-.today_family {
-  font-size: 20px;
-  font-family: PingFangSC-Semibold, PingFang SC;
-  color: #ffffff;
-  padding: 10px 10px 4px 10px;
-  text-align: center;
-}
-
 .today_family span {
   font-size: 20px;
   font-family: DINAlternate-Bold, DINAlternate;
   color: #f86500;
-  margin-right: 6px;
-  margin-left: 10px;
+  margin-right: 4px;
+  margin-left: 4px;
 }

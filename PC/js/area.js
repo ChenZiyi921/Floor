@@ -148,7 +148,7 @@ function area_list_render(room = {}) {
                 res.data[j].room_building +
                 "</p>" +
                 "<p>剩余" +
-                "<span style='color: #cb2020; font-size: 22px'>" +
+                "<span style='color: #fdfdfd; font-weight:700;font-size: 22px'>" +
                 res.data[j].remain_total +
                 "</span>" +
                 "套</p>";
