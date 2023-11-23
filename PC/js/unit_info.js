@@ -74,6 +74,20 @@ function queryClick() {
   }
 }
 
+// 不同地块单元样式不同
+function returnFragment(danyuan, floor) {
+  // 15地块，7号楼
+  if (
+    place === "15" &&
+    room_building === "7号楼" &&
+    danyuan === "一单元" &&
+    floor === "一层"
+  ) {
+    return "<div class='level' style='width: 252px; height: 90px'><p></p><p>社区管理服务用房</p><p style='visibility: hidden;'>3</p></div>";
+  }
+  return "";
+}
+
 // 查询
 function buildingInfo() {
   $.ajax({
@@ -120,6 +134,7 @@ function buildingInfo() {
 
         var tbody = document.querySelector(".tbody");
         var bodyHtml = "";
+        var fragment = "";
         // 循环有多少楼层
         for (var i = 0; i < res.data.length; i++) {
           var itemHtml = "";
@@ -138,6 +153,10 @@ function buildingInfo() {
                 room_type: room_info.room_type,
                 room_danyuan: room_info.room_danyuan,
               });
+              fragment = returnFragment(
+                room_info.room_danyuan,
+                res.data[i].room_floor
+              );
               item +=
                 "<div style='height: 90px' room=" +
                 roomParams +
@@ -167,7 +186,11 @@ function buildingInfo() {
                   : "<div style='visibility: hidden;'><p>1</p><p>2</p><p>3</p></div>") +
                 "</div>";
             }
-            itemHtml += '<td class="item">' + item + "</td>";
+            itemHtml +=
+              '<td class="item"><div style="display: inline-block; float: right;">' +
+              item +
+              fragment +
+              "</div></td>";
           }
           bodyHtml +=
             "<tr>" +
