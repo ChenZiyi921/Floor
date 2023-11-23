@@ -558,7 +558,7 @@ function initChart5(data) {
   let data3 = [];
   for (let i = 0; i < data.length; i++) {
     xAxisData.push(data[i].name);
-    data1.push(data[i].selected);
+    data1.push(Number(((data[i].selected / data[i].count) * 100).toFixed(2)));
     data2.push(data[i].count - data[i].selected);
     data3.push(data[i].count);
   }
@@ -569,15 +569,15 @@ function initChart5(data) {
     },
   };
   option = {
-    // legend: {
-    //   data: ["已选", "未选"],
-    //   right: 10,
-    //   top: 12,
-    //   textStyle: {
-    //     color: "#fff",
-    //   },
-    //   selectedMode: false,
-    // },
+    legend: {
+      data: ["已选", "未选"],
+      right: 10,
+      top: 0,
+      textStyle: {
+        color: "#fff",
+      },
+      selectedMode: false,
+    },
     toolbox: {},
     // tooltip: {},
     xAxis: {
@@ -614,7 +614,7 @@ function initChart5(data) {
       bottom: 40,
       right: 20,
       left: 20,
-      top: 30,
+      top: 40,
     },
     series: [
       {
@@ -627,8 +627,8 @@ function initChart5(data) {
         itemStyle: {
           normal: {
             label: {
-              // formatter: "{c}" + "%",
-              formatter: "{c}户",
+              formatter: "{c}" + "%",
+              // formatter: "{c}户",
               show: true,
               position: "inside",
               textStyle: {
