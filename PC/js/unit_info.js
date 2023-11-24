@@ -277,6 +277,16 @@ function buildingInfo() {
               });
             }
             if (
+              place === "08" &&
+              room_building === "4号楼" &&
+              res.data[i].room_floor === "一层"
+            ) {
+              res.data[i].room_danyua[j].room_info.splice(2, 0, {
+                show: 10,
+                room_number: "南入户",
+              });
+            }
+            if (
               place === "10" &&
               room_building === "3号楼" &&
               res.data[i].room_floor === "一层"
@@ -444,15 +454,6 @@ function buildingInfo() {
                 room_info.room_danyuan === "二单元" &&
                 res.data[i].room_floor === "二层"
               ) {
-              } else if (
-                place === "08" &&
-                room_building === "4号楼" &&
-                res.data[i].room_floor === "一层"
-              ) {
-                fragment4 = returnFragment(
-                  room_info.room_danyuan,
-                  res.data[i].room_floor
-                );
               } else if (
                 place === "10" &&
                 room_building === "2号楼" &&
