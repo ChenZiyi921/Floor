@@ -75,7 +75,7 @@ function queryClick() {
 }
 
 // 不同地块单元样式不同
-function returnFragment(danyuan, floor) {
+function returnFragment(danyuan, floor, sort) {
   // 15地块，7号楼
   if (
     place === "15" &&
@@ -84,6 +84,110 @@ function returnFragment(danyuan, floor) {
     floor === "一层"
   ) {
     return "<div class='level' style='width: 252px; height: 90px'><p></p><p>社区管理服务用房</p><p style='visibility: hidden;'>3</p></div>";
+  }
+  if (place === "08" && room_building === "2号楼") {
+    return (
+      "<tr>" +
+      '<td class="number">三层</td>' +
+      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      "</tr>" +
+      "<tr>" +
+      '<td class="number">二层</td>' +
+      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      "</tr>" +
+      "<tr>" +
+      '<td class="number">一层</td>' +
+      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      "</tr>"
+    );
+  }
+  if (
+    place === "08" &&
+    room_building === "1号楼" &&
+    danyuan === "二单元" &&
+    floor === "二层"
+  ) {
+    return "<div class='level' style='width: 252px; height: 90px'><p></p><p>社区管理服务用房</p><p style='visibility: hidden;'>3</p></div>";
+  }
+  if (place === "08" && room_building === "4号楼" && floor === "一层") {
+    return "<div class='level' style='height: 90px'><p></p><p>南入户</p><p style='visibility: hidden;'>3</p></div>";
+  }
+  if (
+    place === "10" &&
+    room_building === "2号楼" &&
+    danyuan === "一单元" &&
+    floor === "一层"
+  ) {
+    return "<div class='level' style='width: 252px; height: 90px'><p></p><p>社区文化用房</p><p style='visibility: hidden;'>3</p></div>";
+  }
+  if (
+    place === "14" &&
+    room_building === "2号楼" &&
+    danyuan === "二单元" &&
+    floor === "二层"
+  ) {
+    return "<div class='level' style='width: 252px; height: 90px'><p></p><p>社区文化用房</p><p style='visibility: hidden;'>3</p></div>";
+  }
+  if (
+    place === "15" &&
+    room_building === "6号楼" &&
+    danyuan === 2 &&
+    floor === "一层"
+  ) {
+    return "<div class='level' style='width: 252px; height: 90px'><p></p><p>物业用房</p><p style='visibility: hidden;'>3</p></div>";
+  }
+  if (place === "08" && room_building === "1号楼" && danyuan === 0) {
+    if (floor === "一层" && sort === 1) {
+      return "<div class='level' style='width: 252px; height: 90px; display: flex; justify-content: center; align-items: center; float: left;'>商业服务菜市场</div>";
+    }
+    if (floor === "一层" && sort === 2) {
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p>物业服务用房</p><p style='visibility: hidden;'>3</p></div>";
+    }
+    if (floor === "二层") {
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p>社区管理服务用房</p><p style='visibility: hidden;'>3</p></div>";
+    }
+    if (floor === "三层") {
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p>社区卫生服务站</p><p style='visibility: hidden;'>3</p></div>";
+    }
+    if (floor === "四层") {
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p>社区服务中心</p><p style='visibility: hidden;'>3</p></div>";
+    }
+  }
+  if (place === "14" && room_building === "2号楼" && danyuan === 0) {
+    if (floor === "一层") {
+      return "<div class='level' style='width: 378px; height: 90px; display: flex; justify-content: center; align-items: center; float: left;'>商业服务楼</div>";
+    }
+    if (floor === "二层") {
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p>商业服务楼</p><p style='visibility: hidden;'>3</p></div>";
+    }
+    if (floor === "三层") {
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p>商业服务楼</p><p style='visibility: hidden;'>3</p></div>";
+    }
+  }
+  if (place === "14" && room_building === "3号楼" && danyuan === 0) {
+    if (floor === "一层") {
+      return "<div class='level' style='width: 504px; height: 90px; display: flex; justify-content: center; align-items: center; float: left;'>商业服务楼</div>";
+    }
+    if (floor === "二层") {
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p>商业服务楼</p><p style='visibility: hidden;'>3</p></div>";
+    }
+    if (floor === "三层") {
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p>商业服务楼</p><p style='visibility: hidden;'>3</p></div>";
+    }
+  }
+  if (place === "14" && room_building === "4号楼" && danyuan === 0) {
+    if (floor === "一层") {
+      return "<div class='level' style='width: 378px; height: 90px; display: flex; justify-content: center; align-items: center; float: left;'>社区管理服务用房</div>";
+    }
+    if (floor === "二层") {
+      return "<div class='level' style='width: 378px; height: 90px'><p></p><p>社区管理服务用房</p><p style='visibility: hidden;'>3</p></div>";
+    }
+    if (floor === "三层") {
+      return "<div class='level' style='height: 90px'><p></p><p>社区管理服务用房</p><p style='visibility: hidden;'>3</p></div>";
+    }
   }
   return "";
 }
@@ -134,13 +238,179 @@ function buildingInfo() {
 
         var tbody = document.querySelector(".tbody");
         var bodyHtml = "";
-        var fragment = "";
+        var fragment1 = "";
+        var fragment2 = "";
+        var fragment4 = "";
+        var fragment5 = "";
+        var fragment7 = "";
+        var fragment8 = "";
+        var fragment9 = "";
+        var fragment10 = "";
+        var fragment11 = "";
+        var fragment12 = "";
+        var fragment13 = "";
+        var fragment14 = "";
+        var fragment15 = "";
+        var fragment16 = "";
+        var fragment17 = "";
+        var fragment18 = "";
+        var fragment19 = "";
+        var fragment20 = "";
+        var fragment21 = "";
         // 循环有多少楼层
         for (var i = 0; i < res.data.length; i++) {
           var itemHtml = "";
           // 循环有几个单元，供渲染户型使用
           for (var j = 0; j < res.data[i].room_danyua.length; j++) {
             var item = "";
+            if (
+              (place === "08" &&
+                room_building === "5号楼" &&
+                res.data[i].room_floor === "一层") ||
+              (place === "08" &&
+                room_building === "8号楼" &&
+                res.data[i].room_floor === "一层")
+            ) {
+              res.data[i].room_danyua[j].room_info.splice(2, 0, {
+                show: 10,
+                room_number: "南入户",
+              });
+            }
+            if (
+              place === "10" &&
+              room_building === "3号楼" &&
+              res.data[i].room_floor === "一层"
+            ) {
+              if (j === 2) {
+                res.data[i].room_danyua[j].room_info.splice(2, 0, {
+                  show: 10,
+                  room_number: "南入户",
+                });
+              } else {
+                res.data[i].room_danyua[j].room_info.splice(1, 0, {
+                  show: 10,
+                  room_number: "南入户",
+                });
+              }
+            }
+            if (place === "14" && room_building === "7号楼") {
+              if (res.data[i].room_floor === "一层") {
+                if (j === 0) {
+                  res.data[i].room_danyua[j].room_info.splice(0, 0, {
+                    show: 10,
+                    room_number: "服务用房",
+                  });
+                }
+              }
+              if (res.data[i].room_floor === "二层") {
+                if (j === 0) {
+                  res.data[i].room_danyua[j].room_info.splice(0, 0, {
+                    show: 10,
+                    room_number: "社区管理",
+                  });
+                }
+              }
+            }
+            if (place === "14" && room_building === "8号楼") {
+              if (res.data[i].room_floor === "一层") {
+                if (j === 0) {
+                  res.data[i].room_danyua[j].room_info.splice(0, 0, {
+                    show: 10,
+                    room_number: "服务用房",
+                  });
+                }
+              }
+              if (res.data[i].room_floor === "二层") {
+                if (j === 0) {
+                  res.data[i].room_danyua[j].room_info.splice(0, 0, {
+                    show: 10,
+                    room_number: "社区",
+                  });
+                }
+              }
+            }
+            if (place === "15" && room_building === "6号楼") {
+              if (res.data[i].room_floor === "一层") {
+                if (j === 0) {
+                  res.data[i].room_danyua[j].room_info.splice(0, 0, {
+                    show: 10,
+                    room_number: "社区管理用房",
+                  });
+                }
+              }
+              if (res.data[i].room_floor === "一层") {
+                if (j === 0) {
+                  res.data[i].room_danyua[j].room_info.splice(1, 0, {
+                    show: 10,
+                    room_number: "南入户",
+                  });
+                }
+              }
+              if (res.data[i].room_floor === "一层") {
+                if (j === 1) {
+                  res.data[i].room_danyua[j].room_info.splice(1, 0, {
+                    show: 10,
+                    room_number: "南入户",
+                  });
+                }
+              }
+              if (res.data[i].room_floor === "一层") {
+                if (j === 2) {
+                  res.data[i].room_danyua[j].room_info.splice(1, 0, {
+                    show: 10,
+                    room_number: "南入户",
+                  });
+                }
+              }
+            }
+            if (place === "08" && room_building === "1号楼" && j === 0) {
+              if (res.data[i].room_floor === "一层") {
+                fragment11 = returnFragment(j, res.data[i].room_floor, 1);
+                fragment12 = returnFragment(j, res.data[i].room_floor, 2);
+              }
+              if (res.data[i].room_floor === "二层") {
+                fragment8 = returnFragment(j, res.data[i].room_floor);
+              }
+              if (res.data[i].room_floor === "三层") {
+                fragment9 = returnFragment(j, res.data[i].room_floor);
+              }
+              if (res.data[i].room_floor === "四层") {
+                fragment10 = returnFragment(j, res.data[i].room_floor);
+              }
+            }
+            if (place === "14" && room_building === "2号楼" && j === 0) {
+              if (res.data[i].room_floor === "一层") {
+                fragment13 = returnFragment(j, res.data[i].room_floor);
+              }
+              if (res.data[i].room_floor === "二层") {
+                fragment14 = returnFragment(j, res.data[i].room_floor);
+              }
+              if (res.data[i].room_floor === "三层") {
+                fragment15 = returnFragment(j, res.data[i].room_floor);
+              }
+            }
+            if (place === "14" && room_building === "3号楼" && j === 0) {
+              if (res.data[i].room_floor === "一层") {
+                fragment16 = returnFragment(j, res.data[i].room_floor);
+              }
+              if (res.data[i].room_floor === "二层") {
+                fragment17 = returnFragment(j, res.data[i].room_floor);
+              }
+              if (res.data[i].room_floor === "三层") {
+                fragment18 = returnFragment(j, res.data[i].room_floor);
+              }
+            }
+            if (place === "14" && room_building === "4号楼" && j === 0) {
+              if (res.data[i].room_floor === "一层") {
+                fragment19 = returnFragment(j, res.data[i].room_floor);
+              }
+              if (res.data[i].room_floor === "二层") {
+                fragment20 = returnFragment(j, res.data[i].room_floor);
+              }
+              if (res.data[i].room_floor === "三层") {
+                fragment21 = returnFragment(j, res.data[i].room_floor);
+              }
+            }
             for (
               var k = 0;
               k < res.data[i].room_danyua[j].room_info.length;
@@ -153,23 +423,68 @@ function buildingInfo() {
                 room_type: room_info.room_type,
                 room_danyuan: room_info.room_danyuan,
               });
-              fragment = returnFragment(
-                room_info.room_danyuan,
-                res.data[i].room_floor
-              );
+              if (
+                place === "15" &&
+                room_building === "7号楼" &&
+                room_info.room_danyuan === "一单元" &&
+                res.data[i].room_floor === "一层"
+              ) {
+                fragment1 = returnFragment(
+                  room_info.room_danyuan,
+                  res.data[i].room_floor
+                );
+              } else if (place === "08" && room_building === "2号楼") {
+                fragment2 = returnFragment(
+                  room_info.room_danyuan,
+                  res.data[i].room_floor
+                );
+              } else if (
+                place === "08" &&
+                room_building === "1号楼" &&
+                room_info.room_danyuan === "二单元" &&
+                res.data[i].room_floor === "二层"
+              ) {
+              } else if (
+                place === "08" &&
+                room_building === "4号楼" &&
+                res.data[i].room_floor === "一层"
+              ) {
+                fragment4 = returnFragment(
+                  room_info.room_danyuan,
+                  res.data[i].room_floor
+                );
+              } else if (
+                place === "10" &&
+                room_building === "2号楼" &&
+                room_info.room_danyuan === "一单元" &&
+                res.data[i].room_floor === "一层"
+              ) {
+                fragment5 = returnFragment(
+                  room_info.room_danyuan,
+                  res.data[i].room_floor
+                );
+              } else if (
+                place === "15" &&
+                room_building === "6号楼" &&
+                j === 2 &&
+                res.data[i].room_floor === "一层"
+              ) {
+                fragment7 = returnFragment(j, res.data[i].room_floor);
+              }
+
               item +=
                 "<div style='height: 90px' room=" +
                 roomParams +
                 ' img="' +
                 (room_info.img || "") +
                 '" class="level ' +
-                (room_info.show !== 0 ? "level_item " : "") +
+                (room_info.show === 1 ? "level_item " : "") +
                 "" +
                 (room_info.selected_custom_id > 0 && room_info.show !== 0
                   ? "selected"
                   : "") +
                 '">' +
-                (room_info.show !== 0
+                (room_info.show === 1
                   ? "<p>" +
                     (room_info.selected_custom_id > 0
                       ? '<span class="lock"><img src="./images/i_lock.png" alt=""></span>'
@@ -177,19 +492,39 @@ function buildingInfo() {
                     room_info.room_number +
                     "</p>" +
                     "<p>" +
-                    room_info.room_js +
-                    room_info.room_type +
+                    (room_info.room_js || "") +
+                    (room_info.room_type || "") +
                     "</p>" +
                     "<p>" +
-                    room_info.room_area +
-                    "㎡</p>"
-                  : "<div style='visibility: hidden;'><p>1</p><p>2</p><p>3</p></div>") +
+                    (room_info.room_area ? room_info.room_area + "㎡" : "") +
+                    "</p>"
+                  : room_info.show === 0
+                  ? "<div style='visibility: hidden;'><p>1</p><p>2</p><p>3</p></div>"
+                  : room_info.show === 10
+                  ? "<div><p style='visibility: hidden;'>1</p><p>" +
+                    room_info.room_number +
+                    "</p><p style='visibility: hidden;'>3</p></div>"
+                  : "") +
                 "</div>";
             }
+            console.log(fragment13, fragment14, fragment15);
             itemHtml +=
               '<td class="item"><div style="display: inline-block; float: right;">' +
+              (j === 0 && res.data[i].room_floor === "一层"
+                ? fragment11 + fragment12 + fragment13 + fragment16 + fragment19
+                : "") +
+              (j === 0 && res.data[i].room_floor === "二层"
+                ? fragment8 + fragment14 + fragment17 + fragment20
+                : "") +
+              (j === 0 && res.data[i].room_floor === "三层"
+                ? fragment9 + fragment15 + fragment18 + fragment21
+                : "") +
+              (j === 0 && res.data[i].room_floor === "四层" ? fragment10 : "") +
+              fragment4 +
               item +
-              fragment +
+              fragment1 +
+              fragment5 +
+              fragment7 +
               "</div></td>";
           }
           bodyHtml +=
@@ -200,7 +535,7 @@ function buildingInfo() {
             itemHtml +
             "</tr>";
         }
-        tbody.innerHTML = bodyHtml;
+        tbody.innerHTML = bodyHtml + fragment2;
         queryClick();
       } else {
         closePopup();
