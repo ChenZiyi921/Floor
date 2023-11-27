@@ -168,21 +168,21 @@ function returnFragment(danyuan, floor, sort) {
       return "<div class='level' style='width: 504px; height: 90px; display: flex; justify-content: center; align-items: center; float: left;'>商业服务楼</div>";
     }
     if (floor === "二层") {
-      return "<div class='level' style='width: 252px; height: 90px'><p></p><p></p><p style='visibility: hidden;'>3</p></div>";
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p></p><p style='visibility: hidden;'>3</p><p style='position: absolute; left: 0; bottom: -12px; background: #ddd; width: 248px; z-index: 9; height: 30px; box-sizing: border-box;'></p></div>";
     }
     if (floor === "三层") {
-      return "<div class='level' style='width: 252px; height: 90px'><p></p><p></p><p style='visibility: hidden;'>3</p><p style='position: absolute; left: 0; bottom: -12px; background: #ddd; width: 244px; z-index: 9'>商业服务楼</p></div>";
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p></p><p style='visibility: hidden;'>3</p><p style='position: absolute; left: 0; bottom: -12px; background: #ddd; width: 248px; z-index: 9; box-sizing: border-box;'>商业服务楼</p></div>";
     }
   }
   if (place === "14" && room_building === "4号楼" && danyuan === 0) {
     if (floor === "一层") {
-      return "<div class='level' style='width: 378px; height: 90px; display: flex; justify-content: center; align-items: center; float: left;'>社区管理服务用房</div>";
+      return "<div class='level' style='width: 378px; height: 90px; display: flex; justify-content: center; align-items: center; float: left;'></div>";
     }
     if (floor === "二层") {
-      return "<div class='level' style='width: 378px; height: 90px'><p></p><p>社区管理服务用房</p><p style='visibility: hidden;'>3</p></div>";
+      return "<div class='level' style='width: 378px; height: 90px'><p></p><p></p><p style='visibility: hidden;'>3</p><p style='position: absolute; left: 0; bottom: -12px; background: #ddd; width: 374px; z-index: 9; box-sizing: border-box;'>社区管理服务用房</p></div>";
     }
     if (floor === "三层") {
-      return "<div class='level' style='height: 90px'><p></p><p>社区管理服务用房</p><p style='visibility: hidden;'>3</p></div>";
+      return "<div class='level' style='height: 90px'><p></p><p></p><p style='visibility: hidden;'>3</p><p style='position: absolute; left: 0; bottom: -12px; background: #ddd; width: 122px; z-index: 9; height: 30px; box-sizing: border-box;'></p></div>";
     }
   }
   if (place === "14" && room_building === "7号楼" && danyuan === 0) {
