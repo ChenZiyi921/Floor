@@ -89,18 +89,22 @@ function returnFragment(danyuan, floor, sort) {
     return (
       "<tr>" +
       '<td class="number">三层</td>' +
-      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
-      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      '<td class="item" rowspan="3"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;height: 270px; display: flex; justify-content: center; align-items: center;">社区管理服务用房</div></td>' +
+      '<td class="item" rowspan="3"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;height: 270px; display: flex; justify-content: center; align-items: center;">社区管理服务用房</div></td>' +
+      // '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      // '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
       "</tr>" +
       "<tr>" +
       '<td class="number">二层</td>' +
-      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
-      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      // '<td class="item"></td>' +
+      // '<td class="item"></td>' +
       "</tr>" +
       "<tr>" +
       '<td class="number">一层</td>' +
-      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
-      '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      // '<td class="item"></td>' +
+      // '<td class="item"></td>' +
+      // '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
+      // '<td class="item"><div style="width: 500px;float: right;background: #dddddd;line-height: 86px;border: 2px solid #9cacdb;">社区管理服务用房</div></td>' +
       "</tr>"
     );
   }
