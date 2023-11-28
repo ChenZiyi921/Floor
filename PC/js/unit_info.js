@@ -157,7 +157,7 @@ function returnFragment(danyuan, floor, sort) {
       return "<div class='level' style='width: 378px; height: 90px; display: flex; justify-content: center; align-items: center; float: left;'>商业服务楼</div>";
     }
     if (floor === "二层") {
-      return "<div class='level' style='width: 252px; height: 90px'><p></p><p></p><p style='visibility: hidden;'>3</p></div>";
+      return "<div class='level' style='width: 252px; height: 90px'><p></p><p></p><p style='visibility: hidden;'>3</p><p style='position: absolute; left: 0; bottom: -12px; background: #ddd; width: 248px; z-index: 9; box-sizing: border-box; height: 30px;'></p></div>";
     }
     if (floor === "三层") {
       return "<div class='level' style='width: 252px; height: 90px'><p></p><p></p><p style='visibility: hidden;'>3</p><p style='position: absolute; left: 0; bottom: -12px; background: #ddd; width: 244px; z-index: 9'>商业服务楼</p></div>";
