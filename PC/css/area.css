@@ -40,9 +40,9 @@ body {
 
 .back_button {
   position: absolute;
-  left: 50%;
-  top: 160px;
-  transform: translateX(-50%);
+  right: 60px;
+  top: 30px;
+  /* transform: translateX(-50%); */
   display: flex;
   align-items: center;
   justify-content: center;

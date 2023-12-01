@@ -35,13 +35,13 @@
 
 /* 08地块 */
 .place08 .place_item:nth-of-type(1) {
-  top: 706px;
-  left: 1270px;
+  top: 144px;
+  left: 680px;
 }
 
 .place08 .place_item:nth-of-type(2) {
-  top: 550px;
-  left: 1010px;
+  top: 283px;
+  left: 434px;
 }
 
 .place08 .place_item:nth-of-type(3) {
@@ -50,39 +50,40 @@
 }
 
 .place08 .place_item:nth-of-type(4) {
-  top: 283px;
-  left: 434px;
-}
-
-.place08 .place_item:nth-of-type(5) {
-  top: 480px;
-  left: 1660px;
-}
-
-.place08 .place_item:nth-of-type(6) {
-  top: 334px;
-  left: 1300px;
-}
-
-.place08 .place_item:nth-of-type(7) {
   top: 200px;
   left: 970px;
 }
 
+.place08 .place_item:nth-of-type(5) {
+  top: 330px;
+  left: 1296px;
+}
+
+.place08 .place_item:nth-of-type(6) {
+  top: 550px;
+  left: 1010px;
+}
+
+.place08 .place_item:nth-of-type(7) {
+  top: 706px;
+  left: 1258px;
+}
+
 .place08 .place_item:nth-of-type(8) {
-  top: 144px;
-  left: 680px;
+  top: 480px;
+  left: 1660px;
 }
 
 /* 10地块 */
 .place10 .place_item:nth-of-type(1) {
-  top: 736px;
-  left: 1070px;
+  top: 344px;
+  left: 560px;
 }
 
 .place10 .place_item:nth-of-type(2) {
-  top: 512px;
-  left: 1444px;
+  top: 150px;
+  left: 810px;
+
 }
 
 .place10 .place_item:nth-of-type(3) {
@@ -91,13 +92,13 @@
 }
 
 .place10 .place_item:nth-of-type(4) {
-  top: 150px;
-  left: 810px;
+  top: 736px;
+  left: 1070px;
 }
 
 .place10 .place_item:nth-of-type(5) {
-  top: 344px;
-  left: 560px;
+  top: 512px;
+  left: 1444px;
 }
 
 .place10 .place_item:nth-of-type(6) {
@@ -107,18 +108,18 @@
 
 /* 14地块 */
 .place14 .place_item:nth-of-type(1) {
-  top: 746px;
-  left: 880px;
+  top: 444px;
+  left: 480px;
 }
 
 .place14 .place_item:nth-of-type(2) {
-  top: 524px;
-  left: 1260px;
+  top: 224px;
+  left: 800px;
 }
 
 .place14 .place_item:nth-of-type(3) {
-  top: 360px;
-  left: 1650px;
+  top: 110px;
+  left: 990px;
 }
 
 .place14 .place_item:nth-of-type(4) {
@@ -132,39 +133,39 @@
 }
 
 .place14 .place_item:nth-of-type(6) {
-  top: 444px;
-  left: 480px;
+  top: 746px;
+  left: 880px;
 }
 
 .place14 .place_item:nth-of-type(7) {
-  top: 224px;
-  left: 800px;
+  top: 524px;
+  left: 1260px;
 }
 
 .place14 .place_item:nth-of-type(8) {
-  top: 110px;
-  left: 990px;
+  top: 360px;
+  left: 1650px;
 }
 
 /* 15地块 */
 .place15 .place_item:nth-of-type(1) {
-  top: 800px;
-  left: 940px;
+  top: 340px;
+  left: 540px;
 }
 
 .place15 .place_item:nth-of-type(2) {
-  top: 530px;
-  left: 1100px;
+  top: 540px;
+  left: 680px;
 }
 
 .place15 .place_item:nth-of-type(3) {
-  top: 470px;
-  left: 1500px;
+  top: 760px;
+  left: 910px;
 }
 
 .place15 .place_item:nth-of-type(4) {
-  top: 290px;
-  left: 1290px;
+  top: 530px;
+  left: 1100px;
 }
 
 .place15 .place_item:nth-of-type(5) {
@@ -173,16 +174,16 @@
 }
 
 .place15 .place_item:nth-of-type(6) {
-  top: 540px;
-  left: 680px;
+  top: 134px;
+  left: 1100px;
 }
 
 .place15 .place_item:nth-of-type(7) {
-  top: 340px;
-  left: 540px;
+  top: 290px;
+  left: 1290px;
 }
 
 .place15 .place_item:nth-of-type(8) {
-  top: 134px;
-  left: 1100px;
+  top: 470px;
+  left: 1500px;
 }
