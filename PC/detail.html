@@ -335,6 +335,19 @@
     function goBack() {
         location.href = "./index.html?assign_batch_no=" + assign_batch_no;
         //history.back();
+        //停止录像
+
+        $.ajax({
+            type: "post"
+            , url:global.base_url + "pbxapi/v302/hangup"
+            , data: {}
+            , dataType: "json"
+            , success: function (vRes) {
+                console.log(vRes);
+            }
+        });
+
+
     }
 
 

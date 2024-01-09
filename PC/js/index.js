@@ -85,6 +85,20 @@ function customInfo(val) {
             "</span></p>";
           var content = document.querySelector(".content");
           content.style.display = "block";
+
+          //录像
+          if(res.data.village_name){
+            $.ajax({
+              type: "post"
+              , url:global.base_url + "pbxapi/v302/callout"
+              , data: {cid:res.data.family_id,cus_name:res.data.name}
+              , dataType: "json"
+              , success: function (vRes) {
+                  console.log(vRes);
+              }
+            });
+          }
+
         }
       } else {
         closePopup();
