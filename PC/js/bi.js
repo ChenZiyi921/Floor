@@ -18,7 +18,7 @@ function initChart1(data) {
     },
     series: [
       {
-        name: "Access From",
+        name: "选房占比",
         type: "pie",
         radius: ["65%", "80%"],
         avoidLabelOverlap: false,
@@ -63,7 +63,7 @@ function initChart1(data) {
         data: [
           {
             value: data.total_unselected,
-            name: "Search Engine",
+            name: "未选",
             itemStyle: {
               normal: {
                 label: {
@@ -83,7 +83,7 @@ function initChart1(data) {
           },
           {
             value: data.total_selected,
-            name: "Direct",
+            name: "已选",
             itemStyle: {
               normal: {
                 label: {
@@ -142,7 +142,23 @@ function initChart2(data) {
       selectedMode: false,
     },
     toolbox: {},
-    // tooltip: {},
+    tooltip: {
+      formatter: function (params) {
+        return (
+          "<div>" +
+          "<p style='padding-bottom: 10px'>" +
+          params.name +
+          "</p>" +
+          "<p>已选：" +
+          data[params.dataIndex].selected +
+          " 套</p>" +
+          "<p>未选：" +
+          data[params.dataIndex].unselected +
+          " 套</p>" +
+          "</div>"
+        );
+      },
+    },
     xAxis: {
       data: xAxisData,
       axisLabel: {
@@ -290,7 +306,23 @@ function initChart3(data) {
       selectedMode: false,
     },
     toolbox: {},
-    // tooltip: {},
+    tooltip: {
+      formatter: function (params) {
+        return (
+          "<div>" +
+          "<p style='padding-bottom: 10px'>" +
+          params.name +
+          "</p>" +
+          "<p>已选：" +
+          data[params.dataIndex].selected +
+          " 套</p>" +
+          "<p>未选：" +
+          data[params.dataIndex].unselected +
+          " 套</p>" +
+          "</div>"
+        );
+      },
+    },
     xAxis: {
       data: xAxisData,
       axisLabel: {
@@ -429,7 +461,23 @@ function initChart4(data) {
       selectedMode: false,
     },
     toolbox: {},
-    // tooltip: {},
+    tooltip: {
+      formatter: function (params) {
+        return (
+          "<div>" +
+          "<p style='padding-bottom: 10px'>" +
+          params.name +
+          "</p>" +
+          "<p>已选：" +
+          data[params.dataIndex].selected +
+          " 套</p>" +
+          "<p>未选：" +
+          data[params.dataIndex].unselected +
+          " 套</p>" +
+          "</div>"
+        );
+      },
+    },
     xAxis: {
       data: xAxisData,
       axisLabel: {
@@ -579,7 +627,23 @@ function initChart5(data) {
       selectedMode: false,
     },
     toolbox: {},
-    // tooltip: {},
+    tooltip: {
+      formatter: function (params) {
+        return (
+          "<div>" +
+          "<p style='padding-bottom: 10px'>" +
+          params.name +
+          "</p>" +
+          "<p>已选：" +
+          data[params.dataIndex].selected +
+          " 套</p>" +
+          "<p>未选：" +
+          data[params.dataIndex].unselected +
+          " 套</p>" +
+          "</div>"
+        );
+      },
+    },
     xAxis: {
       data: xAxisData,
       axisLabel: {
