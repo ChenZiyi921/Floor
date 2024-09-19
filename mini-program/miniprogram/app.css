@@ -1,0 +1,9 @@
+/**app.wxss**/
+video {
+    width: 100%;
+}
+
+.image {
+    display: block;
+    width: 100%;
+}

@@ -1,0 +1,130 @@
+/* pages/unit_list/unit_list.wxss */
+.container {
+    min-height: 100vh;
+    background: #f9f9f9;
+    box-sizing: border-box;
+    color: #333;
+    padding-bottom: 20rpx;
+}
+
+.tabs {
+    display: flex;
+    border: 2rpx solid #4187f2;
+    border-radius: 6rpx;
+    box-sizing: border-box;
+    margin: 0 30rpx;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-left: 2rpx solid #4187f2;
+    box-sizing: border-box;
+}
+
+.tab:nth-of-type(1) {
+    border: none;
+}
+
+.tab.active {
+    background: #4187f2;
+    color: #fff;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 30rpx;
+}
+
+.head .left {
+    color: #4187f2;
+}
+
+.status_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status_info .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30rpx;
+    line-height: 44rpx;
+}
+
+.status_info .item .image {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 6rpx;
+}
+
+.floor_info {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2rpx solid #c1c1c1;
+    margin: 40rpx 20rpx 0;
+    padding: 40rpx 0;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    background: #fff;
+    box-shadow: 0rpx 0rpx 20rpx 2rpx #e1e1e1;
+}
+
+.house {
+    width: 100rpx;
+    text-align: center;
+    background: #4187f2;
+    color: #fff;
+    border-radius: 100rpx;
+    padding: 0 10rpx;
+    overflow: hidden;
+    box-shadow: 0rpx 0rpx 14rpx 2rpx #c1c1c1;
+}
+
+.house.unselect {
+    background: #fff;
+    color: #333;
+    box-shadow: 0rpx 0rpx 14rpx 2rpx #e1e1e1;
+}
+
+.house.unselect .text {
+    border-bottom: 2rpx solid #ddd;
+}
+
+.house .image {
+    width: 36rpx;
+    height: 36rpx;
+    margin: 16rpx auto 8rpx;
+}
+
+.house .text {
+    padding: 6rpx 0;
+    border-bottom: 2rpx solid #fff;
+    font-size: 40rpx;
+}
+
+.house .status {
+    padding: 16rpx 0 16rpx;
+    font-size: 24rpx;
+}
+
+.room_floor {
+    position: absolute;
+    top: -22rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #8a96b0;
+    color: #fff;
+    padding: 4rpx 16rpx;
+    border-radius: 26rpx;
+}

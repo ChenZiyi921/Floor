@@ -1,0 +1,21 @@
+<!-- index.wxml -->
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" style="height:{{height}}">
+    <block>
+      <swiper-item>
+        <image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" class="swiper-item" mode="widthFix" bindload='goheight'></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" class="swiper-item" mode="widthFix" bindload='goheight'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="item" wx:for="{{data}}" wx:for-item="item">
+    <view class="title">{{item.place}}地块</view>
+    <view class="block">
+      <view class="text" wx:for="{{item.building}}" wx:for-item="building" bindtap="toUnitList" data-place="{{item.place}}" data-building="{{building}}">
+        <text>{{building}}</text>
+      </view>
+    </view>
+  </view>
+</view>

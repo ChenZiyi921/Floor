@@ -1,0 +1,9 @@
+<!-- pages/room_handbook/room_handbook.wxml -->
+<view class="container">
+    <view class="title">信息公示</view>
+    <view class="item">
+        <view class="label">选房手册</view>
+        <view class="date">2023/09/08 23:16:59</view>
+    </view>
+    <image class="image" src="../../img/room_handbook/1.jpg" mode="widthFix" />
+</view>

@@ -1,0 +1,62 @@
+WARN [taro-cli-convertor] generateEntry - D:\work\Floor\mini-program\miniprogram\app.js 入口文件生成异常 
+Error: ENOENT: no such file or directory, open 'D:\work\Floor\mini-program\miniprogram\app.js' 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/index/index 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/index/index 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/index/index.js 
+页面 pages/index/index 没有 JS 文件！ 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/project/project 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/project/project 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/project/project.js 
+页面 pages/project/project 没有 JS 文件！ 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/info/info 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/info/info 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/info/info.js 
+页面 pages/info/info 没有 JS 文件！ 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/room_distribution/room_distribution 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/room_distribution/room_distribution 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/room_distribution/room_distribution.js 
+页面 pages/room_distribution/room_distribution 没有 JS 文件！ 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/room_video/room_video 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/room_video/room_video 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/room_video/room_video.js 
+页面 pages/room_video/room_video 没有 JS 文件！ 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/room_position/room_position 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/room_position/room_position 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/room_position/room_position.js 
+页面 pages/room_position/room_position 没有 JS 文件！ 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/room_type/room_type 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/room_type/room_type 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/room_type/room_type.js 
+页面 pages/room_type/room_type 没有 JS 文件！ 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/room_flow/room_flow 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/room_flow/room_flow 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/room_flow/room_flow.js 
+页面 pages/room_flow/room_flow 没有 JS 文件！ 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/room_handbook/room_handbook 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/room_handbook/room_handbook 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/room_handbook/room_handbook.js 
+页面 pages/room_handbook/room_handbook 没有 JS 文件！ 
+INFO [taro-cli-convertor] traversePages - 开始转换页面 
+pages/unit_list/unit_list 
+ERROR [taro-cli-convertor] traversePages - 页面 pages/unit_list/unit_list 没有 JS 文件 
+WARN [taro-cli-convertor] processStyleAssets - 页面转换异常 
+Path: pages/unit_list/unit_list.js 
+页面 pages/unit_list/unit_list 没有 JS 文件！ 
