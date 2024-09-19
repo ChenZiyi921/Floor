@@ -1,0 +1,56 @@
+/**index.wxss**/
+.container {
+    min-height: 100vh;
+    background: #f9f9f9;
+    box-sizing: border-box;
+    color: #333;
+    padding-bottom: 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background: #4187f2;
+    border-radius: 16px 16px 0px 0px;
+    font-size: 34px;
+    color: #fff;
+}
+
+.item {
+    margin-top: 20px;
+    padding: 0 24px;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    padding: 30px 16px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 0px 0px 16px 16px;
+}
+
+.text {
+    width: calc(100% / 4 - 16px);
+    line-height: 52px;
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 60px;
+    background: #fff;
+    text-align: center;
+    border-width: 4px 4px 10px 4px;
+    border-color: #4187f2;
+    border-style: solid;
+}
+
+.swiper-item {
+    width: 100%;
+    height: 100%;
+}
