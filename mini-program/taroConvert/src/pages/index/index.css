@@ -24,7 +24,7 @@
     padding: 0 24px;
 }
 
-.block {
+.index_container .block {
     display: flex;
     align-items: center;
     justify-content: center;

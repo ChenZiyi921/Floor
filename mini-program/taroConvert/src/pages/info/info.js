@@ -40,9 +40,7 @@ class _C extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pdfurl: `http://h5.klmxf.com/pdfjs/web/viewer.html?file=${encodeURIComponent(
-        "http://h5.klmxf.com/xfxz.pdf"
-      )}`, // 将 pdfurl 放入 state
+      pdfurl: '', // 将 pdfurl 放入 state
     };
   }
 
@@ -106,6 +104,9 @@ class _C extends React.Component {
                 background: "#fff",
                 textAlign: "right",
                 paddingRight: 20,
+                height: 40,
+                lineHeight: '40px',
+                fontSize: 26
               }}
             >
               ×
