@@ -17,9 +17,10 @@
   color: #fff;
 }
 .item {
-  padding: 20px;
+  padding: 20px !important;
   border-bottom: 1px solid #eee;
   background: #fff;
+  margin-top: 0 !important;
 }
 .item:nth-last-of-type(1) {
   border: none;

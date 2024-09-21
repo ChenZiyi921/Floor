@@ -1,6 +1,7 @@
 import { Image, View } from '@tarojs/components'
 import withWeapp, { cacheOptions } from '@tarojs/with-weapp'
 import React from 'react'
+import '../../global.css'
 import './project.css'
 cacheOptions.setOptionsToCache({
   data: {
@@ -12,13 +13,13 @@ cacheOptions.setOptionsToCache({
 class _C extends React.Component {
   render() {
     return (
-      <View className="container">
+      <View className="container project">
         <View className="item">
           <View className="title">项目鸟瞰图</View>
           <View className="block">
             <Image
               className="image"
-              src="https://www.klmxf.com/m/wechat/01.jpg"
+              src="https://qlh.klmxf.com/m/wechat/01.jpg"
               mode="widthFix"
             ></Image>
             {/*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */}
@@ -41,15 +42,15 @@ class _C extends React.Component {
         <View className="item">
           <View className="title">选房大厅地址</View>
           <View className="block">
-            <View className="text">选房场地为：昌平区农学院东路</View>
+            <View className="address_text">选房场地为：昌平区农学院东路</View>
             <Image
               className="image"
-              src="https://www.klmxf.com/m/wechat/02.png"
+              src="https://qlh.klmxf.com/m/wechat/02.png"
               mode="widthFix"
             ></Image>
             <Image
               className="image"
-              src="https://www.klmxf.com/m/wechat/03.jpg"
+              src="https://qlh.klmxf.com/m/wechat/03.jpg"
               mode="widthFix"
             ></Image>
           </View>
@@ -59,12 +60,12 @@ class _C extends React.Component {
           <View className="block">
             <Image
               className="image"
-              src="https://www.klmxf.com/m/wechat/04.jpg"
+              src="https://qlh.klmxf.com/m/wechat/04.jpg"
               mode="widthFix"
             ></Image>
             <Image
               className="image"
-              src="https://www.klmxf.com/m/wechat/05.png"
+              src="https://qlh.klmxf.com/m/wechat/05.png"
               mode="widthFix"
             ></Image>
           </View>

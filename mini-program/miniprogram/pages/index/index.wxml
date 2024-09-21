@@ -3,10 +3,10 @@
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" style="height:{{height}}">
     <block>
       <swiper-item>
-        <image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" class="swiper-item" mode="widthFix" bindload='goheight'></image>
+        <image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" class="swiper-item" mode="widthFix" bindload='goheight'></image>
       </swiper-item>
       <swiper-item>
-        <image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" class="swiper-item" mode="widthFix" bindload='goheight'></image>
+        <image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" class="swiper-item" mode="widthFix" bindload='goheight'></image>
       </swiper-item>
     </block>
   </swiper>

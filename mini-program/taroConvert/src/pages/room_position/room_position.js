@@ -53,7 +53,7 @@ class _C extends React.Component {
         </View>
         <Image
           className="image"
-          src="https://www.klmxf.com/m/wechat/01.jpg"
+          src="https://qlh.klmxf.com/m/wechat/01.jpg"
           mode="widthFix"
         ></Image>
       </View>

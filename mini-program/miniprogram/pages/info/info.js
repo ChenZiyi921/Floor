@@ -7,7 +7,7 @@ Page({
       title: "加载中",
     });
     wx.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
       success: (res) => {
         wx.hideLoading()
           if (res.tempFilePath) {
@@ -58,7 +58,7 @@ Page({
       title: "加载中",
     });
     wx.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
       success: (res) => {
         wx.hideLoading()
           if (res.tempFilePath) {

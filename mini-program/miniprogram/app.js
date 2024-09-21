@@ -1,7 +1,7 @@
 // app.ts
 App({
   globalData: {
-    host: "https://www.klmxf.com",
+    host: "https://qlh.klmxf.com",
   },
   onLaunch() {
     // 展示本地存储能力

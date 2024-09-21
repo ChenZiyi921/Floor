@@ -5,5 +5,5 @@
         <view class="label">项目鸟瞰图</view>
         <view class="date">2023/09/08 23:16:59</view>
     </view>
-    <image class="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix" />
+    <image class="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix" />
 </view>

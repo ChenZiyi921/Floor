@@ -1,91 +1,99 @@
-import { View } from '@tarojs/components'
-import Taro from '@tarojs/taro'
-import withWeapp, { cacheOptions } from '@tarojs/with-weapp'
-import React from 'react'
-import './info.css'
+import { View } from "@tarojs/components";
+import Taro from "@tarojs/taro";
+import withWeapp, { cacheOptions } from "@tarojs/with-weapp";
+
+import React from "react";
+import "./info.css";
+
 cacheOptions.setOptionsToCache({
   data: {
     logs: [],
   },
+  pdfurl: `/pdfjs/web/viewer.html?file=${encodeURIComponent("https://qlh.klmxf.com/m/pdf/xfxz.pdf")}`,
   toRoomDetail() {
+    // this.pdfurl = `/pdfjs/web/viewer.html?file=${encodeURIComponent("https://qlh.klmxf.com/m/pdf/xfxz.pdf")}`;
+    window.open("https://qlh.klmxf.com/m/pdf/xfxz.pdf")
+    return;
     Taro.showLoading({
-      title: '加载中',
-    })
+      title: "加载中",
+    });
     Taro.downloadFile({
-      url: 'https://www.klmxf.com/m/pdf/xfxz.pdf',
+      url: encodeURIComponent("https://qlh.klmxf.com/m/pdf/xfxz.pdf"),
       success: (res) => {
-        Taro.hideLoading()
+        Taro.hideLoading();
         if (res.tempFilePath) {
           Taro.openDocument({
-            filePath: res.tempFilePath,
+            filePath: encodeURIComponent(res.tempFilePath),
             fail: (err) => {
-              console.error(err)
+              console.error(err);
             },
             complete: () => {
-              Taro.hideLoading()
+              Taro.hideLoading();
             },
-          })
+          });
         }
       },
       fail: (err) => {
-        console.error(err)
-        Taro.hideLoading()
+        console.error(err);
+        Taro.hideLoading();
       },
-    })
+    });
   },
   toRoomDistribution() {
     Taro.navigateTo({
-      url: '../room_distribution/room_distribution',
-    })
+      url: "../room_distribution/room_distribution",
+    });
   },
   toRoomVideo() {
     Taro.navigateTo({
-      url: '../room_video/room_video',
-    })
+      url: "../room_video/room_video",
+    });
   },
   toRoomPosition() {
     Taro.navigateTo({
-      url: '../room_position/room_position',
-    })
+      url: "../room_position/room_position",
+    });
   },
   toRoomType() {
     Taro.navigateTo({
-      url: '../room_type/room_type',
-    })
+      url: "../room_type/room_type",
+    });
   },
   toRoomFlow() {
     Taro.navigateTo({
-      url: '../room_flow/room_flow',
-    })
+      url: "../room_flow/room_flow",
+    });
   },
   toRoomHandbook() {
+    window.open("https://qlh.klmxf.com/m/pdf/xfsc.pdf")
+    return
     Taro.showLoading({
-      title: '加载中',
-    })
+      title: "加载中",
+    });
     Taro.downloadFile({
-      url: 'https://www.klmxf.com/m/pdf/xfsc.pdf',
+      url: encodeURIComponent("https://qlh.klmxf.com/m/pdf/xfsc.pdf"),
       success: (res) => {
-        Taro.hideLoading()
+        Taro.hideLoading();
         if (res.tempFilePath) {
           Taro.openDocument({
-            filePath: res.tempFilePath,
+            filePath: encodeURIComponent(res.tempFilePath),
             fail: (err) => {
-              console.error(err)
+              console.error(err);
             },
             complete: () => {
-              Taro.hideLoading()
+              Taro.hideLoading();
             },
-          })
+          });
         }
       },
       fail: (err) => {
-        console.error(err)
-        Taro.hideLoading()
+        console.error(err);
+        Taro.hideLoading();
       },
-    })
+    });
   },
   onLoad() {},
-})
+});
 @withWeapp(cacheOptions.getOptionsFromCache())
 class _C extends React.Component {
   render() {
@@ -120,8 +128,12 @@ class _C extends React.Component {
           <View className="label">选房手册</View>
           <View className="date">2023/09/08 23:16:59</View>
         </View>
+        {/* <iframe
+          src={this.pdfurl}
+          style={{ width: "100vw", height: "100vh" }}
+        ></iframe> */}
       </View>
-    )
+    );
   }
 }
-export default _C
+export default _C;

@@ -1,11 +1,10 @@
-import withWeapp, { cacheOptions } from "@tarojs/with-weapp";
-import { Block } from "@tarojs/components";
-import React from "react";
 import Taro from "@tarojs/taro";
+import withWeapp, { cacheOptions } from "@tarojs/with-weapp";
+import React from "react";
 // app.ts
 cacheOptions.setOptionsToCache({
   globalData: {
-    host: "https://www.klmxf.com"
+    host: "https://qlh.klmxf.com"
   },
   onLaunch() {
     // 展示本地存储能力
@@ -14,12 +13,12 @@ cacheOptions.setOptionsToCache({
     Taro.setStorageSync("logs", logs);
 
     // 登录
-    Taro.login({
-      success: res => {
-        console.log(res.code);
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    });
+    // Taro.login({
+    //   success: res => {
+    //     console.log(res.code);
+    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    //   }
+    // });
   }
 });
 @withWeapp(cacheOptions.getOptionsFromCache(), true)

@@ -1,5 +1,5 @@
 INFO [taroize] parse - 入参 
-option: {"json":"{\"pages\":[\"pages/index/index\",\"pages/project/project\",\"pages/info/info\",\"pages/room_distribution/room_distribution\",\"pages/room_video/room_video\",\"pages/room_position/room_position\",\"pages/room_type/room_type\",\"pages/room_flow/room_flow\",\"pages/room_handbook/room_handbook\",\"pages/unit_list/unit_list\"],\"window\":{\"backgroundTextStyle\":\"light\",\"navigationBarBackgroundColor\":\"#fff\",\"navigationBarTitleText\":\"昌平区“北四村”棚改项目安置房\",\"navigationBarTextStyle\":\"black\"},\"tabBar\":{\"color\":\"#7f8389\",\"selectedColor\":\"#00a8f3\",\"borderStyle\":\"black\",\"backgroundColor\":\"#fff\",\"list\":[{\"pagePath\":\"pages/project/project\",\"text\":\"项目概况\",\"iconPath\":\"img/tabbar/t-1.png\",\"selectedIconPath\":\"img/tabbar/t-1s.png\"},{\"pagePath\":\"pages/index/index\",\"text\":\"主页\",\"iconPath\":\"img/tabbar/t-2.png\",\"selectedIconPath\":\"img/tabbar/t-2s.png\"},{\"pagePath\":\"pages/info/info\",\"text\":\"信息公示\",\"iconPath\":\"img/tabbar/t-3.png\",\"selectedIconPath\":\"img/tabbar/t-3s.png\"}]},\"lazyCodeLoading\":\"requiredComponents\",\"style\":\"v2\",\"sitemapLocation\":\"sitemap.json\"}","script":"// app.ts\r\nApp({\r\n  globalData: {\r\n    host: \"https://www.klmxf.com\",\r\n  },\r\n  onLaunch() {\r\n    // 展示本地存储能力\r\n    const logs = wx.getStorageSync(\"logs\") || [];\r\n    logs.unshift(Date.now());\r\n    wx.setStorageSync(\"logs\", logs);\r\n\r\n    // 登录\r\n    wx.login({\r\n      success: (res) => {\r\n        console.log(res.code);\r\n        // 发送 res.code 到后台换取 openId, sessionKey, unionId\r\n      },\r\n    });\r\n  },\r\n});\r\n","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\app.js","path":"D:\\work\\Floor\\mini-program\\miniprogram","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","framework":"React","isApp":true,"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log"} 
+option: {"json":"{\"pages\":[\"pages/index/index\",\"pages/project/project\",\"pages/info/info\",\"pages/room_distribution/room_distribution\",\"pages/room_video/room_video\",\"pages/room_position/room_position\",\"pages/room_type/room_type\",\"pages/room_flow/room_flow\",\"pages/room_handbook/room_handbook\",\"pages/unit_list/unit_list\"],\"window\":{\"backgroundTextStyle\":\"light\",\"navigationBarBackgroundColor\":\"#fff\",\"navigationBarTitleText\":\"昌平区“北四村”棚改项目安置房\",\"navigationBarTextStyle\":\"black\"},\"tabBar\":{\"color\":\"#7f8389\",\"selectedColor\":\"#00a8f3\",\"borderStyle\":\"black\",\"backgroundColor\":\"#fff\",\"list\":[{\"pagePath\":\"pages/project/project\",\"text\":\"项目概况\",\"iconPath\":\"img/tabbar/t-1.png\",\"selectedIconPath\":\"img/tabbar/t-1s.png\"},{\"pagePath\":\"pages/index/index\",\"text\":\"主页\",\"iconPath\":\"img/tabbar/t-2.png\",\"selectedIconPath\":\"img/tabbar/t-2s.png\"},{\"pagePath\":\"pages/info/info\",\"text\":\"信息公示\",\"iconPath\":\"img/tabbar/t-3.png\",\"selectedIconPath\":\"img/tabbar/t-3s.png\"}]},\"lazyCodeLoading\":\"requiredComponents\",\"style\":\"v2\",\"sitemapLocation\":\"sitemap.json\"}","script":"// app.ts\r\nApp({\r\n  globalData: {\r\n    host: \"https://qlh.klmxf.com\",\r\n  },\r\n  onLaunch() {\r\n    // 展示本地存储能力\r\n    const logs = wx.getStorageSync(\"logs\") || [];\r\n    logs.unshift(Date.now());\r\n    wx.setStorageSync(\"logs\", logs);\r\n\r\n    // 登录\r\n    wx.login({\r\n      success: (res) => {\r\n        console.log(res.code);\r\n        // 发送 res.code 到后台换取 openId, sessionKey, unionId\r\n      },\r\n    });\r\n  },\r\n});\r\n","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\app.js","path":"D:\\work\\Floor\\mini-program\\miniprogram","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","framework":"React","isApp":true,"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log"} 
 INFO [taroize] parseWXML - 入参 
 dirPath: D:\work\Floor\mini-program\miniprogram 
 parseImport: undefined 
@@ -10,7 +10,7 @@ scriptPath: D:\work\Floor\mini-program\miniprogram\app.js
 INFO [taroize] parseScript - 解析CallExpression 
 App({
   globalData: {
-    host: "https://www.klmxf.com"
+    host: "https://qlh.klmxf.com"
   },
   onLaunch() {
     // 展示本地存储能力
@@ -30,7 +30,7 @@ App({
 INFO [taroize] parsePage - 入参 
 pagePath: App({
   globalData: {
-    host: "https://www.klmxf.com"
+    host: "https://qlh.klmxf.com"
   },
   onLaunch() {
     // 展示本地存储能力
@@ -146,7 +146,7 @@ res
 INFO [taroize] parseScript - 解析Identifier 
 code 
 INFO [taroize] parse - 入参 
-option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"// index.ts\r\n// 获取应用实例\r\nconst app = getApp();\r\n\r\nPage({\r\n  data: {\r\n    indicatorDots: true,\r\n    vertical: false,\r\n    autoplay: true,\r\n    interval: 2000,\r\n    duration: 500,\r\n    circular: true,\r\n    height: \"\",\r\n    data: [],\r\n  },\r\n  goheight(e) {\r\n    var width = wx.getSystemInfoSync().windowWidth;\r\n    //获取可使用窗口宽度\r\n    var imgheight = e.detail.height;\r\n    //获取图片实际高度\r\n    var imgwidth = e.detail.width;\r\n    //获取图片实际宽度\r\n    var height = (width * imgheight) / imgwidth + \"px\";\r\n    //计算等比swiper高度\r\n    this.setData({\r\n      height: height,\r\n    });\r\n  },\r\n  changeIndicatorDots() {\r\n    this.setData({\r\n      indicatorDots: !this.data.indicatorDots,\r\n    });\r\n  },\r\n\r\n  changeAutoplay() {\r\n    this.setData({\r\n      autoplay: !this.data.autoplay,\r\n    });\r\n  },\r\n\r\n  intervalChange(e) {\r\n    this.setData({\r\n      interval: e.detail.value,\r\n    });\r\n  },\r\n\r\n  durationChange(e) {\r\n    this.setData({\r\n      duration: e.detail.value,\r\n    });\r\n  },\r\n  toUnitList(e) {\r\n    const { place, building } = e.currentTarget.dataset;\r\n    wx.setStorage({ data: { place, building }, key: \"queryDy\" });\r\n    wx.navigateTo({\r\n      url: `../unit_list/unit_list`,\r\n    });\r\n  },\r\n  onLoad() {\r\n    this.getList();\r\n  },\r\n  getList() {\r\n    wx.request({\r\n      url: app.globalData.host + \"/api/wechat/placeFloor\",\r\n      method: \"GET\",\r\n      header: {\r\n        \"Content-Type\": \"application/json\",\r\n      },\r\n      data: {\r\n        assign_batch_no: 1,\r\n      },\r\n      success: (res) => {\r\n        const { data, status } = res.data;\r\n        if (status === \"success\") {\r\n          this.setData({ data: data });\r\n        }\r\n      },\r\n      fail: function (error) {\r\n        console.error(\"请求出错:\", error);\r\n      },\r\n    });\r\n  },\r\n});\r\n","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\index\\index.js","wxml":"<!-- index.wxml -->\r\n<view class=\"container\">\r\n  <swiper indicator-dots=\"{{indicatorDots}}\" autoplay=\"{{autoplay}}\" circular=\"{{circular}}\" interval=\"{{interval}}\" duration=\"{{duration}}\" style=\"height:{{height}}\">\r\n    <block>\r\n      <swiper-item>\r\n        <image src=\"https://www.klmxf.com/m/wechat/banner/banner1.jpg\" class=\"swiper-item\" mode=\"widthFix\" bindload='goheight'></image>\r\n      </swiper-item>\r\n      <swiper-item>\r\n        <image src=\"https://www.klmxf.com/m/wechat/banner/banner2.jpg\" class=\"swiper-item\" mode=\"widthFix\" bindload='goheight'></image>\r\n      </swiper-item>\r\n    </block>\r\n  </swiper>\r\n  <view class=\"item\" wx:for=\"{{data}}\" wx:for-item=\"item\">\r\n    <view class=\"title\">{{item.place}}地块</view>\r\n    <view class=\"block\">\r\n      <view class=\"text\" wx:for=\"{{item.building}}\" wx:for-item=\"building\" bindtap=\"toUnitList\" data-place=\"{{item.place}}\" data-building=\"{{building}}\">\r\n        <text>{{building}}</text>\r\n      </view>\r\n    </view>\r\n  </view>\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\index","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\index\\index.wxml","framework":"React"} 
+option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"// index.ts\r\n// 获取应用实例\r\nconst app = getApp();\r\n\r\nPage({\r\n  data: {\r\n    indicatorDots: true,\r\n    vertical: false,\r\n    autoplay: true,\r\n    interval: 2000,\r\n    duration: 500,\r\n    circular: true,\r\n    height: \"\",\r\n    data: [],\r\n  },\r\n  goheight(e) {\r\n    var width = wx.getSystemInfoSync().windowWidth;\r\n    //获取可使用窗口宽度\r\n    var imgheight = e.detail.height;\r\n    //获取图片实际高度\r\n    var imgwidth = e.detail.width;\r\n    //获取图片实际宽度\r\n    var height = (width * imgheight) / imgwidth + \"px\";\r\n    //计算等比swiper高度\r\n    this.setData({\r\n      height: height,\r\n    });\r\n  },\r\n  changeIndicatorDots() {\r\n    this.setData({\r\n      indicatorDots: !this.data.indicatorDots,\r\n    });\r\n  },\r\n\r\n  changeAutoplay() {\r\n    this.setData({\r\n      autoplay: !this.data.autoplay,\r\n    });\r\n  },\r\n\r\n  intervalChange(e) {\r\n    this.setData({\r\n      interval: e.detail.value,\r\n    });\r\n  },\r\n\r\n  durationChange(e) {\r\n    this.setData({\r\n      duration: e.detail.value,\r\n    });\r\n  },\r\n  toUnitList(e) {\r\n    const { place, building } = e.currentTarget.dataset;\r\n    wx.setStorage({ data: { place, building }, key: \"queryDy\" });\r\n    wx.navigateTo({\r\n      url: `../unit_list/unit_list`,\r\n    });\r\n  },\r\n  onLoad() {\r\n    this.getList();\r\n  },\r\n  getList() {\r\n    wx.request({\r\n      url: app.globalData.host + \"/api/wechat/placeFloor\",\r\n      method: \"GET\",\r\n      header: {\r\n        \"Content-Type\": \"application/json\",\r\n      },\r\n      data: {\r\n        assign_batch_no: 1,\r\n      },\r\n      success: (res) => {\r\n        const { data, status } = res.data;\r\n        if (status === \"success\") {\r\n          this.setData({ data: data });\r\n        }\r\n      },\r\n      fail: function (error) {\r\n        console.error(\"请求出错:\", error);\r\n      },\r\n    });\r\n  },\r\n});\r\n","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\index\\index.js","wxml":"<!-- index.wxml -->\r\n<view class=\"container\">\r\n  <swiper indicator-dots=\"{{indicatorDots}}\" autoplay=\"{{autoplay}}\" circular=\"{{circular}}\" interval=\"{{interval}}\" duration=\"{{duration}}\" style=\"height:{{height}}\">\r\n    <block>\r\n      <swiper-item>\r\n        <image src=\"https://qlh.klmxf.com/m/wechat/banner/banner1.jpg\" class=\"swiper-item\" mode=\"widthFix\" bindload='goheight'></image>\r\n      </swiper-item>\r\n      <swiper-item>\r\n        <image src=\"https://qlh.klmxf.com/m/wechat/banner/banner2.jpg\" class=\"swiper-item\" mode=\"widthFix\" bindload='goheight'></image>\r\n      </swiper-item>\r\n    </block>\r\n  </swiper>\r\n  <view class=\"item\" wx:for=\"{{data}}\" wx:for-item=\"item\">\r\n    <view class=\"title\">{{item.place}}地块</view>\r\n    <view class=\"block\">\r\n      <view class=\"text\" wx:for=\"{{item.building}}\" wx:for-item=\"building\" bindtap=\"toUnitList\" data-place=\"{{item.place}}\" data-building=\"{{building}}\">\r\n        <text>{{building}}</text>\r\n      </view>\r\n    </view>\r\n  </view>\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\index","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\index\\index.wxml","framework":"React"} 
 INFO [taroize] parseWXML - 入参 
 dirPath: D:\work\Floor\mini-program\miniprogram\pages\index 
 parseImport: undefined 
@@ -194,7 +194,7 @@ INFO [taroize] parseNode - 入参
 tagName: swiper-item 
 INFO [taroize] parseElement - 进入函数 
 INFO [taroize] parseAttribute - 入参 
-attr: {"key":"src","value":"https://www.klmxf.com/m/wechat/banner/banner1.jpg"} 
+attr: {"key":"src","value":"https://qlh.klmxf.com/m/wechat/banner/banner1.jpg"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
 attr: {"key":"class","value":"swiper-item"} 
@@ -212,7 +212,7 @@ INFO [taroize] parseNode - 入参
 tagName: swiper-item 
 INFO [taroize] parseElement - 进入函数 
 INFO [taroize] parseAttribute - 入参 
-attr: {"key":"src","value":"https://www.klmxf.com/m/wechat/banner/banner2.jpg"} 
+attr: {"key":"src","value":"https://qlh.klmxf.com/m/wechat/banner/banner2.jpg"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
 attr: {"key":"class","value":"swiper-item"} 
@@ -287,7 +287,7 @@ dirPath: D:\work\Floor\mini-program\miniprogram\pages\index
 INFO [taroize] createWxmlVistor - 解析JSXElement 
 <Block><View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
       height: `${height}`
-    }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper><View className="item" wx:for={data} wx:for-item="item"><View className="title">{item.place + "地块"}</View><View className="block"><View className="text" wx:for={item.building} wx:for-item="building" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View></View></View></View></Block> 
+    }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper><View className="item" wx:for={data} wx:for-item="item"><View className="title">{item.place + "地块"}</View><View className="block"><View className="text" wx:for={item.building} wx:for-item="building" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View></View></View></View></Block> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Block 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
@@ -331,7 +331,7 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -355,7 +355,7 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -475,7 +475,7 @@ Block
 INFO [taroize] createWxmlVistor - 解析JSXElement 
 <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
     height: `${height}`
-  }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper><Block>{data.map((item, index) => {
+  }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper><Block>{data.map((item, index) => {
       return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block"><Block>{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</Block></View></View>;
@@ -521,7 +521,7 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -545,7 +545,7 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -635,7 +635,7 @@ className
 INFO [taroize] createWxmlVistor - 解析JSXElement 
 <Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
   height: `${height}`
-}}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper> 
+}}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Swiper 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -671,7 +671,7 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -695,7 +695,7 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -761,7 +761,7 @@ height
 INFO [taroize] createWxmlVistor - 解析Identifier 
 height 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block> 
+<Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Block 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
@@ -769,7 +769,7 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -793,7 +793,7 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -817,13 +817,13 @@ Block
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Block 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem> 
+<SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 SwiperItem 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -845,11 +845,11 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 SwiperItem 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image> 
+<Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -869,7 +869,7 @@ Image
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -891,13 +891,13 @@ Image
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 SwiperItem 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem> 
+<SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 SwiperItem 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -919,11 +919,11 @@ SwiperItem
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 SwiperItem 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image> 
+<Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -943,7 +943,7 @@ Image
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" 
+src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -2226,7 +2226,7 @@ error
 INFO [taroize] parseScript - 解析Identifier 
 error 
 INFO [taroize] parse - 入参 
-option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"Page({\r\n  data: {\r\n    logs: [],\r\n  },\r\n  toRoomDetail() {\r\n    wx.showLoading({\r\n      title: \"加载中\",\r\n    });\r\n    wx.downloadFile({\r\n      url: \"https://www.klmxf.com/m/pdf/xfxz.pdf\",\r\n      success: (res) => {\r\n        wx.hideLoading()\r\n          if (res.tempFilePath) {\r\n              wx.openDocument({\r\n                  filePath: res.tempFilePath,\r\n                  fail: (err) => {\r\n                      console.error(err);\r\n                  },\r\n                  complete: () => {\r\n                      wx.hideLoading();\r\n                  }\r\n              })\r\n          }\r\n      },\r\n      fail: (err) => {\r\n          console.error(err);\r\n          wx.hideLoading();\r\n      }\r\n  })\r\n  },\r\n  toRoomDistribution() {\r\n    wx.navigateTo({\r\n      url: '../room_distribution/room_distribution',\r\n    })\r\n  },\r\n  toRoomVideo() {\r\n    wx.navigateTo({\r\n      url: '../room_video/room_video',\r\n    })\r\n  },\r\n  toRoomPosition() {\r\n    wx.navigateTo({\r\n      url: '../room_position/room_position',\r\n    })\r\n  },\r\n  toRoomType() {\r\n    wx.navigateTo({\r\n      url: '../room_type/room_type',\r\n    })\r\n  },\r\n  toRoomFlow() {\r\n    wx.navigateTo({\r\n      url: '../room_flow/room_flow',\r\n    })\r\n  },\r\n  toRoomHandbook() {\r\n    wx.showLoading({\r\n      title: \"加载中\",\r\n    });\r\n    wx.downloadFile({\r\n      url: \"https://www.klmxf.com/m/pdf/xfsc.pdf\",\r\n      success: (res) => {\r\n        wx.hideLoading()\r\n          if (res.tempFilePath) {\r\n              wx.openDocument({\r\n                  filePath: res.tempFilePath,\r\n                  fail: (err) => {\r\n                      console.error(err);\r\n                  },\r\n                  complete: () => {\r\n                      wx.hideLoading();\r\n                  }\r\n              })\r\n          }\r\n      },\r\n      fail: (err) => {\r\n          console.error(err);\r\n          wx.hideLoading();\r\n      }\r\n  })\r\n  },\r\n  onLoad() {},\r\n});\r\n","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\info\\info.js","wxml":"<!-- info.wxml -->\r\n<view class=\"container\">\r\n  <view class=\"title\">信息公示</view>\r\n  <view class=\"item\" bindtap=\"toRoomDetail\">\r\n    <view class=\"label\">选房细则</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomDistribution\">\r\n    <view class=\"label\">居室分布示意图</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomVideo\">\r\n    <view class=\"label\">选房流程动画</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomPosition\">\r\n    <view class=\"label\">项目鸟瞰图</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomType\">\r\n    <view class=\"label\">户型信息</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomFlow\">\r\n    <view class=\"label\">选房流程</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomHandbook\">\r\n    <view class=\"label\">选房手册</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\info","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\info\\info.wxml","framework":"React"} 
+option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"Page({\r\n  data: {\r\n    logs: [],\r\n  },\r\n  toRoomDetail() {\r\n    wx.showLoading({\r\n      title: \"加载中\",\r\n    });\r\n    wx.downloadFile({\r\n      url: \"https://qlh.klmxf.com/m/pdf/xfxz.pdf\",\r\n      success: (res) => {\r\n        wx.hideLoading()\r\n          if (res.tempFilePath) {\r\n              wx.openDocument({\r\n                  filePath: res.tempFilePath,\r\n                  fail: (err) => {\r\n                      console.error(err);\r\n                  },\r\n                  complete: () => {\r\n                      wx.hideLoading();\r\n                  }\r\n              })\r\n          }\r\n      },\r\n      fail: (err) => {\r\n          console.error(err);\r\n          wx.hideLoading();\r\n      }\r\n  })\r\n  },\r\n  toRoomDistribution() {\r\n    wx.navigateTo({\r\n      url: '../room_distribution/room_distribution',\r\n    })\r\n  },\r\n  toRoomVideo() {\r\n    wx.navigateTo({\r\n      url: '../room_video/room_video',\r\n    })\r\n  },\r\n  toRoomPosition() {\r\n    wx.navigateTo({\r\n      url: '../room_position/room_position',\r\n    })\r\n  },\r\n  toRoomType() {\r\n    wx.navigateTo({\r\n      url: '../room_type/room_type',\r\n    })\r\n  },\r\n  toRoomFlow() {\r\n    wx.navigateTo({\r\n      url: '../room_flow/room_flow',\r\n    })\r\n  },\r\n  toRoomHandbook() {\r\n    wx.showLoading({\r\n      title: \"加载中\",\r\n    });\r\n    wx.downloadFile({\r\n      url: \"https://qlh.klmxf.com/m/pdf/xfsc.pdf\",\r\n      success: (res) => {\r\n        wx.hideLoading()\r\n          if (res.tempFilePath) {\r\n              wx.openDocument({\r\n                  filePath: res.tempFilePath,\r\n                  fail: (err) => {\r\n                      console.error(err);\r\n                  },\r\n                  complete: () => {\r\n                      wx.hideLoading();\r\n                  }\r\n              })\r\n          }\r\n      },\r\n      fail: (err) => {\r\n          console.error(err);\r\n          wx.hideLoading();\r\n      }\r\n  })\r\n  },\r\n  onLoad() {},\r\n});\r\n","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\info\\info.js","wxml":"<!-- info.wxml -->\r\n<view class=\"container\">\r\n  <view class=\"title\">信息公示</view>\r\n  <view class=\"item\" bindtap=\"toRoomDetail\">\r\n    <view class=\"label\">选房细则</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomDistribution\">\r\n    <view class=\"label\">居室分布示意图</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomVideo\">\r\n    <view class=\"label\">选房流程动画</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomPosition\">\r\n    <view class=\"label\">项目鸟瞰图</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomType\">\r\n    <view class=\"label\">户型信息</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomFlow\">\r\n    <view class=\"label\">选房流程</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n  <view class=\"item\" bindtap=\"toRoomHandbook\">\r\n    <view class=\"label\">选房手册</view>\r\n    <view class=\"date\">2023/09/08 23:16:59</view>\r\n  </view>\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\info","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\info\\info.wxml","framework":"React"} 
 INFO [taroize] parseWXML - 入参 
 dirPath: D:\work\Floor\mini-program\miniprogram\pages\info 
 parseImport: undefined 
@@ -3493,7 +3493,7 @@ Page({
       title: "加载中"
     });
     wx.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
       success: res => {
         wx.hideLoading();
         if (res.tempFilePath) {
@@ -3544,7 +3544,7 @@ Page({
       title: "加载中"
     });
     wx.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
       success: res => {
         wx.hideLoading();
         if (res.tempFilePath) {
@@ -3577,7 +3577,7 @@ pagePath: Page({
       title: "加载中"
     });
     wx.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
       success: res => {
         wx.hideLoading();
         if (res.tempFilePath) {
@@ -3628,7 +3628,7 @@ pagePath: Page({
       title: "加载中"
     });
     wx.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
       success: res => {
         wx.hideLoading();
         if (res.tempFilePath) {
@@ -3657,7 +3657,7 @@ wx.showLoading({
 }) 
 INFO [taroize] parsePage - 解析CallExpression 
 wx.downloadFile({
-  url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+  url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
   success: res => {
     wx.hideLoading();
     if (res.tempFilePath) {
@@ -3728,7 +3728,7 @@ wx.showLoading({
 }) 
 INFO [taroize] parsePage - 解析CallExpression 
 wx.downloadFile({
-  url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+  url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
   success: res => {
     wx.hideLoading();
     if (res.tempFilePath) {
@@ -3782,7 +3782,7 @@ INFO [taroize] parseScript - 解析BlockStatement
     title: "加载中"
   });
   Taro.downloadFile({
-    url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+    url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
     success: res => {
       Taro.hideLoading();
       if (res.tempFilePath) {
@@ -3815,7 +3815,7 @@ INFO [taroize] parseScript - 解析Identifier
 title 
 INFO [taroize] parseScript - 解析CallExpression 
 Taro.downloadFile({
-  url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+  url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
   success: res => {
     Taro.hideLoading();
     if (res.tempFilePath) {
@@ -4051,7 +4051,7 @@ INFO [taroize] parseScript - 解析BlockStatement
     title: "加载中"
   });
   Taro.downloadFile({
-    url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+    url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
     success: res => {
       Taro.hideLoading();
       if (res.tempFilePath) {
@@ -4084,7 +4084,7 @@ INFO [taroize] parseScript - 解析Identifier
 title 
 INFO [taroize] parseScript - 解析CallExpression 
 Taro.downloadFile({
-  url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+  url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
   success: res => {
     Taro.hideLoading();
     if (res.tempFilePath) {
@@ -4227,7 +4227,7 @@ onLoad
 INFO [taroize] parseScript - 解析BlockStatement 
 {} 
 INFO [taroize] parse - 入参 
-option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"Page({\r\n  data: {\r\n    logs: [],\r\n  },\r\n  onLoad() {\r\n    \r\n  },\r\n})\r\n","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\project\\project.js","wxml":"<!-- project.wxml -->\r\n<view class=\"container\">\r\n  <view class=\"item\">\r\n    <view class=\"title\">项目鸟瞰图</view>\r\n    <view class=\"block\">\r\n      <image class=\"image\" src=\"https://www.klmxf.com/m/wechat/01.jpg\" mode=\"widthFix\" />\r\n      <!-- <image class=\"image\" src=\"../../img/2.jpg\" mode=\"widthFix\" /> -->\r\n    </view>\r\n  </view>\r\n  <view class=\"item\">\r\n    <view class=\"title\">选房周期</view>\r\n    <view class=\"block\" style=\"padding: 30rpx 16rpx\">\r\n      <view class=\"h5\">第一轮时间：待定</view>\r\n      <view class=\"h5\">第二轮时间：待定</view>\r\n      <view class=\"h5\">第二轮时间：待定</view>\r\n      <view class=\"h6\">具体选房时间以《选房通知单》注明时间为准</view>\r\n    </view>\r\n  </view>\r\n  <view class=\"item\">\r\n    <view class=\"title\">选房大厅地址</view>\r\n    <view class=\"block\">\r\n      <view class=\"text\">选房场地为：昌平区农学院东路</view>\r\n      <image class=\"image\" src=\"https://www.klmxf.com/m/wechat/02.png\" mode=\"widthFix\" />\r\n      <image class=\"image\" src=\"https://www.klmxf.com/m/wechat/03.jpg\" mode=\"widthFix\" />\r\n    </view>\r\n  </view>\r\n  <view class=\"item\">\r\n    <view class=\"title\">选房大厅动向安排</view>\r\n    <view class=\"block\">\r\n      <image class=\"image\" src=\"https://www.klmxf.com/m/wechat/04.jpg\" mode=\"widthFix\" />\r\n      <image class=\"image\" src=\"https://www.klmxf.com/m/wechat/05.png\" mode=\"widthFix\" />\r\n    </view>\r\n  </view>\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\project","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\project\\project.wxml","framework":"React"} 
+option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"Page({\r\n  data: {\r\n    logs: [],\r\n  },\r\n  onLoad() {\r\n    \r\n  },\r\n})\r\n","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\project\\project.js","wxml":"<!-- project.wxml -->\r\n<view class=\"container\">\r\n  <view class=\"item\">\r\n    <view class=\"title\">项目鸟瞰图</view>\r\n    <view class=\"block\">\r\n      <image class=\"image\" src=\"https://qlh.klmxf.com/m/wechat/01.jpg\" mode=\"widthFix\" />\r\n      <!-- <image class=\"image\" src=\"../../img/2.jpg\" mode=\"widthFix\" /> -->\r\n    </view>\r\n  </view>\r\n  <view class=\"item\">\r\n    <view class=\"title\">选房周期</view>\r\n    <view class=\"block\" style=\"padding: 30rpx 16rpx\">\r\n      <view class=\"h5\">第一轮时间：待定</view>\r\n      <view class=\"h5\">第二轮时间：待定</view>\r\n      <view class=\"h5\">第二轮时间：待定</view>\r\n      <view class=\"h6\">具体选房时间以《选房通知单》注明时间为准</view>\r\n    </view>\r\n  </view>\r\n  <view class=\"item\">\r\n    <view class=\"title\">选房大厅地址</view>\r\n    <view class=\"block\">\r\n      <view class=\"text\">选房场地为：昌平区农学院东路</view>\r\n      <image class=\"image\" src=\"https://qlh.klmxf.com/m/wechat/02.png\" mode=\"widthFix\" />\r\n      <image class=\"image\" src=\"https://qlh.klmxf.com/m/wechat/03.jpg\" mode=\"widthFix\" />\r\n    </view>\r\n  </view>\r\n  <view class=\"item\">\r\n    <view class=\"title\">选房大厅动向安排</view>\r\n    <view class=\"block\">\r\n      <image class=\"image\" src=\"https://qlh.klmxf.com/m/wechat/04.jpg\" mode=\"widthFix\" />\r\n      <image class=\"image\" src=\"https://qlh.klmxf.com/m/wechat/05.png\" mode=\"widthFix\" />\r\n    </view>\r\n  </view>\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\project","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\project\\project.wxml","framework":"React"} 
 INFO [taroize] parseWXML - 入参 
 dirPath: D:\work\Floor\mini-program\miniprogram\pages\project 
 parseImport: undefined 
@@ -4269,7 +4269,7 @@ INFO [taroize] parseAttribute - 入参
 attr: {"key":"class","value":"image"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
-attr: {"key":"src","value":"https://www.klmxf.com/m/wechat/01.jpg"} 
+attr: {"key":"src","value":"https://qlh.klmxf.com/m/wechat/01.jpg"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
 attr: {"key":"mode","value":"widthFix"} 
@@ -4384,7 +4384,7 @@ INFO [taroize] parseAttribute - 入参
 attr: {"key":"class","value":"image"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
-attr: {"key":"src","value":"https://www.klmxf.com/m/wechat/02.png"} 
+attr: {"key":"src","value":"https://qlh.klmxf.com/m/wechat/02.png"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
 attr: {"key":"mode","value":"widthFix"} 
@@ -4396,7 +4396,7 @@ INFO [taroize] parseAttribute - 入参
 attr: {"key":"class","value":"image"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
-attr: {"key":"src","value":"https://www.klmxf.com/m/wechat/03.jpg"} 
+attr: {"key":"src","value":"https://qlh.klmxf.com/m/wechat/03.jpg"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
 attr: {"key":"mode","value":"widthFix"} 
@@ -4430,7 +4430,7 @@ INFO [taroize] parseAttribute - 入参
 attr: {"key":"class","value":"image"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
-attr: {"key":"src","value":"https://www.klmxf.com/m/wechat/04.jpg"} 
+attr: {"key":"src","value":"https://qlh.klmxf.com/m/wechat/04.jpg"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
 attr: {"key":"mode","value":"widthFix"} 
@@ -4442,7 +4442,7 @@ INFO [taroize] parseAttribute - 入参
 attr: {"key":"class","value":"image"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
-attr: {"key":"src","value":"https://www.klmxf.com/m/wechat/05.png"} 
+attr: {"key":"src","value":"https://qlh.klmxf.com/m/wechat/05.png"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
 attr: {"key":"mode","value":"widthFix"} 
@@ -4453,11 +4453,11 @@ INFO [taroize] templateBfs - 进入函数
 INFO [taroize] createWxmlVistor - 入参 
 dirPath: D:\work\Floor\mini-program\miniprogram\pages\project 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Block><View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
+<Block><View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
           /*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */
         }</View></View><View className="item"><View className="title">选房周期</View><View className="block" style={{
         padding: "0.75rem 0.4rem"
-      }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View></Block> 
+      }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View></Block> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Block 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
@@ -4493,7 +4493,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4603,7 +4603,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/02.png" 
+src="https://qlh.klmxf.com/m/wechat/02.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4619,7 +4619,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/03.jpg" 
+src="https://qlh.klmxf.com/m/wechat/03.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4659,7 +4659,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/04.jpg" 
+src="https://qlh.klmxf.com/m/wechat/04.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4675,7 +4675,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/05.png" 
+src="https://qlh.klmxf.com/m/wechat/05.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4695,11 +4695,11 @@ Block
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Block 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
+<View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
         /*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */
       }</View></View><View className="item"><View className="title">选房周期</View><View className="block" style={{
       padding: "0.75rem 0.4rem"
-    }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View> 
+    }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4733,7 +4733,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4843,7 +4843,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/02.png" 
+src="https://qlh.klmxf.com/m/wechat/02.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4859,7 +4859,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/03.jpg" 
+src="https://qlh.klmxf.com/m/wechat/03.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4899,7 +4899,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/04.jpg" 
+src="https://qlh.klmxf.com/m/wechat/04.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4915,7 +4915,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/05.png" 
+src="https://qlh.klmxf.com/m/wechat/05.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -4937,7 +4937,7 @@ className="container"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
+<View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
       /*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */
     }</View></View> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
@@ -4967,7 +4967,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5005,7 +5005,7 @@ className
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
+<View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
     /*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */
   }</View> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
@@ -5021,7 +5021,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5039,7 +5039,7 @@ className="block"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5047,7 +5047,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5063,7 +5063,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5307,7 +5307,7 @@ View
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View> 
+<View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5343,7 +5343,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/02.png" 
+src="https://qlh.klmxf.com/m/wechat/02.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5359,7 +5359,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/03.jpg" 
+src="https://qlh.klmxf.com/m/wechat/03.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5397,7 +5397,7 @@ className
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View> 
+<View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5419,7 +5419,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/02.png" 
+src="https://qlh.klmxf.com/m/wechat/02.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5435,7 +5435,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/03.jpg" 
+src="https://qlh.klmxf.com/m/wechat/03.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5471,7 +5471,7 @@ className
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5479,7 +5479,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/02.png" 
+src="https://qlh.klmxf.com/m/wechat/02.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5495,7 +5495,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/02.png" 
+src="https://qlh.klmxf.com/m/wechat/02.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5505,7 +5505,7 @@ mode
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5513,7 +5513,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/03.jpg" 
+src="https://qlh.klmxf.com/m/wechat/03.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5529,7 +5529,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/03.jpg" 
+src="https://qlh.klmxf.com/m/wechat/03.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5543,7 +5543,7 @@ View
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View> 
+<View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5571,7 +5571,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/04.jpg" 
+src="https://qlh.klmxf.com/m/wechat/04.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5587,7 +5587,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/05.png" 
+src="https://qlh.klmxf.com/m/wechat/05.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5625,7 +5625,7 @@ className
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View> 
+<View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5639,7 +5639,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/04.jpg" 
+src="https://qlh.klmxf.com/m/wechat/04.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5655,7 +5655,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/05.png" 
+src="https://qlh.klmxf.com/m/wechat/05.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5673,7 +5673,7 @@ className="block"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5681,7 +5681,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/04.jpg" 
+src="https://qlh.klmxf.com/m/wechat/04.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5697,7 +5697,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/04.jpg" 
+src="https://qlh.klmxf.com/m/wechat/04.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5707,7 +5707,7 @@ mode
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5715,7 +5715,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/05.png" 
+src="https://qlh.klmxf.com/m/wechat/05.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5731,7 +5731,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/05.png" 
+src="https://qlh.klmxf.com/m/wechat/05.png" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5777,7 +5777,7 @@ onLoad
 INFO [taroize] parseScript - 解析BlockStatement 
 {} 
 INFO [taroize] parse - 入参 
-option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"// pages/room_position/room_position.ts\r\nPage({\r\n\r\n  /**\r\n   * 页面的初始数据\r\n   */\r\n  data: {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面加载\r\n   */\r\n  onLoad() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面初次渲染完成\r\n   */\r\n  onReady() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面显示\r\n   */\r\n  onShow() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面隐藏\r\n   */\r\n  onHide() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面卸载\r\n   */\r\n  onUnload() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 页面相关事件处理函数--监听用户下拉动作\r\n   */\r\n  onPullDownRefresh() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 页面上拉触底事件的处理函数\r\n   */\r\n  onReachBottom() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 用户点击右上角分享\r\n   */\r\n  onShareAppMessage() {\r\n\r\n  }\r\n})","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_position\\room_position.js","wxml":"<!-- pages/room_position/room_position.wxml -->\r\n<view class=\"container\">\r\n    <view class=\"title\">信息公示</view>\r\n    <view class=\"item\">\r\n        <view class=\"label\">项目鸟瞰图</view>\r\n        <view class=\"date\">2023/09/08 23:16:59</view>\r\n    </view>\r\n    <image class=\"image\" src=\"https://www.klmxf.com/m/wechat/01.jpg\" mode=\"widthFix\" />\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_position","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_position\\room_position.wxml","framework":"React"} 
+option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"// pages/room_position/room_position.ts\r\nPage({\r\n\r\n  /**\r\n   * 页面的初始数据\r\n   */\r\n  data: {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面加载\r\n   */\r\n  onLoad() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面初次渲染完成\r\n   */\r\n  onReady() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面显示\r\n   */\r\n  onShow() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面隐藏\r\n   */\r\n  onHide() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面卸载\r\n   */\r\n  onUnload() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 页面相关事件处理函数--监听用户下拉动作\r\n   */\r\n  onPullDownRefresh() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 页面上拉触底事件的处理函数\r\n   */\r\n  onReachBottom() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 用户点击右上角分享\r\n   */\r\n  onShareAppMessage() {\r\n\r\n  }\r\n})","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_position\\room_position.js","wxml":"<!-- pages/room_position/room_position.wxml -->\r\n<view class=\"container\">\r\n    <view class=\"title\">信息公示</view>\r\n    <view class=\"item\">\r\n        <view class=\"label\">项目鸟瞰图</view>\r\n        <view class=\"date\">2023/09/08 23:16:59</view>\r\n    </view>\r\n    <image class=\"image\" src=\"https://qlh.klmxf.com/m/wechat/01.jpg\" mode=\"widthFix\" />\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_position","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_position\\room_position.wxml","framework":"React"} 
 INFO [taroize] parseWXML - 入参 
 dirPath: D:\work\Floor\mini-program\miniprogram\pages\room_position 
 parseImport: undefined 
@@ -5833,7 +5833,7 @@ INFO [taroize] parseAttribute - 入参
 attr: {"key":"class","value":"image"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
-attr: {"key":"src","value":"https://www.klmxf.com/m/wechat/01.jpg"} 
+attr: {"key":"src","value":"https://qlh.klmxf.com/m/wechat/01.jpg"} 
 INFO [taroize] parseContent - 进入函数 
 INFO [taroize] parseAttribute - 入参 
 attr: {"key":"mode","value":"widthFix"} 
@@ -5844,7 +5844,7 @@ INFO [taroize] templateBfs - 进入函数
 INFO [taroize] createWxmlVistor - 入参 
 dirPath: D:\work\Floor\mini-program\miniprogram\pages\room_position 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Block><View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View></Block> 
+<Block><View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View></Block> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Block 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
@@ -5892,7 +5892,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5908,7 +5908,7 @@ Block
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Block 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View> 
+<View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -5954,7 +5954,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -6060,7 +6060,7 @@ View
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 View 
 INFO [taroize] createWxmlVistor - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image> 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 Image 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -6068,7 +6068,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -6084,7 +6084,7 @@ className="image"
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 className 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
-src="https://www.klmxf.com/m/wechat/01.jpg" 
+src="https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taroize] createWxmlVistor - 解析JSXIdentifier 
 src 
 INFO [taroize] createWxmlVistor - 解析JSXAttribute 
@@ -6216,7 +6216,7 @@ onShareAppMessage
 INFO [taroize] parseScript - 解析BlockStatement 
 {} 
 INFO [taroize] parse - 入参 
-option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"// pages/room_type/room_type.ts\r\nPage({\r\n\r\n  /**\r\n   * 页面的初始数据\r\n   */\r\n  data: {\r\n    imgList:[\r\n      'https://www.klmxf.com/m/wechat/js/1.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/2.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/3.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/4.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/5.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/6.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/7.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/8.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/9.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/10.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/11.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/12.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/13.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/14.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/15.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/16.jpg',         \r\n      'https://www.klmxf.com/m/wechat/js/17.jpg',         \r\n      // 'https://www.klmxf.com/m/wechat/js/18.jpg',  \r\n      ],\r\n  },\r\n\r\n  imgPreview:function(event)\r\n  {\r\n    var src = event.currentTarget.dataset.src;\r\n    var imgList = event.currentTarget.dataset.list;\r\n    wx.previewImage({\r\n      current: src, \r\n      urls: imgList\r\n    })\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面加载\r\n   */\r\n  onLoad() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面初次渲染完成\r\n   */\r\n  onReady() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面显示\r\n   */\r\n  onShow() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面隐藏\r\n   */\r\n  onHide() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面卸载\r\n   */\r\n  onUnload() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 页面相关事件处理函数--监听用户下拉动作\r\n   */\r\n  onPullDownRefresh() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 页面上拉触底事件的处理函数\r\n   */\r\n  onReachBottom() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 用户点击右上角分享\r\n   */\r\n  onShareAppMessage() {\r\n\r\n  }\r\n})","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_type\\room_type.js","wxml":"<!-- pages/room_type/room_type.wxml -->\r\n<view class=\"container\">\r\n    <view class=\"title\">信息公示</view>\r\n    <view class=\"item\">\r\n        <view class=\"label\">户型信息</view>\r\n        <view class=\"date\">2023/09/08 23:16:59</view>\r\n    </view>\r\n    <view  wx:for=\"{{imgList}}\">  \r\n    <image class=\"image\" wx:key=\"imgs\" src=\"{{item}}\" data-src=\"{{item}}\" mode='widthFix' data-list=\"{{imgList}}\" bindtap=\"imgPreview\" style=\"margin-top: 24rpx;\" />\r\n    </view>\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_type","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_type\\room_type.wxml","framework":"React"} 
+option: {"json":"{\"navigationBarTitleText\":\"北四村棚改项目\"}","script":"// pages/room_type/room_type.ts\r\nPage({\r\n\r\n  /**\r\n   * 页面的初始数据\r\n   */\r\n  data: {\r\n    imgList:[\r\n      'https://qlh.klmxf.com/m/wechat/js/1.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/2.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/3.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/4.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/5.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/6.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/7.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/8.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/9.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/10.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/11.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/12.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/13.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/14.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/15.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/16.jpg',         \r\n      'https://qlh.klmxf.com/m/wechat/js/17.jpg',         \r\n      // 'https://qlh.klmxf.com/m/wechat/js/18.jpg',  \r\n      ],\r\n  },\r\n\r\n  imgPreview:function(event)\r\n  {\r\n    var src = event.currentTarget.dataset.src;\r\n    var imgList = event.currentTarget.dataset.list;\r\n    wx.previewImage({\r\n      current: src, \r\n      urls: imgList\r\n    })\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面加载\r\n   */\r\n  onLoad() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面初次渲染完成\r\n   */\r\n  onReady() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面显示\r\n   */\r\n  onShow() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面隐藏\r\n   */\r\n  onHide() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 生命周期函数--监听页面卸载\r\n   */\r\n  onUnload() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 页面相关事件处理函数--监听用户下拉动作\r\n   */\r\n  onPullDownRefresh() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 页面上拉触底事件的处理函数\r\n   */\r\n  onReachBottom() {\r\n\r\n  },\r\n\r\n  /**\r\n   * 用户点击右上角分享\r\n   */\r\n  onShareAppMessage() {\r\n\r\n  }\r\n})","scriptPath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_type\\room_type.js","wxml":"<!-- pages/room_type/room_type.wxml -->\r\n<view class=\"container\">\r\n    <view class=\"title\">信息公示</view>\r\n    <view class=\"item\">\r\n        <view class=\"label\">户型信息</view>\r\n        <view class=\"date\">2023/09/08 23:16:59</view>\r\n    </view>\r\n    <view  wx:for=\"{{imgList}}\">  \r\n    <image class=\"image\" wx:key=\"imgs\" src=\"{{item}}\" data-src=\"{{item}}\" mode='widthFix' data-list=\"{{imgList}}\" bindtap=\"imgPreview\" style=\"margin-top: 24rpx;\" />\r\n    </view>\r\n</view>","path":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_type","rootPath":"D:\\work\\Floor\\mini-program\\miniprogram","pluginInfo":{"pluginRoot":"","pluginName":"","pages":{},"pagesMap":{},"publicComponents":{},"entryFilePath":""},"logFilePath":"D:\\work\\Floor\\mini-program\\taroConvert\\.convert\\convert.log","templatePath":"D:\\work\\Floor\\mini-program\\miniprogram\\pages\\room_type\\room_type.wxml","framework":"React"} 
 INFO [taroize] parseWXML - 入参 
 dirPath: D:\work\Floor\mini-program\miniprogram\pages\room_type 
 parseImport: undefined 
@@ -6961,8 +6961,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgList: ['https://www.klmxf.com/m/wechat/js/1.jpg', 'https://www.klmxf.com/m/wechat/js/2.jpg', 'https://www.klmxf.com/m/wechat/js/3.jpg', 'https://www.klmxf.com/m/wechat/js/4.jpg', 'https://www.klmxf.com/m/wechat/js/5.jpg', 'https://www.klmxf.com/m/wechat/js/6.jpg', 'https://www.klmxf.com/m/wechat/js/7.jpg', 'https://www.klmxf.com/m/wechat/js/8.jpg', 'https://www.klmxf.com/m/wechat/js/9.jpg', 'https://www.klmxf.com/m/wechat/js/10.jpg', 'https://www.klmxf.com/m/wechat/js/11.jpg', 'https://www.klmxf.com/m/wechat/js/12.jpg', 'https://www.klmxf.com/m/wechat/js/13.jpg', 'https://www.klmxf.com/m/wechat/js/14.jpg', 'https://www.klmxf.com/m/wechat/js/15.jpg', 'https://www.klmxf.com/m/wechat/js/16.jpg', 'https://www.klmxf.com/m/wechat/js/17.jpg'
-    // 'https://www.klmxf.com/m/wechat/js/18.jpg',  
+    imgList: ['https://qlh.klmxf.com/m/wechat/js/1.jpg', 'https://qlh.klmxf.com/m/wechat/js/2.jpg', 'https://qlh.klmxf.com/m/wechat/js/3.jpg', 'https://qlh.klmxf.com/m/wechat/js/4.jpg', 'https://qlh.klmxf.com/m/wechat/js/5.jpg', 'https://qlh.klmxf.com/m/wechat/js/6.jpg', 'https://qlh.klmxf.com/m/wechat/js/7.jpg', 'https://qlh.klmxf.com/m/wechat/js/8.jpg', 'https://qlh.klmxf.com/m/wechat/js/9.jpg', 'https://qlh.klmxf.com/m/wechat/js/10.jpg', 'https://qlh.klmxf.com/m/wechat/js/11.jpg', 'https://qlh.klmxf.com/m/wechat/js/12.jpg', 'https://qlh.klmxf.com/m/wechat/js/13.jpg', 'https://qlh.klmxf.com/m/wechat/js/14.jpg', 'https://qlh.klmxf.com/m/wechat/js/15.jpg', 'https://qlh.klmxf.com/m/wechat/js/16.jpg', 'https://qlh.klmxf.com/m/wechat/js/17.jpg'
+    // 'https://qlh.klmxf.com/m/wechat/js/18.jpg',  
     ]
   },
   imgPreview: function (event) {
@@ -7012,8 +7012,8 @@ pagePath: Page({
    * 页面的初始数据
    */
   data: {
-    imgList: ['https://www.klmxf.com/m/wechat/js/1.jpg', 'https://www.klmxf.com/m/wechat/js/2.jpg', 'https://www.klmxf.com/m/wechat/js/3.jpg', 'https://www.klmxf.com/m/wechat/js/4.jpg', 'https://www.klmxf.com/m/wechat/js/5.jpg', 'https://www.klmxf.com/m/wechat/js/6.jpg', 'https://www.klmxf.com/m/wechat/js/7.jpg', 'https://www.klmxf.com/m/wechat/js/8.jpg', 'https://www.klmxf.com/m/wechat/js/9.jpg', 'https://www.klmxf.com/m/wechat/js/10.jpg', 'https://www.klmxf.com/m/wechat/js/11.jpg', 'https://www.klmxf.com/m/wechat/js/12.jpg', 'https://www.klmxf.com/m/wechat/js/13.jpg', 'https://www.klmxf.com/m/wechat/js/14.jpg', 'https://www.klmxf.com/m/wechat/js/15.jpg', 'https://www.klmxf.com/m/wechat/js/16.jpg', 'https://www.klmxf.com/m/wechat/js/17.jpg'
-    // 'https://www.klmxf.com/m/wechat/js/18.jpg',  
+    imgList: ['https://qlh.klmxf.com/m/wechat/js/1.jpg', 'https://qlh.klmxf.com/m/wechat/js/2.jpg', 'https://qlh.klmxf.com/m/wechat/js/3.jpg', 'https://qlh.klmxf.com/m/wechat/js/4.jpg', 'https://qlh.klmxf.com/m/wechat/js/5.jpg', 'https://qlh.klmxf.com/m/wechat/js/6.jpg', 'https://qlh.klmxf.com/m/wechat/js/7.jpg', 'https://qlh.klmxf.com/m/wechat/js/8.jpg', 'https://qlh.klmxf.com/m/wechat/js/9.jpg', 'https://qlh.klmxf.com/m/wechat/js/10.jpg', 'https://qlh.klmxf.com/m/wechat/js/11.jpg', 'https://qlh.klmxf.com/m/wechat/js/12.jpg', 'https://qlh.klmxf.com/m/wechat/js/13.jpg', 'https://qlh.klmxf.com/m/wechat/js/14.jpg', 'https://qlh.klmxf.com/m/wechat/js/15.jpg', 'https://qlh.klmxf.com/m/wechat/js/16.jpg', 'https://qlh.klmxf.com/m/wechat/js/17.jpg'
+    // 'https://qlh.klmxf.com/m/wechat/js/18.jpg',  
     ]
   },
   imgPreview: function (event) {
@@ -10786,7 +10786,7 @@ value: @tarojs/with-weapp
 INFO [taro-cli-convertor] parseAst - 解析CallExpression 
 App({
   globalData: {
-    host: "https://www.klmxf.com"
+    host: "https://qlh.klmxf.com"
   },
   onLaunch() {
     // 展示本地存储能力
@@ -10806,7 +10806,7 @@ App({
 INFO [taro-cli-convertor] parseAst - 解析CallExpression 
 cacheOptions.setOptionsToCache({
   globalData: {
-    host: "https://www.klmxf.com"
+    host: "https://qlh.klmxf.com"
   },
   onLaunch() {
     // 展示本地存储能力
@@ -10888,7 +10888,7 @@ INFO [taro-cli-convertor] parseAst - 解析StringLiteral
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "@tarojs/with-weapp" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com" 
+"https://qlh.klmxf.com" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "logs" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
@@ -10904,7 +10904,7 @@ require("@tarojs/with-weapp")
 INFO [taro-cli-convertor] convertToOptional - 解析CallExpression 
 cacheOptions.setOptionsToCache({
   globalData: {
-    host: "https://www.klmxf.com"
+    host: "https://qlh.klmxf.com"
   },
   onLaunch() {
     // 展示本地存储能力
@@ -10923,10 +10923,10 @@ cacheOptions.setOptionsToCache({
 }) 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
 globalData: {
-  host: "https://www.klmxf.com"
+  host: "https://qlh.klmxf.com"
 } 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
-host: "https://www.klmxf.com" 
+host: "https://qlh.klmxf.com" 
 INFO [taro-cli-convertor] convertToOptional - 解析CallExpression 
 Taro.getStorageSync("logs") 
 INFO [taro-cli-convertor] convertToOptional - 解析CallExpression 
@@ -11338,7 +11338,7 @@ class _C extends React.Component {
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11358,7 +11358,7 @@ this.data
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
     height: `${height}`
-  }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
+  }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
     return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
           return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
         })}</View></View>;
@@ -11366,19 +11366,19 @@ INFO [taro-cli-convertor] parseAst - 解析JSXElement
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
   height: `${height}`
-}}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper> 
+}}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block> 
+<Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem> 
+<SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image> 
+<Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image> 
 INFO [taro-cli-convertor] parseAst - 解析MemberExpression 
 this.goheight 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem> 
+<SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image> 
+<Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image> 
 INFO [taro-cli-convertor] parseAst - 解析MemberExpression 
 this.goheight 
 INFO [taro-cli-convertor] parseAst - 解析CallExpression 
@@ -11452,13 +11452,13 @@ INFO [taro-cli-convertor] parseAst - 解析StringLiteral
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "container" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/wechat/banner/banner1.jpg" 
+"https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "swiper-item" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "widthFix" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/wechat/banner/banner2.jpg" 
+"https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "swiper-item" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
@@ -11757,7 +11757,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析ClassBody
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11778,7 +11778,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11799,7 +11799,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11820,7 +11820,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11841,7 +11841,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11862,7 +11862,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11883,7 +11883,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11904,7 +11904,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11925,7 +11925,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11946,7 +11946,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11967,7 +11967,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -11988,7 +11988,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -12009,7 +12009,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -12030,7 +12030,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -12051,7 +12051,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析MemberExpression
     } = this.data;
     return <View className="container"><Swiper indicatorDots={indicatorDots} autoplay={autoplay} circular={circular} interval={interval} duration={duration} style={{
         height: `${height}`
-      }}><Block><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://www.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
+      }}><Block><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner1.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem><SwiperItem><Image src="https://qlh.klmxf.com/m/wechat/banner/banner2.jpg" className="swiper-item" mode="widthFix" onLoad={this.goheight}></Image></SwiperItem></Block></Swiper>{data?.map((item, index) => {
         return <View className="item"><View className="title">{item.place + "地块"}</View><View className="block">{item.building.map((building, index) => {
               return <View className="text" onClick={this.toUnitList} data-place={item.place} data-building={building}><Text>{building}</Text></View>;
             })}</View></View>;
@@ -12175,11 +12175,11 @@ INFO [taro-cli-convertor] parseAst - 解析ClassDeclaration
 @withWeapp(cacheOptions.getOptionsFromCache())
 class _C extends React.Component {
   render() {
-    return <View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
+    return <View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
             /*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */
           }</View></View><View className="item"><View className="title">选房周期</View><View className="block" style={{
           padding: "0.75rem 0.4rem"
-        }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View>;
+        }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View>;
   }
 } 
 INFO [taro-cli-convertor] parseAst - 解析CallExpression 
@@ -12191,23 +12191,23 @@ cacheOptions.getOptionsFromCache
 INFO [taro-cli-convertor] parseAst - 解析MemberExpression 
 React.Component 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
+<View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
         /*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */
       }</View></View><View className="item"><View className="title">选房周期</View><View className="block" style={{
       padding: "0.75rem 0.4rem"
-    }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View> 
+    }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
+<View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
       /*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */
     }</View></View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <View className="title">项目鸟瞰图</View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
+<View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
     /*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */
   }</View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <View className="item"><View className="title">选房周期</View><View className="block" style={{
     padding: "0.75rem 0.4rem"
@@ -12227,27 +12227,27 @@ INFO [taro-cli-convertor] parseAst - 解析JSXElement
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <View className="h6">具体选房时间以《选房通知单》注明时间为准</View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View> 
+<View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <View className="title">选房大厅地址</View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View> 
+<View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <View className="text">选房场地为：昌平区农学院东路</View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View> 
+<View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <View className="title">选房大厅动向安排</View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View> 
+<View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image> 
 INFO [taro-cli-convertor] parseAst - 解析ExportDefaultDeclaration 
 export default _C; 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
@@ -12271,7 +12271,7 @@ INFO [taro-cli-convertor] parseAst - 解析StringLiteral
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "image" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/wechat/01.jpg" 
+"https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "widthFix" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
@@ -12301,13 +12301,13 @@ INFO [taro-cli-convertor] parseAst - 解析StringLiteral
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "image" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/wechat/02.png" 
+"https://qlh.klmxf.com/m/wechat/02.png" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "widthFix" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "image" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/wechat/03.jpg" 
+"https://qlh.klmxf.com/m/wechat/03.jpg" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "widthFix" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
@@ -12319,13 +12319,13 @@ INFO [taro-cli-convertor] parseAst - 解析StringLiteral
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "image" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/wechat/04.jpg" 
+"https://qlh.klmxf.com/m/wechat/04.jpg" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "widthFix" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "image" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/wechat/05.png" 
+"https://qlh.klmxf.com/m/wechat/05.png" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "widthFix" 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
@@ -12356,11 +12356,11 @@ cacheOptions.getOptionsFromCache()
 INFO [taro-cli-convertor] convertToOptional - 解析ClassBody 
 {
   render() {
-    return <View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
+    return <View className="container"><View className="item"><View className="title">项目鸟瞰图</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image>{
             /*  <image class="image" src="../../img/2.jpg" mode="widthFix" />  */
           }</View></View><View className="item"><View className="title">选房周期</View><View className="block" style={{
           padding: "0.75rem 0.4rem"
-        }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://www.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://www.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://www.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View>;
+        }}><View className="h5">第一轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h5">第二轮时间：待定</View><View className="h6">具体选房时间以《选房通知单》注明时间为准</View></View></View><View className="item"><View className="title">选房大厅地址</View><View className="block"><View className="text">选房场地为：昌平区农学院东路</View><Image className="image" src="https://qlh.klmxf.com/m/wechat/02.png" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/03.jpg" mode="widthFix"></Image></View></View><View className="item"><View className="title">选房大厅动向安排</View><View className="block"><Image className="image" src="https://qlh.klmxf.com/m/wechat/04.jpg" mode="widthFix"></Image><Image className="image" src="https://qlh.klmxf.com/m/wechat/05.png" mode="widthFix"></Image></View></View></View>;
   }
 } 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
@@ -12409,7 +12409,7 @@ Page({
       title: "加载中"
     });
     Taro.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
       success: res => {
         Taro.hideLoading();
         if (res.tempFilePath) {
@@ -12460,7 +12460,7 @@ Page({
       title: "加载中"
     });
     Taro.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
       success: res => {
         Taro.hideLoading();
         if (res.tempFilePath) {
@@ -12493,7 +12493,7 @@ cacheOptions.setOptionsToCache({
       title: "加载中"
     });
     Taro.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
       success: res => {
         Taro.hideLoading();
         if (res.tempFilePath) {
@@ -12544,7 +12544,7 @@ cacheOptions.setOptionsToCache({
       title: "加载中"
     });
     Taro.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
       success: res => {
         Taro.hideLoading();
         if (res.tempFilePath) {
@@ -12577,7 +12577,7 @@ INFO [taro-cli-convertor] parseAst - 解析MemberExpression
 Taro.showLoading 
 INFO [taro-cli-convertor] parseAst - 解析CallExpression 
 Taro.downloadFile({
-  url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+  url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
   success: res => {
     Taro.hideLoading();
     if (res.tempFilePath) {
@@ -12673,7 +12673,7 @@ INFO [taro-cli-convertor] parseAst - 解析MemberExpression
 Taro.showLoading 
 INFO [taro-cli-convertor] parseAst - 解析CallExpression 
 Taro.downloadFile({
-  url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+  url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
   success: res => {
     Taro.hideLoading();
     if (res.tempFilePath) {
@@ -12821,7 +12821,7 @@ INFO [taro-cli-convertor] parseAst - 解析StringLiteral
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "加载中" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/pdf/xfxz.pdf" 
+"https://qlh.klmxf.com/m/pdf/xfxz.pdf" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 '../room_distribution/room_distribution' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
@@ -12835,7 +12835,7 @@ INFO [taro-cli-convertor] parseAst - 解析StringLiteral
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "加载中" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/pdf/xfsc.pdf" 
+"https://qlh.klmxf.com/m/pdf/xfsc.pdf" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "container" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
@@ -12900,7 +12900,7 @@ cacheOptions.setOptionsToCache({
       title: "加载中"
     });
     Taro.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
       success: res => {
         Taro.hideLoading();
         if (res.tempFilePath) {
@@ -12951,7 +12951,7 @@ cacheOptions.setOptionsToCache({
       title: "加载中"
     });
     Taro.downloadFile({
-      url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+      url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
       success: res => {
         Taro.hideLoading();
         if (res.tempFilePath) {
@@ -12988,7 +12988,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty
 title: "加载中" 
 INFO [taro-cli-convertor] convertToOptional - 解析CallExpression 
 Taro.downloadFile({
-  url: "https://www.klmxf.com/m/pdf/xfxz.pdf",
+  url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf",
   success: res => {
     Taro.hideLoading();
     if (res.tempFilePath) {
@@ -13009,7 +13009,7 @@ Taro.downloadFile({
   }
 }) 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
-url: "https://www.klmxf.com/m/pdf/xfxz.pdf" 
+url: "https://qlh.klmxf.com/m/pdf/xfxz.pdf" 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
 success: res => {
   Taro.hideLoading();
@@ -13098,7 +13098,7 @@ INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty
 title: "加载中" 
 INFO [taro-cli-convertor] convertToOptional - 解析CallExpression 
 Taro.downloadFile({
-  url: "https://www.klmxf.com/m/pdf/xfsc.pdf",
+  url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf",
   success: res => {
     Taro.hideLoading();
     if (res.tempFilePath) {
@@ -13119,7 +13119,7 @@ Taro.downloadFile({
   }
 }) 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
-url: "https://www.klmxf.com/m/pdf/xfsc.pdf" 
+url: "https://qlh.klmxf.com/m/pdf/xfsc.pdf" 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
 success: res => {
   Taro.hideLoading();
@@ -13804,7 +13804,7 @@ INFO [taro-cli-convertor] parseAst - 解析ClassDeclaration
 @withWeapp(cacheOptions.getOptionsFromCache())
 class _C extends React.Component {
   render() {
-    return <View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View>;
+    return <View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View>;
   }
 } 
 INFO [taro-cli-convertor] parseAst - 解析CallExpression 
@@ -13816,7 +13816,7 @@ cacheOptions.getOptionsFromCache
 INFO [taro-cli-convertor] parseAst - 解析MemberExpression 
 React.Component 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View> 
+<View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <View className="title">信息公示</View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
@@ -13826,7 +13826,7 @@ INFO [taro-cli-convertor] parseAst - 解析JSXElement
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
 <View className="date">2023/09/08 23:16:59</View> 
 INFO [taro-cli-convertor] parseAst - 解析JSXElement 
-<Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image> 
+<Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image> 
 INFO [taro-cli-convertor] parseAst - 解析ExportDefaultDeclaration 
 export default _C; 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
@@ -13852,7 +13852,7 @@ INFO [taro-cli-convertor] parseAst - 解析StringLiteral
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "image" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-"https://www.klmxf.com/m/wechat/01.jpg" 
+"https://qlh.klmxf.com/m/wechat/01.jpg" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "widthFix" 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
@@ -13914,7 +13914,7 @@ cacheOptions.getOptionsFromCache()
 INFO [taro-cli-convertor] convertToOptional - 解析ClassBody 
 {
   render() {
-    return <View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://www.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View>;
+    return <View className="container"><View className="title">信息公示</View><View className="item"><View className="label">项目鸟瞰图</View><View className="date">2023/09/08 23:16:59</View></View><Image className="image" src="https://qlh.klmxf.com/m/wechat/01.jpg" mode="widthFix"></Image></View>;
   }
 } 
 INFO [taro-cli-convertor] parseAst - 解析VariableDeclaration 
@@ -13957,8 +13957,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgList: ['https://www.klmxf.com/m/wechat/js/1.jpg', 'https://www.klmxf.com/m/wechat/js/2.jpg', 'https://www.klmxf.com/m/wechat/js/3.jpg', 'https://www.klmxf.com/m/wechat/js/4.jpg', 'https://www.klmxf.com/m/wechat/js/5.jpg', 'https://www.klmxf.com/m/wechat/js/6.jpg', 'https://www.klmxf.com/m/wechat/js/7.jpg', 'https://www.klmxf.com/m/wechat/js/8.jpg', 'https://www.klmxf.com/m/wechat/js/9.jpg', 'https://www.klmxf.com/m/wechat/js/10.jpg', 'https://www.klmxf.com/m/wechat/js/11.jpg', 'https://www.klmxf.com/m/wechat/js/12.jpg', 'https://www.klmxf.com/m/wechat/js/13.jpg', 'https://www.klmxf.com/m/wechat/js/14.jpg', 'https://www.klmxf.com/m/wechat/js/15.jpg', 'https://www.klmxf.com/m/wechat/js/16.jpg', 'https://www.klmxf.com/m/wechat/js/17.jpg'
-    // 'https://www.klmxf.com/m/wechat/js/18.jpg',  
+    imgList: ['https://qlh.klmxf.com/m/wechat/js/1.jpg', 'https://qlh.klmxf.com/m/wechat/js/2.jpg', 'https://qlh.klmxf.com/m/wechat/js/3.jpg', 'https://qlh.klmxf.com/m/wechat/js/4.jpg', 'https://qlh.klmxf.com/m/wechat/js/5.jpg', 'https://qlh.klmxf.com/m/wechat/js/6.jpg', 'https://qlh.klmxf.com/m/wechat/js/7.jpg', 'https://qlh.klmxf.com/m/wechat/js/8.jpg', 'https://qlh.klmxf.com/m/wechat/js/9.jpg', 'https://qlh.klmxf.com/m/wechat/js/10.jpg', 'https://qlh.klmxf.com/m/wechat/js/11.jpg', 'https://qlh.klmxf.com/m/wechat/js/12.jpg', 'https://qlh.klmxf.com/m/wechat/js/13.jpg', 'https://qlh.klmxf.com/m/wechat/js/14.jpg', 'https://qlh.klmxf.com/m/wechat/js/15.jpg', 'https://qlh.klmxf.com/m/wechat/js/16.jpg', 'https://qlh.klmxf.com/m/wechat/js/17.jpg'
+    // 'https://qlh.klmxf.com/m/wechat/js/18.jpg',  
     ]
   },
   imgPreview: function (event) {
@@ -14008,8 +14008,8 @@ cacheOptions.setOptionsToCache({
    * 页面的初始数据
    */
   data: {
-    imgList: ['https://www.klmxf.com/m/wechat/js/1.jpg', 'https://www.klmxf.com/m/wechat/js/2.jpg', 'https://www.klmxf.com/m/wechat/js/3.jpg', 'https://www.klmxf.com/m/wechat/js/4.jpg', 'https://www.klmxf.com/m/wechat/js/5.jpg', 'https://www.klmxf.com/m/wechat/js/6.jpg', 'https://www.klmxf.com/m/wechat/js/7.jpg', 'https://www.klmxf.com/m/wechat/js/8.jpg', 'https://www.klmxf.com/m/wechat/js/9.jpg', 'https://www.klmxf.com/m/wechat/js/10.jpg', 'https://www.klmxf.com/m/wechat/js/11.jpg', 'https://www.klmxf.com/m/wechat/js/12.jpg', 'https://www.klmxf.com/m/wechat/js/13.jpg', 'https://www.klmxf.com/m/wechat/js/14.jpg', 'https://www.klmxf.com/m/wechat/js/15.jpg', 'https://www.klmxf.com/m/wechat/js/16.jpg', 'https://www.klmxf.com/m/wechat/js/17.jpg'
-    // 'https://www.klmxf.com/m/wechat/js/18.jpg',  
+    imgList: ['https://qlh.klmxf.com/m/wechat/js/1.jpg', 'https://qlh.klmxf.com/m/wechat/js/2.jpg', 'https://qlh.klmxf.com/m/wechat/js/3.jpg', 'https://qlh.klmxf.com/m/wechat/js/4.jpg', 'https://qlh.klmxf.com/m/wechat/js/5.jpg', 'https://qlh.klmxf.com/m/wechat/js/6.jpg', 'https://qlh.klmxf.com/m/wechat/js/7.jpg', 'https://qlh.klmxf.com/m/wechat/js/8.jpg', 'https://qlh.klmxf.com/m/wechat/js/9.jpg', 'https://qlh.klmxf.com/m/wechat/js/10.jpg', 'https://qlh.klmxf.com/m/wechat/js/11.jpg', 'https://qlh.klmxf.com/m/wechat/js/12.jpg', 'https://qlh.klmxf.com/m/wechat/js/13.jpg', 'https://qlh.klmxf.com/m/wechat/js/14.jpg', 'https://qlh.klmxf.com/m/wechat/js/15.jpg', 'https://qlh.klmxf.com/m/wechat/js/16.jpg', 'https://qlh.klmxf.com/m/wechat/js/17.jpg'
+    // 'https://qlh.klmxf.com/m/wechat/js/18.jpg',  
     ]
   },
   imgPreview: function (event) {
@@ -14149,40 +14149,40 @@ INFO [taro-cli-convertor] parseAst - 解析StringLiteral
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "@tarojs/with-weapp" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/1.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/1.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/2.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/2.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/3.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/3.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/4.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/4.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/5.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/5.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/6.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/6.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/7.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/7.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/8.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/8.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/9.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/9.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/10.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/10.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/11.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/11.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/12.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/12.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/13.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/13.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/14.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/14.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/15.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/15.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/16.jpg' 
+'https://qlh.klmxf.com/m/wechat/js/16.jpg' 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
-'https://www.klmxf.com/m/wechat/js/17.jpg'
-// 'https://www.klmxf.com/m/wechat/js/18.jpg', 
+'https://qlh.klmxf.com/m/wechat/js/17.jpg'
+// 'https://qlh.klmxf.com/m/wechat/js/18.jpg', 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
 "container" 
 INFO [taro-cli-convertor] parseAst - 解析StringLiteral 
@@ -14219,8 +14219,8 @@ cacheOptions.setOptionsToCache({
    * 页面的初始数据
    */
   data: {
-    imgList: ['https://www.klmxf.com/m/wechat/js/1.jpg', 'https://www.klmxf.com/m/wechat/js/2.jpg', 'https://www.klmxf.com/m/wechat/js/3.jpg', 'https://www.klmxf.com/m/wechat/js/4.jpg', 'https://www.klmxf.com/m/wechat/js/5.jpg', 'https://www.klmxf.com/m/wechat/js/6.jpg', 'https://www.klmxf.com/m/wechat/js/7.jpg', 'https://www.klmxf.com/m/wechat/js/8.jpg', 'https://www.klmxf.com/m/wechat/js/9.jpg', 'https://www.klmxf.com/m/wechat/js/10.jpg', 'https://www.klmxf.com/m/wechat/js/11.jpg', 'https://www.klmxf.com/m/wechat/js/12.jpg', 'https://www.klmxf.com/m/wechat/js/13.jpg', 'https://www.klmxf.com/m/wechat/js/14.jpg', 'https://www.klmxf.com/m/wechat/js/15.jpg', 'https://www.klmxf.com/m/wechat/js/16.jpg', 'https://www.klmxf.com/m/wechat/js/17.jpg'
-    // 'https://www.klmxf.com/m/wechat/js/18.jpg',  
+    imgList: ['https://qlh.klmxf.com/m/wechat/js/1.jpg', 'https://qlh.klmxf.com/m/wechat/js/2.jpg', 'https://qlh.klmxf.com/m/wechat/js/3.jpg', 'https://qlh.klmxf.com/m/wechat/js/4.jpg', 'https://qlh.klmxf.com/m/wechat/js/5.jpg', 'https://qlh.klmxf.com/m/wechat/js/6.jpg', 'https://qlh.klmxf.com/m/wechat/js/7.jpg', 'https://qlh.klmxf.com/m/wechat/js/8.jpg', 'https://qlh.klmxf.com/m/wechat/js/9.jpg', 'https://qlh.klmxf.com/m/wechat/js/10.jpg', 'https://qlh.klmxf.com/m/wechat/js/11.jpg', 'https://qlh.klmxf.com/m/wechat/js/12.jpg', 'https://qlh.klmxf.com/m/wechat/js/13.jpg', 'https://qlh.klmxf.com/m/wechat/js/14.jpg', 'https://qlh.klmxf.com/m/wechat/js/15.jpg', 'https://qlh.klmxf.com/m/wechat/js/16.jpg', 'https://qlh.klmxf.com/m/wechat/js/17.jpg'
+    // 'https://qlh.klmxf.com/m/wechat/js/18.jpg',  
     ]
   },
   imgPreview: function (event) {
@@ -14269,13 +14269,13 @@ INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty
  * 页面的初始数据
  */
 data: {
-  imgList: ['https://www.klmxf.com/m/wechat/js/1.jpg', 'https://www.klmxf.com/m/wechat/js/2.jpg', 'https://www.klmxf.com/m/wechat/js/3.jpg', 'https://www.klmxf.com/m/wechat/js/4.jpg', 'https://www.klmxf.com/m/wechat/js/5.jpg', 'https://www.klmxf.com/m/wechat/js/6.jpg', 'https://www.klmxf.com/m/wechat/js/7.jpg', 'https://www.klmxf.com/m/wechat/js/8.jpg', 'https://www.klmxf.com/m/wechat/js/9.jpg', 'https://www.klmxf.com/m/wechat/js/10.jpg', 'https://www.klmxf.com/m/wechat/js/11.jpg', 'https://www.klmxf.com/m/wechat/js/12.jpg', 'https://www.klmxf.com/m/wechat/js/13.jpg', 'https://www.klmxf.com/m/wechat/js/14.jpg', 'https://www.klmxf.com/m/wechat/js/15.jpg', 'https://www.klmxf.com/m/wechat/js/16.jpg', 'https://www.klmxf.com/m/wechat/js/17.jpg'
-  // 'https://www.klmxf.com/m/wechat/js/18.jpg',  
+  imgList: ['https://qlh.klmxf.com/m/wechat/js/1.jpg', 'https://qlh.klmxf.com/m/wechat/js/2.jpg', 'https://qlh.klmxf.com/m/wechat/js/3.jpg', 'https://qlh.klmxf.com/m/wechat/js/4.jpg', 'https://qlh.klmxf.com/m/wechat/js/5.jpg', 'https://qlh.klmxf.com/m/wechat/js/6.jpg', 'https://qlh.klmxf.com/m/wechat/js/7.jpg', 'https://qlh.klmxf.com/m/wechat/js/8.jpg', 'https://qlh.klmxf.com/m/wechat/js/9.jpg', 'https://qlh.klmxf.com/m/wechat/js/10.jpg', 'https://qlh.klmxf.com/m/wechat/js/11.jpg', 'https://qlh.klmxf.com/m/wechat/js/12.jpg', 'https://qlh.klmxf.com/m/wechat/js/13.jpg', 'https://qlh.klmxf.com/m/wechat/js/14.jpg', 'https://qlh.klmxf.com/m/wechat/js/15.jpg', 'https://qlh.klmxf.com/m/wechat/js/16.jpg', 'https://qlh.klmxf.com/m/wechat/js/17.jpg'
+  // 'https://qlh.klmxf.com/m/wechat/js/18.jpg',  
   ]
 } 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
-imgList: ['https://www.klmxf.com/m/wechat/js/1.jpg', 'https://www.klmxf.com/m/wechat/js/2.jpg', 'https://www.klmxf.com/m/wechat/js/3.jpg', 'https://www.klmxf.com/m/wechat/js/4.jpg', 'https://www.klmxf.com/m/wechat/js/5.jpg', 'https://www.klmxf.com/m/wechat/js/6.jpg', 'https://www.klmxf.com/m/wechat/js/7.jpg', 'https://www.klmxf.com/m/wechat/js/8.jpg', 'https://www.klmxf.com/m/wechat/js/9.jpg', 'https://www.klmxf.com/m/wechat/js/10.jpg', 'https://www.klmxf.com/m/wechat/js/11.jpg', 'https://www.klmxf.com/m/wechat/js/12.jpg', 'https://www.klmxf.com/m/wechat/js/13.jpg', 'https://www.klmxf.com/m/wechat/js/14.jpg', 'https://www.klmxf.com/m/wechat/js/15.jpg', 'https://www.klmxf.com/m/wechat/js/16.jpg', 'https://www.klmxf.com/m/wechat/js/17.jpg'
-// 'https://www.klmxf.com/m/wechat/js/18.jpg',  
+imgList: ['https://qlh.klmxf.com/m/wechat/js/1.jpg', 'https://qlh.klmxf.com/m/wechat/js/2.jpg', 'https://qlh.klmxf.com/m/wechat/js/3.jpg', 'https://qlh.klmxf.com/m/wechat/js/4.jpg', 'https://qlh.klmxf.com/m/wechat/js/5.jpg', 'https://qlh.klmxf.com/m/wechat/js/6.jpg', 'https://qlh.klmxf.com/m/wechat/js/7.jpg', 'https://qlh.klmxf.com/m/wechat/js/8.jpg', 'https://qlh.klmxf.com/m/wechat/js/9.jpg', 'https://qlh.klmxf.com/m/wechat/js/10.jpg', 'https://qlh.klmxf.com/m/wechat/js/11.jpg', 'https://qlh.klmxf.com/m/wechat/js/12.jpg', 'https://qlh.klmxf.com/m/wechat/js/13.jpg', 'https://qlh.klmxf.com/m/wechat/js/14.jpg', 'https://qlh.klmxf.com/m/wechat/js/15.jpg', 'https://qlh.klmxf.com/m/wechat/js/16.jpg', 'https://qlh.klmxf.com/m/wechat/js/17.jpg'
+// 'https://qlh.klmxf.com/m/wechat/js/18.jpg',  
 ] 
 INFO [taro-cli-convertor] convertToOptional - 解析ObjectProperty 
 imgPreview: function (event) {

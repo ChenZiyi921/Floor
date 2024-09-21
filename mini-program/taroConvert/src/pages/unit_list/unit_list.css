@@ -1,5 +1,5 @@
 /* pages/unit_list/unit_list.wxss */
-.container {
+.unit_list_container {
     min-height: 100vh;
     background: #f9f9f9;
     box-sizing: border-box;
@@ -97,7 +97,7 @@
     box-shadow: 0px 0px 14px 2px #e1e1e1;
 }
 
-.house.unselect .text {
+.house.unselect .unit_list_text {
     border-bottom: 2px solid #ddd;
 }
 
@@ -107,7 +107,7 @@
     margin: 16px auto 8px;
 }
 
-.house .text {
+.house .unit_list_text {
     padding: 6px 0;
     border-bottom: 2px solid #fff;
     font-size: 40px;
