@@ -106,7 +106,7 @@ class _C extends React.Component {
                 paddingRight: 20,
                 height: 40,
                 lineHeight: '40px',
-                fontSize: 26
+                // fontSize: 26
               }}
             >
               ×
