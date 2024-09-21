@@ -54,7 +54,7 @@ class _C extends React.Component {
         <Video
           initialTime={0}
           controls={true}
-          autoplay={false}
+          autoplay={true}
           loop={false}
           muted={false}
         

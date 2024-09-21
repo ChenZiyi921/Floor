@@ -181,8 +181,8 @@ class _C extends React.Component {
                       className="image"
                       src={
                         item.selected === 0
-                          ? "../../img/checkbox.svg"
-                          : "../../img/checkbox_white.svg"
+                          ? require("../../img/checkbox.svg")
+                          : require("../../img/checkbox_white.svg")
                       }
                     ></Image>
                     <View className="unit_list_text">{item.room_number}</View>
