@@ -1,43 +1,12 @@
 import { View } from "@tarojs/components";
 import Taro from "@tarojs/taro";
 import withWeapp, { cacheOptions } from "@tarojs/with-weapp";
-
 import React from "react";
 import "./info.css";
 
 cacheOptions.setOptionsToCache({
   data: {
     logs: [],
-  },
-  pdfurl: `/pdfjs/web/viewer.html?file=${encodeURIComponent("https://qlh.klmxf.com/m/pdf/xfxz.pdf")}`,
-  toRoomDetail() {
-    // this.pdfurl = `/pdfjs/web/viewer.html?file=${encodeURIComponent("https://qlh.klmxf.com/m/pdf/xfxz.pdf")}`;
-    window.open("https://qlh.klmxf.com/m/pdf/xfxz.pdf")
-    return;
-    Taro.showLoading({
-      title: "加载中",
-    });
-    Taro.downloadFile({
-      url: encodeURIComponent("https://qlh.klmxf.com/m/pdf/xfxz.pdf"),
-      success: (res) => {
-        Taro.hideLoading();
-        if (res.tempFilePath) {
-          Taro.openDocument({
-            filePath: encodeURIComponent(res.tempFilePath),
-            fail: (err) => {
-              console.error(err);
-            },
-            complete: () => {
-              Taro.hideLoading();
-            },
-          });
-        }
-      },
-      fail: (err) => {
-        console.error(err);
-        Taro.hideLoading();
-      },
-    });
   },
   toRoomDistribution() {
     Taro.navigateTo({
@@ -64,41 +33,42 @@ cacheOptions.setOptionsToCache({
       url: "../room_flow/room_flow",
     });
   },
-  toRoomHandbook() {
-    window.open("https://qlh.klmxf.com/m/pdf/xfsc.pdf")
-    return
-    Taro.showLoading({
-      title: "加载中",
-    });
-    Taro.downloadFile({
-      url: encodeURIComponent("https://qlh.klmxf.com/m/pdf/xfsc.pdf"),
-      success: (res) => {
-        Taro.hideLoading();
-        if (res.tempFilePath) {
-          Taro.openDocument({
-            filePath: encodeURIComponent(res.tempFilePath),
-            fail: (err) => {
-              console.error(err);
-            },
-            complete: () => {
-              Taro.hideLoading();
-            },
-          });
-        }
-      },
-      fail: (err) => {
-        console.error(err);
-        Taro.hideLoading();
-      },
-    });
-  },
   onLoad() {},
 });
 @withWeapp(cacheOptions.getOptionsFromCache())
 class _C extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pdfurl: `http://h5.klmxf.com/pdfjs/web/viewer.html?file=${encodeURIComponent(
+        "http://h5.klmxf.com/xfxz.pdf"
+      )}`, // 将 pdfurl 放入 state
+    };
+  }
+
+  closePdfPreview = () => {
+    this.setState({ pdfurl: "" }); // 更新 state
+  };
+
+  toRoomDetail = () => {
+    this.setState({
+      pdfurl: `http://h5.klmxf.com/pdfjs/web/viewer.html?file=${encodeURIComponent(
+        "http://h5.klmxf.com/xfxz.pdf"
+      )}`,
+    });
+  };
+
+  toRoomHandbook = () => {
+    this.setState({
+      pdfurl: `http://h5.klmxf.com/pdfjs/web/viewer.html?file=${encodeURIComponent(
+        "http://h5.klmxf.com/xfsc.pdf"
+      )}`,
+    });
+  };
   render() {
+    console.log(this.state.pdfurl);
     return (
-      <View className="container">
+      <View className="info_container">
         <View className="title">信息公示</View>
         <View className="item" onClick={this.toRoomDetail}>
           <View className="label">选房细则</View>
@@ -128,10 +98,24 @@ class _C extends React.Component {
           <View className="label">选房手册</View>
           <View className="date">2023/09/08 23:16:59</View>
         </View>
-        {/* <iframe
-          src={this.pdfurl}
-          style={{ width: "100vw", height: "100vh" }}
-        ></iframe> */}
+        {this.state.pdfurl ? (
+          <View className="pdfPreview">
+            <View
+              onClick={this.closePdfPreview}
+              style={{
+                background: "#fff",
+                textAlign: "right",
+                paddingRight: 20,
+              }}
+            >
+              ×
+            </View>
+            <iframe
+              src={this.state.pdfurl}
+              style={{ width: "100vw", height: "calc(100vh - 40px)" }}
+            ></iframe>
+          </View>
+        ) : null}
       </View>
     );
   }

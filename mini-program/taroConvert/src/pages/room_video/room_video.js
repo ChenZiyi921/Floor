@@ -52,8 +52,14 @@ class _C extends React.Component {
           <View className="date">2023/09/08 23:16:59</View>
         </View>
         <Video
-          src="https://baikevideo.cdn.bcebos.com/media/mda-Ofj5DOML8EqV0Umy/da4f175769bcf693d0d0e205e1546015.mp4"
-          poster="http://mmbiz.qpic.cn/mmbiz_jpg/EhZ0Apwc3PEeGtkWJyWbblIIRII9eLXQVibOHX3un9B2icSeoEp0BHxxlAib4ko6budbzYlfBuGp5ibA1TCXqSRwPg/0?wx_fmt=jpeg"
+          initialTime={0}
+          controls={true}
+          autoplay={false}
+          loop={false}
+          muted={false}
+        
+          src="https://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+          poster="https://h5.klmxf.com/poster.png"
         ></Video>
       </View>
     )

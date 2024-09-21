@@ -1,11 +1,11 @@
-.container {
+.info_container {
   padding: 0px 30px 30px;
   min-height: 100vh;
   background: #f9f9f9;
   box-sizing: border-box;
   color: #333;
 }
-.title {
+.info_container .title {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,23 +16,37 @@
   font-size: 34px;
   color: #fff;
 }
-.item {
+.info_container .item {
   padding: 20px !important;
   border-bottom: 1px solid #eee;
   background: #fff;
   margin-top: 0 !important;
 }
-.item:nth-last-of-type(1) {
+.info_container .item:nth-last-of-type(1) {
   border: none;
   border-radius: 0px 0px 16px 16px;
 }
-.item .label {
+.info_container .item .label {
   font-size: 34px;
   color: #333;
   padding: 6px 0;
+  text-align: left;
 }
-.item .date {
+.info_container .item .date {
   font-size: 28px;
   color: #777;
   padding: 6px 0;
+  text-align: left;
+}
+
+.pdfPreview{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+}
+iframe {
+  border: none;
 }
